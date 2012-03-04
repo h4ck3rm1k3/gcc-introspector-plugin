@@ -15,7 +15,7 @@ test2: $(PLUGIN_OBJECT_FILES) main2.o gtkinterface.o
 	$(GCC) -pthread -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lcairo -lpango-1.0 -lfreetype -lfontconfig -lgobject-2.0 -lgmodule-2.0 -lgthread-2.0 -lrt -lglib-2.0 $^ -o $@
 
 test : plugin.so
-	LD_PRELOAD=/usr/lib/libgtk-3.so gcc-4.6 -fplugin=/home/mdupont/experiments/introspector/plugin/firstplugin/plugin.so -I$(GCCPLUGINS_DIR)/include  plugin.c -c -o plugin-bootstrap.o
+	LD_PRELOAD=/usr/lib/libgtk-3.so gcc-4.6 -fplugin=/home/mdupont/experiments/introspector/plugin/firstplugin/plugin.so -I$(GCCPLUGINS_DIR)/include  hello.c -c -o plugin-bootstrap.o
 
 clean :
 	rm plugin.so

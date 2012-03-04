@@ -13,7 +13,7 @@ const enum tree_code_class tree_code_type[] = {
 #include "all-tree.def"
 };
 
-
+static void generic_callback(void *gcc_data, void *user_data);
 #include <config.h>
 #include <system.h>
 #include <coretypes.h>
@@ -48,15 +48,12 @@ void crashhandler()
 
 static void generic_callbackPLUGIN_FINISH_TYPE (tree t, void *_)
 {
-  //  void process_type(tree t); // foward
-  //f(t);
-  //    gtk_add_node("blah","Blah");
-
-  char address[255];
-  sprintf(address,"%p",t);
-  printf ( "tcname:%s %s\n", tree_code_name[TREE_CODE(t)],address);
-  gtk_add_node(address,tree_code_name[TREE_CODE(t)]);
-  printf ( "after tcname:%s %s\n", tree_code_name[TREE_CODE(t)],address);
+  printf ( "tcname:%s\n", tree_code_name[TREE_CODE(t)]);
+  printf("check1 pointer %p\n",t);
+  printf("check2 as long %ul\n",t);
+  gtk_add_node(t,tree_code_name[TREE_CODE(t)]);
+  printf ( "after tcname:%s %s\n", tree_code_name[TREE_CODE(t)],t);
+  //  generic_callback(t, "user_data");
 
 }
 
@@ -69,10 +66,10 @@ static void generic_callback(void *gcc_data, void *user_data)
     void print_data()
     {
       int x;
-      for (x=0;x<1023;x++)
+      for (x=0;x<sizeof(union tree_node);x++)
 	{
 	  //	printf("%d %c %x\t", x, c_gcc_data[x], c_gcc_data[x]);  
-	  printf("%x:", c_gcc_data[x]);  
+	  printf("%x", c_gcc_data[x]);  
 	}
     }
   }
@@ -85,6 +82,19 @@ static void generic_callback(void *gcc_data, void *user_data)
   //  printf ("%H", (char * )user_data[1]);
 }
 
+void gcc_report_tree_visit(tree t) // in the gcc model
+{
+  printf ("starting\n");
+  generic_callback(t, "user_data");
+  //tree type_decl = TYPE_NAME (t);
+
+  tree field;
+  for (field = TYPE_FIELDS (t) ; field ; field = TREE_CHAIN (field)) {
+    if (DECL_ARTIFICIAL(field) && !DECL_IMPLICIT_TYPEDEF_P(field)) continue;
+    fprintf(stderr, "%s: member %s\n", "test", tree_code_name[TREE_CODE(field)]);
+  }
+  
+}
 static void generic_callbackPLUGIN_FINISH (tree t, void *_)
 {
   gtk_shutdown();
@@ -147,61 +157,27 @@ void register_all_plugins  (struct plugin_name_args *plugin_info)
     /* Allows to see low level AST in C and C++ frontends. */
     DEFEVENT (PLUGIN_PRE_GENERICIZE)
 
-    /* Called before GCC exits.  */
-    DEFEVENT (PLUGIN_FINISH)
+    /* Called before GCC exits.  */    DEFEVENT (PLUGIN_FINISH)
+    /* Information about the plugin. */    //DEFEVENT (PLUGIN_INFO)
 
-    /* Information about the plugin. */
-    //DEFEVENT (PLUGIN_INFO)
+    /* Called at start of GCC Garbage Collection. */    DEFEVENT (PLUGIN_GGC_START)
+    /* Extend the GGC marking. */    DEFEVENT (PLUGIN_GGC_MARKING)
+    /* Called at end of GGC. */    DEFEVENT (PLUGIN_GGC_END)
 
-    /* Called at start of GCC Garbage Collection. */
-    DEFEVENT (PLUGIN_GGC_START)
+    /* Register an extra GGC root table. */    //DEFEVENT (PLUGIN_REGISTER_GGC_ROOTS)
+    /* Register an extra GGC cache table. */  //DEFEVENT (PLUGIN_REGISTER_GGC_CACHES)
 
-    /* Extend the GGC marking. */
-    DEFEVENT (PLUGIN_GGC_MARKING)
-
-    /* Called at end of GGC. */
-    DEFEVENT (PLUGIN_GGC_END)
-
-    /* Register an extra GGC root table. */
-    //DEFEVENT (PLUGIN_REGISTER_GGC_ROOTS)
-
-    /* Register an extra GGC cache table. */
-    //DEFEVENT (PLUGIN_REGISTER_GGC_CACHES)
-
-    /* Called during attribute registration.  */
-    DEFEVENT (PLUGIN_ATTRIBUTES)
-
-    /* Called before processing a translation unit.  */
-    DEFEVENT (PLUGIN_START_UNIT)
-
-    /* Called during pragma registration.  */
-    DEFEVENT (PLUGIN_PRAGMAS)
-
-    /* Called before first pass from all_passes.  */
-    DEFEVENT (PLUGIN_ALL_PASSES_START)
-
-    /* Called after last pass from all_passes.  */
-    DEFEVENT (PLUGIN_ALL_PASSES_END)
-
-    /* Called before first ipa pass.  */
-    DEFEVENT (PLUGIN_ALL_IPA_PASSES_START)
-
-    /* Called after last ipa pass.  */
-    DEFEVENT (PLUGIN_ALL_IPA_PASSES_END)
-
-    /* Allows to override pass gate decision for current_pass.  */
-    DEFEVENT (PLUGIN_OVERRIDE_GATE)
-
-    /* Called before executing a pass.  */
-    DEFEVENT (PLUGIN_PASS_EXECUTION)
-
-    /* Called before executing subpasses of a GIMPLE_PASS in
-       execute_ipa_pass_list.  */
-    DEFEVENT (PLUGIN_EARLY_GIMPLE_PASSES_START)
-
-    /* Called after executing subpasses of a GIMPLE_PASS in
-       execute_ipa_pass_list.  */
-    DEFEVENT (PLUGIN_EARLY_GIMPLE_PASSES_END)
+    /* Called during attribute registration.  */    DEFEVENT (PLUGIN_ATTRIBUTES)
+    /* Called before processing a translation unit.  */    DEFEVENT (PLUGIN_START_UNIT)
+    /* Called during pragma registration.  */    DEFEVENT (PLUGIN_PRAGMAS)
+    /* Called before first pass from all_passes.  */    DEFEVENT (PLUGIN_ALL_PASSES_START)
+    /* Called after last pass from all_passes.  */    DEFEVENT (PLUGIN_ALL_PASSES_END)
+    /* Called before first ipa pass.  */   DEFEVENT (PLUGIN_ALL_IPA_PASSES_START)
+    /* Called after last ipa pass.  */    DEFEVENT (PLUGIN_ALL_IPA_PASSES_END)
+    /* Allows to override pass gate decision for current_pass.  */    DEFEVENT (PLUGIN_OVERRIDE_GATE)
+    /* Called before executing a pass.  */    DEFEVENT (PLUGIN_PASS_EXECUTION)
+    DEFEVENT (PLUGIN_EARLY_GIMPLE_PASSES_START)        /* Called before executing subpasses of a GIMPLE_PASS in       execute_ipa_pass_list.  */
+    DEFEVENT (PLUGIN_EARLY_GIMPLE_PASSES_END)/* Called after executing subpasses of a GIMPLE_PASS in execute_ipa_pass_list.  */
 
     /* Called when a pass is first instantiated.  */
     DEFEVENT (PLUGIN_NEW_PASS)
@@ -216,7 +192,7 @@ plugin_init (struct plugin_name_args *plugin_info,
 {
 
 
-  register_all_plugins(plugin_info);
+  //  register_all_plugins(plugin_info);
 
   register_special_plugins  (plugin_info);
 
@@ -224,50 +200,7 @@ plugin_init (struct plugin_name_args *plugin_info,
 }
 
 
-/*   gcc.PLUGIN_ATTRIBUTES	For creating custom GCC attributes */
-/* gcc.PLUGIN_PRE_GENERICIZE	For working with the AST in the C and C++ frontends */
-/* gcc.PLUGIN_PASS_EXECUTION	Called before each pass is executed */
-/* gcc.PLUGIN_FINISH_UNIT	At the end of working with a translation unit (aka source file) */
-/* gcc.PLUGIN_FINISH_TYPE	After a type has been parsed */
-/* gcc.PLUGIN_FINISH_DECL	After a declaration has been parsed (GCC 4.7 or later) */
-/* gcc.PLUGIN_FINISH	Called before GCC exits */
-/* http://gcc-python-plugin.readthedocs.org/en/latest/callbacks.html */
-
-/*   PLUGIN_PASS_MANAGER_SETUP,    /\* To hook into pass manager.  *\/ */
-/*        PLUGIN_FINISH_TYPE,           /\* After finishing parsing a type.  *\/ */
-/*        PLUGIN_FINISH_DECL,           /\* After finishing parsing a declaration. *\/ */
-/*        PLUGIN_FINISH_UNIT,           /\* Useful for summary processing.  *\/ */
-/*        PLUGIN_PRE_GENERICIZE,        /\* Allows to see low level AST in C and C++ frontends.  *\/ */
-/*        PLUGIN_FINISH,                /\* Called before GCC exits.  *\/ */
-/*        PLUGIN_INFO,                  /\* Information about the plugin. *\/ */
-/*        PLUGIN_GGC_START,             /\* Called at start of GCC Garbage Collection. *\/ */
-/*        PLUGIN_GGC_MARKING,           /\* Extend the GGC marking. *\/ */
-/*        PLUGIN_GGC_END,               /\* Called at end of GGC. *\/ */
-/*        PLUGIN_REGISTER_GGC_ROOTS,    /\* Register an extra GGC root table. *\/ */
-/*        PLUGIN_REGISTER_GGC_CACHES,   /\* Register an extra GGC cache table. *\/ */
-/*        PLUGIN_ATTRIBUTES,            /\* Called during attribute registration *\/ */
-/*        PLUGIN_START_UNIT,            /\* Called before processing a translation unit.  *\/ */
-/*        PLUGIN_PRAGMAS,               /\* Called during pragma registration. *\/ */
-/*        /\* Called before first pass from all_passes.  *\/ */
-/*        PLUGIN_ALL_PASSES_START, */
-/*        /\* Called after last pass from all_passes.  *\/ */
-/*        PLUGIN_ALL_PASSES_END, */
-/*        /\* Called before first ipa pass.  *\/ */
-/*        PLUGIN_ALL_IPA_PASSES_START, */
-/*        /\* Called after last ipa pass.  *\/ */
-/*        PLUGIN_ALL_IPA_PASSES_END, */
-/*        /\* Allows to override pass gate decision for current_pass.  *\/ */
-/*        PLUGIN_OVERRIDE_GATE, */
-/*        /\* Called before executing a pass.  *\/ */
-/*        PLUGIN_PASS_EXECUTION, */
-/*        /\* Called before executing subpasses of a GIMPLE_PASS in */
-/*           execute_ipa_pass_list.  *\/ */
-/*        PLUGIN_EARLY_GIMPLE_PASSES_START, */
-/*        /\* Called after executing subpasses of a GIMPLE_PASS in */
-/*           execute_ipa_pass_list.  *\/ */
-/*        PLUGIN_EARLY_GIMPLE_PASSES_END, */
-/*        /\* Called when a pass is first instantiated.  *\/ */
-/*        PLUGIN_NEW_PASS, */
-     
-/*        PLUGIN_EVENT_FIRST_DYNAMIC    /\* Dummy event used for indexing callback */
-/*                                         array.  *\/ */
+const int sizeof_tree()
+{
+  return sizeof(union tree_node);
+}
