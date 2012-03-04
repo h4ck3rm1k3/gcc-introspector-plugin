@@ -1,10 +1,7 @@
-struct s{
-  int x;
-};
 
 // this is the format
 struct tree_base {
-  unsigned tree_code code : 16;
+  unsigned code : 16; // this is normally the tree code, but took it out for now
   unsigned side_effects_flag : 1;
   unsigned constant_flag : 1;
   unsigned addressable_flag : 1;
@@ -37,3 +34,6 @@ struct tree_base {
   unsigned address_space : 8;
 };
 
+struct s{
+  int x;
+};

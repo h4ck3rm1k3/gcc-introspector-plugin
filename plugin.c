@@ -46,15 +46,98 @@ void crashhandler()
 
 #endif
 
+void id (tree d)
+{
+  const char *name = IDENTIFIER_POINTER(d);
+  int namel = IDENTIFIER_LENGTH(d);
+  if (namel)
+    {
+      fprintf(stderr, "has name1 %d :%s\n",namel,name);
+      fprintf(stderr, "%s: member1 %s\n", name, tree_code_name[TREE_CODE(d)]);
+    }
+  else
+    {
+      fprintf(stderr, "has no name1 length %d\n",namel);
+    }
+}
+
 static void generic_callbackPLUGIN_FINISH_TYPE (tree t, void *_)
 {
   printf ( "tcname:%s\n", tree_code_name[TREE_CODE(t)]);
-  printf("check1 pointer %p\n",t);
-  printf("check2 as long %ul\n",t);
+  //  printf("check1 pointer %p\n",t);
+  //  printf("check2 as long %ul\n",t);
   gtk_add_node(t,tree_code_name[TREE_CODE(t)]);
-  printf ( "after tcname:%s %s\n", tree_code_name[TREE_CODE(t)],t);
+  //  printf ( "after tcname:%s\n", tree_code_name[TREE_CODE(t)]);
   //  generic_callback(t, "user_data");
 
+  void name(tree t)
+  {
+    tree d =DECL_NAME(t);
+    if (d)
+      {
+	fprintf(stderr, "has decl\n");
+	// gtk_add_node(d,tree_code_name[TREE_CODE(d)]);
+
+	void id (tree d)
+	{
+	  const char *name = IDENTIFIER_POINTER(d);
+	  int namel = IDENTIFIER_LENGTH(d);
+	  if (namel)
+	    {
+	      fprintf(stderr, "has name1 %d :%s\n",namel,name);
+	      gtk_add_node(d,name);
+	      //	      gtk_add_node_field(d,tree_code_name[TREE_CODE(d)],name);
+	      //	      fprintf(stderr, "%s: member1 %s\n", name, );
+	    }
+	  else
+	    {
+	      fprintf(stderr, "has no name1 length %d\n",namel);
+	    }
+	}
+	
+	id(d);
+      }
+    else
+      {
+	id(t);
+      }
+  }
+  
+  void fields (tree t)
+  {
+    tree field;
+    for (field = TYPE_FIELDS (t) ; field ; field = TREE_CHAIN (field)) {
+      //if (DECL_ARTIFICIAL(field) && !DECL_IMPLICIT_TYPEDEF_P(field)) continue;
+      fprintf(stderr, "%s: member %s\n", "test1", tree_code_name[TREE_CODE(field)]);
+      //gtk_add_node(field,tree_code_name[TREE_CODE(field)]);
+      name(field);
+    }
+  }// fields
+  
+  void record(tree t)	
+  {
+    switch (TREE_CODE(t)) {
+    case RECORD_TYPE:
+    case UNION_TYPE:
+      name(t);
+      fields (t);
+      break;
+      
+    default: 
+      break;      
+    }
+  }//
+  
+  void check_record (tree t) { 
+    record(t);
+  }
+    
+  if (t)
+    {
+      check_record(t);
+    }
+
+  //gcc_report_tree_visit(t);
 }
 
 static void generic_callback(void *gcc_data, void *user_data)
@@ -84,17 +167,44 @@ static void generic_callback(void *gcc_data, void *user_data)
 
 void gcc_report_tree_visit(tree t) // in the gcc model
 {
-  printf ("starting\n");
-  generic_callback(t, "user_data");
-  //tree type_decl = TYPE_NAME (t);
+  return;
+  void name(tree t)
+  {
+    tree d =DECL_NAME(t);
+    if (d)
+      {
+	fprintf(stderr, "has decl\n");
+	id (d);
+      }
+    else
+      {
+	fprintf(stderr, "has no decl\n");
+	id (t);
+      }
+  };
 
-  tree field;
-  for (field = TYPE_FIELDS (t) ; field ; field = TREE_CHAIN (field)) {
-    if (DECL_ARTIFICIAL(field) && !DECL_IMPLICIT_TYPEDEF_P(field)) continue;
-    fprintf(stderr, "%s: member %s\n", "test", tree_code_name[TREE_CODE(field)]);
-  }
+  void record(tree t)
+  {
+    printf ("starting\n");
+    name (t);
+    generic_callback(t, "user_data");
+    //tree type_decl = TYPE_NAME (t);
+    
+    tree field;
+    for (field = TYPE_FIELDS (t) ; field ; field = TREE_CHAIN (field)) {
+      //if (DECL_ARTIFICIAL(field) && !DECL_IMPLICIT_TYPEDEF_P(field)) continue;
+      name (field);
+      fprintf(stderr, "%s: member %s\n", "test2", tree_code_name[TREE_CODE(field)]);
+      
+    }
+  };
+  if (t)
+    {
+      record(t);
+    }
   
 }
+
 static void generic_callbackPLUGIN_FINISH (tree t, void *_)
 {
   gtk_shutdown();
@@ -107,7 +217,7 @@ static void generic_callbackPLUGIN_GGC_START ()
 
 static void generic_callbackPLUGIN_ATTRIBUTES ()
 {
-    gtk_startup();
+  gtk_startup();
 }
 
 static void generic_callbackPLUGIN_GGC_END ()
@@ -120,7 +230,7 @@ static void generic_callbackPLUGIN_GGC_END ()
   the commented out ones just crash
 */
 #define DEFEVENTSPECIAL(X)   register_callback (plugin_info->base_name,  X,  (plugin_callback_func)&generic_callback ##X, #X );
-  //#define DEFEVENT(X)   
+//#define DEFEVENT(X)   
 
 //void (*)(union tree_node *, void *)
 
