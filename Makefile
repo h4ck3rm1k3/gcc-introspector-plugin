@@ -20,3 +20,17 @@ test : plugin.so
 clean :
 	rm plugin.so
 	rm *.o
+
+
+
+plugincpp.o : plugin.cpp
+	g++ -c -fpermissive -std=gnu++0x  -I /usr/lib/gcc/i686-linux-gnu/4.6/plugin/include/ plugin.cpp -o plugincpp.o
+
+main2.o : main2.cpp
+	g++ -c -fpermissive -std=gnu++0x  -I /usr/lib/gcc/i686-linux-gnu/4.6/plugin/include/ main2.cpp -o main2.o
+
+dummy.o : dummy.cpp
+	g++ -c -fpermissive -std=gnu++0x  -I /usr/lib/gcc/i686-linux-gnu/4.6/plugin/include/ dummy.cpp -o dummy.o
+
+cpp : plugincpp.o dummy.o main2.o 
+	g++ -fpermissive -std=gnu++0x  -I /usr/lib/gcc/i686-linux-gnu/4.6/plugin/include/ plugincpp.o main2.o dummy.o
