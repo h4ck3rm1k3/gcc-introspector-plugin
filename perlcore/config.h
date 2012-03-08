@@ -2193,9 +2193,9 @@
  *	not available to translate error numbers to strings but sys_errlist[]
  *	array is there.
  */
-#define HAS_STRERROR		/**/
-#define HAS_SYS_ERRLIST	/**/
-#define Strerror(e) strerror(e)
+//#define HAS_STRERROR		/**/
+//#define HAS_SYS_ERRLIST	/**/
+//#define Strerror(e) strerror(e)
 
 /* HAS_STRERROR_R:
  *	This symbol, if defined, indicates that the strerror_r routine
@@ -2878,7 +2878,7 @@
 #define	PERL_TARGETARCH	""	/**/
 #endif
 
-/* MEM_ALIGNBYTES:
+/* MEM_ALIGNBYES:
  *	This symbol contains the number of bytes required to align a
  *	double, or a long double when applicable. Usual values are 2,
  *	4 and 8. The default is eight, for safety.
@@ -2908,28 +2908,28 @@
 #if defined(USE_CROSS_COMPILE) || defined(MULTIARCH)
 #  ifdef __LITTLE_ENDIAN__
 #    if LONGSIZE == 4
-#      define BYTEORDER 0x1234
+#      define BYTEORDER_hide 0x1234
 #    else
 #      if LONGSIZE == 8
-#        define BYTEORDER 0x12345678
+#        define BYTEORDER_hide 0x12345678
 #      endif
 #    endif
 #  else
 #    ifdef __BIG_ENDIAN__
 #      if LONGSIZE == 4
-#        define BYTEORDER 0x4321
+#        define BYTEORDER_hide 0x4321
 #      else
 #        if LONGSIZE == 8
-#          define BYTEORDER 0x87654321
+#          define BYTEORDER_hide 0x87654321
 #        endif
 #      endif
 #    endif
 #  endif
-#  if !defined(BYTEORDER) && (defined(NeXT) || defined(__NeXT__))
-#    define BYTEORDER 0x4321
+#  if !defined(BYTEORDER_hide) && (defined(NeXT) || defined(__NeXT__))
+#    define BYTEORDER_hide 0x4321
 #  endif
 #else
-#define BYTEORDER 0x12345678	/* large digits for MSB */
+#define BYTEORDER_hide 0x12345678	/* large digits for MSB */
 #endif /* NeXT */
 
 /* CHARBITS:
@@ -4451,14 +4451,14 @@
 #define	NV_OVERFLOWS_INTEGERS_AT	256.0*256.0*256.0*256.0*256.0*256.0*2.0*2.0*2.0*2.0*2.0
 #define	NV_ZERO_IS_ALLBITS_ZERO
 #if UVSIZE == 8
-#   ifdef BYTEORDER
-#       if BYTEORDER == 0x1234
-#           undef BYTEORDER
-#           define BYTEORDER 0x12345678
+#   ifdef BYTEORDER_hide
+#       if BYTEORDER_hide == 0x1234
+#           undef BYTEORDER_hide
+#           define BYTEORDER_hide 0x12345678
 #       else
-#           if BYTEORDER == 0x4321
-#               undef BYTEORDER
-#               define BYTEORDER 0x87654321
+#           if BYTEORDER_hide == 0x4321
+#               undef BYTEORDER_hide
+#               define BYTEORDER_hide 0x87654321
 #           endif
 #       endif
 #   endif

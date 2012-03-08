@@ -69,11 +69,14 @@ struct GTY(()) real_value {
    slots at preprocessor time, which means we can't use sizeof.  Guess.  */
 
 #define REAL_VALUE_TYPE_SIZE (SIGNIFICAND_BITS + 32)
-/*#define REAL_WIDTH			       \
-  (REAL_VALUE_TYPE_SIZE/HOST_BITS_PER_WIDE_INT \
-   + (REAL_VALUE_TYPE_SIZE%HOST_BITS_PER_WIDE_INT ? 1 : 0)) /* round up */
-*/
-/* Verify the guess.  */
+
+//#define REAL_WIDTH 3
+#define REAL_WIDTH 6
+/* /\*#define REAL_WIDTH			       \ */
+/*   (REAL_VALUE_TYPE_SIZE/HOST_BITS_PER_WIDE_INT \ */
+/*    + (REAL_VALUE_TYPE_SIZE%HOST_BITS_PER_WIDE_INT ? 1 : 0)) /\* round up *\/ */
+/* *\/ */
+/* /\* Verify the guess.  *\/ */
 extern char test_real_width
   [sizeof(REAL_VALUE_TYPE) <= REAL_WIDTH*sizeof(HOST_WIDE_INT) ? 1 : -1];
 
@@ -84,7 +87,7 @@ extern char test_real_width
    A number of places assume that there are always at least two 'w'
    slots in a CONST_DOUBLE, so we provide them even if one would suffice.  */
 
-#define REAL_WIDTH 2
+
 #if REAL_WIDTH == 1
 # define CONST_DOUBLE_FORMAT	 "ww"
 #else
