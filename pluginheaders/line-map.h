@@ -61,7 +61,8 @@ struct GTY(()) line_map {
   linenum_type to_line;
   source_location start_location;
   int included_from;
-  ENUM_BITFIELD (lc_reason) reason : CHAR_BIT;
+  //ENUM_BITFIELD (lc_reason) reason : CHAR_BIT;
+  ///home/mdupont/experiments/introspector/plugin/firstplugin/pluginheaders/line-map.h:64:3: error: expected specifier-qualifier-list before 'ENUM_BITFIELD'
   /* The sysp field isn't really needed now that it's in cpp_buffer.  */
   unsigned char sysp;
   /* Number of the low-order source_location bits used for a column number.  */

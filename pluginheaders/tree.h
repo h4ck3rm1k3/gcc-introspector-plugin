@@ -29,7 +29,7 @@ along with GCC; see the file COPYING3.  If not see
 #include "vec.h"
 #include "vecir.h"
 #include "double-int.h"
-#include "real.h"
+//#include "gcc-real.h"
 #include "fixed-value.h"
 #include "alias.h"
 #include "flags.h"
@@ -1412,8 +1412,8 @@ struct GTY(()) tree_int_cst {
 };
 
 /* In a REAL_CST node.  struct real_value is an opaque entity, with
-   manipulators defined in real.h.  We don't want tree.h depending on
-   real.h and transitively on tm.h.  */
+   manipulators defined in gcc-real.h.  We don't want tree.h depending on
+   gcc-real.h and transitively on tm.h.  */
 struct real_value;
 
 #define TREE_REAL_CST_PTR(NODE) (REAL_CST_CHECK (NODE)->real_cst.real_cst_ptr)

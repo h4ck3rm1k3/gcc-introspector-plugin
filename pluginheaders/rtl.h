@@ -25,7 +25,7 @@ along with GCC; see the file COPYING3.  If not see
 #include "statistics.h"
 #include "machmode.h"
 #include "input.h"
-#include "real.h"
+#include "gcc-real.h"
 #include "vec.h"
 #include "vecir.h"
 #include "fixed-value.h"

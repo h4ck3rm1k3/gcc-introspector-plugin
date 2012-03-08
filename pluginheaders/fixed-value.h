@@ -21,7 +21,7 @@ along with GCC; see the file COPYING3.  If not see
 #define GCC_FIXED_VALUE_H
 
 #include "machmode.h"
-#include "real.h"
+#include "gcc-real.h"
 #include "double-int.h"
 
 struct GTY(()) fixed_value
