@@ -34,3 +34,5 @@ dummy.o : dummy.cpp
 
 cpp : plugincpp.o dummy.o main2.o 
 	g++ -fpermissive -std=gnu++0x  -I /usr/lib/gcc/i686-linux-gnu/4.6/plugin/include/ plugincpp.o main2.o dummy.o
+cxxml : plugin.cpp
+	gccxml -fxml=plugin.xml -fpermissive   -I /usr/lib/gcc/i686-linux-gnu/4.6/plugin/include/ plugin.cpp
