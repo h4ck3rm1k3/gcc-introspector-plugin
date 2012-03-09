@@ -1,11 +1,16 @@
 use Inline 'Info', 'Force', 'Noclean';
-use Inline C => Config => 
+use Cwd;
+use strict;
+use warnings;
+my $dir = getcwd;
+warn "Dir is $dir";
+use Inline "C" => Config => 
     AUTO_INCLUDE => '#include "gcc.h"',
-    INC => '-I/home/mdupont/experiments/introspector/plugin/firstplugin/pluginheaders/',
+    INC => '-I' . getcwd . '/pluginheaders/',
     CCFLAGS=> '-save-temps --verbose',
     TYPEMAPS => 'typemap',
-    ENABLE => AUTOWRAP ;
-use Inline C;
+    ENABLE => "AUTOWRAP" ;
+use Inline "C";
 
 print "this is being executed in the compiler;\n";
 

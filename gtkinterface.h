@@ -1,8 +1,10 @@
 #pragma once 
 
+#ifndef tree_node
 union tree_node;
 typedef union tree_node *tree;
 struct tree_base;
+#endif
 
 int gtk_add_node(tree node_ptr,const char * node_type);
 int gtk_shutdown();

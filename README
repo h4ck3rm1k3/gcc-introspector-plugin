@@ -1,3 +1,17 @@
+
+TO INSTALL :
+on ubuntu, 
+ sudo apt-get install gcc-4.5-plugin-dev 
+ (or your version of gcc)
+
+for gtk :
+sudo apt-get install libgtk2.0-dev libglib2.0-dev 
+for perl :
+sudo apt-get install libperl-dev  
+
+for perl :
+    sudo cpan Inline::C
+
 some ideas  :
 
 1. we will want to control the compiler via the gui.
