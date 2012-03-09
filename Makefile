@@ -5,7 +5,8 @@ PLUGIN_OBJECT_FILES= $(patsubst %.c,%.o,$(PLUGIN_SOURCE_FILES))
 GCCPLUGINS_DIR:= /home/mdupont/experiments/introspector/plugin/firstplugin/pluginheaders/
 PERLCORE_DIR:= /home/mdupont/experiments/introspector/plugin/firstplugin/perlcore
 
-CFLAGS+= -save-temps -I$(GCCPLUGINS_DIR) -I/usr/include/gtk-3.0 -I/usr/include/glib-2.0 -fPIC -O2 -I/usr/lib/i386-linux-gnu/glib-2.0/include -I /usr/include/cairo -I /usr/include/pango-1.0 -I/usr/lib/i386-linux-gnu/gtk-3.0/include -I /usr/include/gdk-pixbuf-2.0 -I/usr/include/atk-1.0/ -I$(PERLCORE_DIR) -lperl
+CFLAGS+= -save-temps -I$(GCCPLUGINS_DIR) -I/usr/include/gtk-3.0 -I/usr/include/glib-2.0 -fPIC -O2 -I/usr/lib/i386-linux-gnu/glib-2.0/include -I /usr/include/cairo -I /usr/include/pango-1.0 -I/usr/lib/i386-linux-gnu/gtk-3.0/include -I /usr/include/gdk-pixbuf-2.0 -I/usr/include/atk-1.0/ -I$(PERLCORE_DIR) -lperl -Wl,-E  -fstack-protector -L/usr/local/lib  -L/usr/lib/perl/5.12/CORE -lperl -ldl -lm -lpthread -lc -lcrypt
+
 
 #/usr/lib/gcc/i686-linux-gnu/4.6/plugin/include/
 LD_PRELOAD=/usr/lib/libgtk-3.so

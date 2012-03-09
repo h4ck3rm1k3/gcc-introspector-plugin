@@ -1,0 +1,5 @@
+make[1]: Entering directory `/home/mdupont/experiments/introspector/plugin/firstplugin/inline/_Inline/build/GCC_pm_66e6'
+Files found in blib/arch: installing files in blib/lib into architecture dependent library tree
+Installing /home/mdupont/experiments/introspector/plugin/firstplugin/inline/_Inline/lib/auto/GCC_pm_66e6/GCC_pm_66e6.so
+Installing /home/mdupont/experiments/introspector/plugin/firstplugin/inline/_Inline/lib/auto/GCC_pm_66e6/GCC_pm_66e6.bs
+make[1]: Leaving directory `/home/mdupont/experiments/introspector/plugin/firstplugin/inline/_Inline/build/GCC_pm_66e6'

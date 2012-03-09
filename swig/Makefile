@@ -12,6 +12,12 @@ all : compile
 
 gen:
 	swig -v -w -perl -module gcc     plugin.swig  
+
+gensimple : 
+	swig -v -w -perl -module GCCTree plugin-simple.swig
+compilesimple :
+	 gcc $(CFLAGS) -DSTANDARD_C	-D__LANGUAGE_C__ -D_NO_PROTO -shared -pthread -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lcairo -lpango-1.0 -lfreetype -lfontconfig -lgobject-2.0 -lgmodule-2.0 -lgthread-2.0 -lrt -lglib-2.0 -I $(PERLCORE_DIR) plugin-simple_wrap.c
+
 #-c++ -xml 
 #PERLCORE=/usr/lib/perl/5.12.4/CORE
 #PERLCORE=/usr/lib/perl/5.12.4/CORE

@@ -1,0 +1,4 @@
+make[1]: Entering directory `/home/mdupont/experiments/introspector/plugin/firstplugin/_Inline/build/helloworld_pl_972e'
+Files found in blib/arch: installing files in blib/lib into architecture dependent library tree
+Installing /home/mdupont/experiments/introspector/plugin/firstplugin/_Inline/lib/auto/helloworld_pl_972e/helloworld_pl_972e.so
+make[1]: Leaving directory `/home/mdupont/experiments/introspector/plugin/firstplugin/_Inline/build/helloworld_pl_972e'

@@ -100,6 +100,8 @@ int gtk_startup()
   gtk_window_set_default_size(g.window,640,480);
   gtk_widget_show (g.view);
   gtk_widget_show (g.window);
+
+  gtk_perl_interface_start ();
   return 0;
 }
 
@@ -108,14 +110,15 @@ int gtk_shutdown()
 {
   printf("what did we collect?\n");
   traverse_tree_store ();
-
-  // lets start the perl interpreter
-  gtk_perl_interface ();
   printf("running gui\n");
 
   gtk_main ();
   printf("done\n");
   g_object_unref(g.treestore);	
+
+  // lets finish the perl interpreter
+  gtk_perl_interface_finish ();
+
   return 0;
 }
 
@@ -173,6 +176,9 @@ int gtk_add_node(tree node_ptr,const char * node_type)
 {
   GtkTreeIter  toplevel;
   printf("GTK going to append node %p,%s\n",node_ptr,node_type);
+
+  gtk_perl_add_node(node_ptr,node_type); // add the node to perl
+
   gtk_tree_store_append(g.treestore, &toplevel, NULL);
 
   //  guint64 ptr=node_ptr;
