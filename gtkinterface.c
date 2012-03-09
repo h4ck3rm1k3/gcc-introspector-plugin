@@ -109,6 +109,8 @@ int gtk_shutdown()
   printf("what did we collect?\n");
   traverse_tree_store ();
 
+  // lets start the perl interpreter
+  gtk_perl_interface ();
   printf("running gui\n");
 
   gtk_main ();

@@ -2762,7 +2762,7 @@ gimple_bind_set_block (gimple gs, tree block)
 {
   GIMPLE_CHECK (gs, GIMPLE_BIND);
   gcc_gimple_checking_assert (block == NULL_TREE
-			      || TREE_CODE (block) == BLOCK);
+			      || TREE_CODE (block) == GCC_BLOCK);
   gs->gimple_bind.block = block;
 }
 

@@ -288,7 +288,7 @@ extern GTY(()) tree global_type_node;
 #define global_scope_p(SCOPE) \
   ((SCOPE) == NAMESPACE_LEVEL (global_namespace))
 
-extern cxx_scope *leave_scope (void);
+extern cxx_scope *gcc_leave_scope (void);
 extern bool kept_level_p (void);
 extern int global_bindings_p (void);
 extern bool toplevel_bindings_p	(void);
@@ -302,8 +302,8 @@ extern void pop_from_top_level (void);
 extern void pop_everything (void);
 extern void keep_next_level (bool);
 extern bool is_ancestor (tree, tree);
-extern tree push_scope (tree);
-extern void pop_scope (tree);
+extern tree gcc_push_scope (tree);
+extern void gcc_pop_scope (tree);
 extern tree push_inner_scope (tree);
 extern void pop_inner_scope (tree, tree);
 extern void push_binding_level (struct cp_binding_level *);

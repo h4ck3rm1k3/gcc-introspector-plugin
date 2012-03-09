@@ -247,9 +247,9 @@ struct pretty_print_info
 #define pp_minus(PP)            pp_character (PP, '-')
 #define pp_star(PP)             pp_character (PP, '*')
 #define pp_slash(PP)            pp_character (PP, '/')
-#define pp_modulo(PP)           pp_character (PP, '%')
+#define gcc_pp_modulo(PP)           pp_character (PP, '%')
 #define pp_exclamation(PP)      pp_character (PP, '!')
-#define pp_complement(PP)       pp_character (PP, '~')
+#define gcc_pp_complement(PP)       pp_character (PP, '~')
 #define pp_quote(PP)            pp_character (PP, '\'')
 #define pp_backquote(PP)        pp_character (PP, '`')
 #define pp_doublequote(PP)      pp_character (PP, '"')
@@ -268,19 +268,19 @@ struct pretty_print_info
      pp_character (PP, C);          \
      pp_space (PP);                 \
    } while (0)
-#define pp_scalar(PP, FORMAT, SCALAR)	                      \
+#define gcc_pp_scalar(PP, FORMAT, SCALAR)	                      \
   do					        	      \
     {			         			      \
       sprintf (pp_buffer (PP)->digit_buffer, FORMAT, SCALAR); \
       pp_string (PP, pp_buffer (PP)->digit_buffer);           \
     }						              \
   while (0)
-#define pp_decimal_int(PP, I)  pp_scalar (PP, "%d", I)
+#define pp_decimal_int(PP, I)  gcc_pp_scalar (PP, "%d", I)
 #define pp_wide_integer(PP, I) \
-   pp_scalar (PP, HOST_WIDE_INT_PRINT_DEC, (HOST_WIDE_INT) I)
+   gcc_pp_scalar (PP, HOST_WIDE_INT_PRINT_DEC, (HOST_WIDE_INT) I)
 #define pp_widest_integer(PP, I) \
-   pp_scalar (PP, HOST_WIDEST_INT_PRINT_DEC, (HOST_WIDEST_INT) I)
-#define pp_pointer(PP, P)      pp_scalar (PP, "%p", P)
+   gcc_pp_scalar (PP, HOST_WIDEST_INT_PRINT_DEC, (HOST_WIDEST_INT) I)
+#define pp_pointer(PP, P)      gcc_pp_scalar (PP, "%p", P)
 
 #define pp_identifier(PP, ID)  pp_string (PP, (pp_translate_identifiers (PP) \
 					  ? identifier_to_locale (ID)	\

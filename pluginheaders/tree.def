@@ -76,7 +76,7 @@ DEFTREECODE (TREE_VEC, "tree_vec", tcc_exceptional, 0)
    instance of an inline function).
    TREE_ASM_WRITTEN is nonzero if the block was actually referenced
    in the generated assembly.  */
-DEFTREECODE (BLOCK, "block", tcc_exceptional, 0)
+DEFTREECODE (GCC_BLOCK, "block", tcc_exceptional, 0)
 
 /* Each data type is represented by a tree node whose code is one of
    the following:  */

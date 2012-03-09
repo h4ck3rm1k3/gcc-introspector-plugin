@@ -10,7 +10,7 @@
 
 #ifndef H_PERL
 #define H_PERL 1
-
+#define bool char
 #ifdef PERL_FOR_X2P
 /*
  * This file is being used for x2p stuff.
@@ -473,7 +473,7 @@ register struct op *Perl_op asm(stringify(OP_IN_REGISTER));
 #define WITH_THX(s) STMT_START { dTHX; s; } STMT_END
 #define WITH_THR(s) WITH_THX(s)
 
-#ifndef BYTEORDER  /* Should never happen -- byteorder is in config.h */
+#ifndef BYTEORDER_hide  /* Should never happen -- byteorder is in config.h */
 #   define BYTEORDER 0x1234
 #endif
 
@@ -2404,7 +2404,7 @@ typedef struct gp GP;
 typedef struct gv GV;
 typedef struct io IO;
 typedef struct context PERL_CONTEXT;
-typedef struct block BLOCK;
+typedef struct block PERL_BLOCK;
 
 typedef struct magic MAGIC;
 typedef struct xpv XPV;
@@ -3497,7 +3497,7 @@ struct ptr_tbl {
 #define ntohl my_ntohl
 #endif
 #else
-#if (BYTEORDER & 0xffff) == 0x4321
+#if (BYTEORDER_hide & 0xffff) == 0x4321
 #undef HAS_HTONS
 #undef HAS_HTONL
 #undef HAS_NTOHS
@@ -3509,12 +3509,12 @@ struct ptr_tbl {
  * Little-endian byte order functions - 'v' for 'VAX', or 'reVerse'.
  * -DWS
  */
-#if BYTEORDER != 0x1234
+#if BYTEORDER_hide != 0x1234
 # define HAS_VTOHL
 # define HAS_VTOHS
 # define HAS_HTOVL
 # define HAS_HTOVS
-# if BYTEORDER == 0x4321 || BYTEORDER == 0x87654321
+# if BYTEORDER_hide == 0x4321 || BYTEORDER_hide == 0x87654321
 #  define vtohl(x)	((((x)&0xFF)<<24)	\
 			+(((x)>>24)&0xFF)	\
 			+(((x)&0x0000FF00)<<8)	\

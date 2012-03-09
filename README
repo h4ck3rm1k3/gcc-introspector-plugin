@@ -1,6 +1,13 @@
 some ideas  :
 
 1. we will want to control the compiler via the gui.
-imagine an eval function.
+
+we want to add the compiler as a module that can be used. 
+
+1.1 imagine an eval function.
+
 2. callbacks defined for the evaluation of tree structures using functional programming style. we want to define an api as a series of semantic callbacks with full details. this can be embedded in a function and executed when needed. this function can also be dynamically called or created by a user. 
 
+3. adding in a perl interpreter.
+
+4. integrating two modules into one executable. gcc and perl. they dont compile/link together very well.
