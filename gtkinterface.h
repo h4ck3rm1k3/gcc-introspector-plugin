@@ -1,9 +1,15 @@
 #pragma once 
 
+#ifndef GCC_CORETYPES_H
 #ifndef tree_node
 union tree_node;
+#endif
+#ifndef tree
 typedef union tree_node *tree;
+#endif
+#ifndef tree_base
 struct tree_base;
+#endif
 #endif
 
 int gtk_add_node(tree node_ptr,const char * node_type);

@@ -1,6 +1,6 @@
 #include "gtkinterface.h"
-
-void register_callback()
+char * tree_code_name[]={};
+int register_callback()
 {}
 
 void xassert()
