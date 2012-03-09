@@ -13,9 +13,9 @@
 /*
  * Package name      : perl5
  * Source directory  : .
- * Configuration time: Tue Sep  6 08:07:52 UTC 2011
+ * Configuration time: Fri Apr 22 19:20:15 UTC 2011
  * Configured by     : Debian Project
- * Target system     : linux roseapple 2.6.24-28-server #1 smp wed aug 18 21:17:51 utc 2010 i686 i686 i386 gnulinux 
+ * Target system     : linux allspice 2.6.24-28-server #1 smp wed aug 18 21:17:51 utc 2010 x86_64 gnulinux 
  */
 
 #ifndef _config_h_
@@ -861,28 +861,6 @@
  */
 /*#define I_VFORK	/ **/
 
-/* CAN_VAPROTO:
- *	This variable is defined on systems supporting prototype declaration
- *	of functions with a variable number of arguments.
- */
-/* _V:
- *	This macro is used to declare function parameters in prototypes for
- *	functions with a variable number of parameters. Use double parentheses.
- *	For example:
- *
- *		int printf _V((char *fmt, ...));
- *
- *	Remember to use the plain simple _() macro when declaring a function
- *	with no variable number of arguments, since it might be possible to
- *	have a non-effect _V() macro and still get prototypes via _().
- */
-#define CAN_VAPROTO	/**/
-#ifdef CAN_VAPROTO
-#define	_V(args) args
-#else
-#define	_V(args) ()
-#endif
-
 /* INTSIZE:
  *	This symbol contains the value of sizeof(int) so that the C
  *	preprocessor can make decisions based on it.
@@ -896,7 +874,7 @@
  *	preprocessor can make decisions based on it.
  */
 #define INTSIZE 4		/**/
-#define LONGSIZE 4		/**/
+#define LONGSIZE 8		/**/
 #define SHORTSIZE 2		/**/
 
 /* MULTIARCH:
@@ -915,9 +893,9 @@
  */
 #define HAS_QUAD	/**/
 #ifdef HAS_QUAD
-#   define Quad_t long long	/**/
-#   define Uquad_t unsigned long long	/**/
-#   define QUADKIND 3	/**/
+#   define Quad_t long	/**/
+#   define Uquad_t unsigned long	/**/
+#   define QUADKIND 2	/**/
 #   define QUAD_IS_INT	1
 #   define QUAD_IS_LONG	2
 #   define QUAD_IS_LONG_LONG	3
@@ -950,8 +928,8 @@
  *	This symbol contains the ~name expanded version of ARCHLIB, to be used
  *	in programs that are not prepared to deal with ~ expansion at run-time.
  */
-#define ARCHLIB "/usr/lib/perl/5.12"		/**/
-#define ARCHLIB_EXP "/usr/lib/perl/5.12"		/**/
+#define ARCHLIB "/usr/lib/perl/5.10"		/**/
+#define ARCHLIB_EXP "/usr/lib/perl/5.10"		/**/
 
 /* ARCHNAME:
  *	This symbol holds a string representing the architecture name.
@@ -959,7 +937,7 @@
  *	where library files may be held under a private library, for
  *	instance.
  */
-#define ARCHNAME "i686-linux-gnu-thread-multi-64int"		/**/
+#define ARCHNAME "x86_64-linux-gnu-thread-multi"		/**/
 
 /* BIN:
  *	This symbol holds the path of the bin directory where the package will
@@ -1083,7 +1061,7 @@
  */
 #define HASATTRIBUTE_DEPRECATED	/**/
 #define HASATTRIBUTE_FORMAT	/**/
-#define PRINTF_FORMAT_NULL_OK	/**/
+/*#define PRINTF_FORMAT_NULL_OK	/ **/
 #define HASATTRIBUTE_NORETURN	/**/
 #define HASATTRIBUTE_MALLOC	/**/
 #define HASATTRIBUTE_NONNULL	/**/
@@ -1789,7 +1767,7 @@
  */
 #define HAS_LONG_DOUBLE		/**/
 #ifdef HAS_LONG_DOUBLE
-#define LONG_DOUBLESIZE 12		/**/
+#define LONG_DOUBLESIZE 16		/**/
 #endif
 
 /* HAS_LONG_LONG:
@@ -2193,9 +2171,9 @@
  *	not available to translate error numbers to strings but sys_errlist[]
  *	array is there.
  */
-//#define HAS_STRERROR		/**/
-//#define HAS_SYS_ERRLIST	/**/
-//#define Strerror(e) strerror(e)
+#define HAS_STRERROR		/**/
+#define HAS_SYS_ERRLIST	/**/
+#define Strerror(e) strerror(e)
 
 /* HAS_STRERROR_R:
  *	This symbol, if defined, indicates that the strerror_r routine
@@ -2320,7 +2298,7 @@
 /* Gid_t_f:
  *	This symbol defines the format string used for printing a Gid_t.
  */
-#define	Gid_t_f		"lu"		/**/
+#define	Gid_t_f		"u"		/**/
 
 /* Gid_t_sign:
  *	This symbol holds the signedess of a Gid_t.
@@ -2518,7 +2496,7 @@
  *	for a C initialization string.  See the inc_version_list entry
  *	in Porting/Glossary for more details.
  */
-#define PERL_INC_VERSION_LIST "5.12.3",0		/**/
+#define PERL_INC_VERSION_LIST "5.10.0",0		/**/
 
 /* INSTALL_USR_BIN_PERL:
  *	This symbol, if defined, indicates that Perl is to be installed
@@ -2585,7 +2563,7 @@
  *	This symbol holds the type used for the 1st argument to
  *	getnetbyaddr().
  */
-#define Netdb_host_t		const void * /**/
+#define Netdb_host_t		char * /**/
 #define Netdb_hlen_t		size_t /**/
 #define Netdb_name_t		const char * /**/
 #define Netdb_net_t		in_addr_t /**/
@@ -2617,8 +2595,8 @@
  *	This symbol contains the ~name expanded version of PRIVLIB, to be used
  *	in programs that are not prepared to deal with ~ expansion at run-time.
  */
-#define PRIVLIB "/usr/share/perl/5.12"		/**/
-#define PRIVLIB_EXP "/usr/share/perl/5.12"		/**/
+#define PRIVLIB "/usr/share/perl/5.10"		/**/
+#define PRIVLIB_EXP "/usr/share/perl/5.10"		/**/
 
 /* CAN_PROTOTYPE:
  *	If defined, this macro indicates that the C compiler can handle
@@ -2710,8 +2688,8 @@
  *	This symbol contains the ~name expanded version of SITEARCH, to be used
  *	in programs that are not prepared to deal with ~ expansion at run-time.
  */
-#define SITEARCH "/usr/local/lib/perl/5.12.4"		/**/
-#define SITEARCH_EXP "/usr/local/lib/perl/5.12.4"		/**/
+#define SITEARCH "/usr/local/lib/perl/5.10.1"		/**/
+#define SITEARCH_EXP "/usr/local/lib/perl/5.10.1"		/**/
 
 /* SITELIB:
  *	This symbol contains the name of the private library for this package.
@@ -2733,14 +2711,14 @@
  *	removed.  The elements in inc_version_list (inc_version_list.U) can
  *	be tacked onto this variable to generate a list of directories to search.
  */
-#define SITELIB "/usr/local/share/perl/5.12.4"		/**/
-#define SITELIB_EXP "/usr/local/share/perl/5.12.4"		/**/
+#define SITELIB "/usr/local/share/perl/5.10.1"		/**/
+#define SITELIB_EXP "/usr/local/share/perl/5.10.1"		/**/
 #define SITELIB_STEM ""		/**/
 
 /* Size_t_size:
  *	This symbol holds the size of a Size_t in bytes.
  */
-#define Size_t_size 4		/* */
+#define Size_t_size 8		/* */
 
 /* Size_t:
  *	This symbol holds the type used to declare length parameters
@@ -2765,7 +2743,7 @@
 /* Uid_t_f:
  *	This symbol defines the format string used for printing a Uid_t.
  */
-#define	Uid_t_f		"lu"		/**/
+#define	Uid_t_f		"u"		/**/
 
 /* Uid_t_sign:
  *	This symbol holds the signedess of a Uid_t.
@@ -2878,7 +2856,7 @@
 #define	PERL_TARGETARCH	""	/**/
 #endif
 
-/* MEM_ALIGNBYES:
+/* MEM_ALIGNBYTES:
  *	This symbol contains the number of bytes required to align a
  *	double, or a long double when applicable. Usual values are 2,
  *	4 and 8. The default is eight, for safety.
@@ -2886,7 +2864,7 @@
 #if defined(USE_CROSS_COMPILE) || defined(MULTIARCH)
 #  define MEM_ALIGNBYTES 8
 #else
-#define MEM_ALIGNBYTES 4
+#define MEM_ALIGNBYTES 8
 #endif
 
 /* BYTEORDER:
@@ -2908,35 +2886,29 @@
 #if defined(USE_CROSS_COMPILE) || defined(MULTIARCH)
 #  ifdef __LITTLE_ENDIAN__
 #    if LONGSIZE == 4
-#      define BYTEORDER_hide 0x1234
+#      define BYTEORDER 0x1234
 #    else
 #      if LONGSIZE == 8
-#        define BYTEORDER_hide 0x12345678
+#        define BYTEORDER 0x12345678
 #      endif
 #    endif
 #  else
 #    ifdef __BIG_ENDIAN__
 #      if LONGSIZE == 4
-#        define BYTEORDER_hide 0x4321
+#        define BYTEORDER 0x4321
 #      else
 #        if LONGSIZE == 8
-#          define BYTEORDER_hide 0x87654321
+#          define BYTEORDER 0x87654321
 #        endif
 #      endif
 #    endif
 #  endif
-#  if !defined(BYTEORDER_hide) && (defined(NeXT) || defined(__NeXT__))
-#    define BYTEORDER_hide 0x4321
+#  if !defined(BYTEORDER) && (defined(NeXT) || defined(__NeXT__))
+#    define BYTEORDER 0x4321
 #  endif
 #else
-#define BYTEORDER_hide 0x12345678	/* large digits for MSB */
+#define BYTEORDER 0x12345678	/* large digits for MSB */
 #endif /* NeXT */
-
-/* CHARBITS:
- *	This symbol contains the size of a char, so that the C preprocessor
- *	can make decisions based on it.
- */
-#define CHARBITS 8		/**/
 
 /* CASTI32:
  *	This symbol is defined if the C compiler can cast negative
@@ -3233,7 +3205,7 @@
  *	the compiler supports (void *); otherwise it will be
  *	sizeof(char *).
  */
-#define PTRSIZE 4		/**/
+#define PTRSIZE 8		/**/
 
 /* Drand01:
  *	This macro is to be used to generate uniformly distributed
@@ -3294,7 +3266,7 @@
  *	file descriptor of the script to be executed.
  */
 /*#define SETUID_SCRIPTS_ARE_SECURE_NOW	/ **/
-/*#define DOSUID		/ **/
+#define DOSUID		/**/
 
 /* PERL_USE_DEVEL:
  *	This symbol, if defined, indicates that Perl was configured with
@@ -3942,7 +3914,7 @@
  *	have statfs() and struct statfs, they have ustat() and getmnt()
  *	with struct ustat and struct fs_data.
  */
-#define HAS_STRUCT_STATFS_F_FLAGS		/**/
+/*#define HAS_STRUCT_STATFS_F_FLAGS		/ **/
 
 /* HAS_STRUCT_STATFS:
  *	This symbol, if defined, indicates that the struct statfs
@@ -4163,9 +4135,9 @@
  */
 #define DB_Hash_t	u_int32_t		/**/
 #define DB_Prefix_t	size_t  	/**/
-#define DB_VERSION_MAJOR_CFG	5  	/**/
-#define DB_VERSION_MINOR_CFG	1  	/**/
-#define DB_VERSION_PATCH_CFG	25  	/**/
+#define DB_VERSION_MAJOR_CFG	4  	/**/
+#define DB_VERSION_MINOR_CFG	8  	/**/
+#define DB_VERSION_PATCH_CFG	30  	/**/
 
 /* I_FP:
  *	This symbol, if defined, indicates that <fp.h> exists and
@@ -4334,7 +4306,7 @@
  *	of copying mechanisms, handy.h defines a platform-
  *	independent macro, Perl_va_copy(src, dst), to do the job.
  */
-/*#define	NEED_VA_COPY		/ **/
+#define	NEED_VA_COPY		/**/
 
 /* IVTYPE:
  *	This symbol defines the C type used for Perl's IV.
@@ -4420,17 +4392,17 @@
  *	This symbol, if defined, indicates that a variable of type NVTYPE
  *	stores 0.0 in memory as all bits zero.
  */
-#define	IVTYPE		long long		/**/
-#define	UVTYPE		unsigned long long		/**/
+#define	IVTYPE		long		/**/
+#define	UVTYPE		unsigned long		/**/
 #define	I8TYPE		signed char		/**/
 #define	U8TYPE		unsigned char		/**/
 #define	I16TYPE		short	/**/
 #define	U16TYPE		unsigned short	/**/
-#define	I32TYPE		long	/**/
-#define	U32TYPE		unsigned long	/**/
+#define	I32TYPE		int	/**/
+#define	U32TYPE		unsigned int	/**/
 #ifdef HAS_QUAD
-#define	I64TYPE		long long	/**/
-#define	U64TYPE		unsigned long long	/**/
+#define	I64TYPE		long	/**/
+#define	U64TYPE		unsigned long	/**/
 #endif
 #define	NVTYPE		double		/**/
 #define	IVSIZE		8		/**/
@@ -4451,14 +4423,14 @@
 #define	NV_OVERFLOWS_INTEGERS_AT	256.0*256.0*256.0*256.0*256.0*256.0*2.0*2.0*2.0*2.0*2.0
 #define	NV_ZERO_IS_ALLBITS_ZERO
 #if UVSIZE == 8
-#   ifdef BYTEORDER_hide
-#       if BYTEORDER_hide == 0x1234
-#           undef BYTEORDER_hide
-#           define BYTEORDER_hide 0x12345678
+#   ifdef BYTEORDER
+#       if BYTEORDER == 0x1234
+#           undef BYTEORDER
+#           define BYTEORDER 0x12345678
 #       else
-#           if BYTEORDER_hide == 0x4321
-#               undef BYTEORDER_hide
-#               define BYTEORDER_hide 0x87654321
+#           if BYTEORDER == 0x4321
+#               undef BYTEORDER
+#               define BYTEORDER 0x87654321
 #           endif
 #       endif
 #   endif
@@ -4496,11 +4468,11 @@
  *	This symbol defines the format string used for printing a Perl NV
  *	using %g-ish floating point format.
  */
-#define	IVdf		"Ld"		/**/
-#define	UVuf		"Lu"		/**/
-#define	UVof		"Lo"		/**/
-#define	UVxf		"Lx"		/**/
-#define	UVXf		"LX"		/**/
+#define	IVdf		"ld"		/**/
+#define	UVuf		"lu"		/**/
+#define	UVof		"lo"		/**/
+#define	UVxf		"lx"		/**/
+#define	UVXf		"lX"		/**/
 #define	NVef		"e"		/**/
 #define	NVff		"f"		/**/
 #define	NVgf		"g"		/**/
@@ -4512,7 +4484,7 @@
  *	is either n or 32*ceil(n/32), especially many little-endians do
  *	the latter.  This is only useful if you have select(), naturally.
  */
-#define SELECT_MIN_BITS 	32	/**/
+#define SELECT_MIN_BITS 	64	/**/
 
 /* STARTPERL:
  *	This variable contains the string to put in front of a perl
@@ -4550,10 +4522,10 @@
  *	This symbol contains the minimum value for the time_t offset that
  *	the system function localtime () accepts, and defaults to 0
  */
-#define GMTIME_MAX		2147483647	/**/
-#define GMTIME_MIN		-2147483648	/**/
-#define LOCALTIME_MAX	2147483647	/**/
-#define LOCALTIME_MIN	-2147483648	/**/
+#define GMTIME_MAX		67768036191676799	/**/
+#define GMTIME_MIN		-62167219200	/**/
+#define LOCALTIME_MAX	67768036191676799	/**/
+#define LOCALTIME_MIN	-62167219200	/**/
 
 /* USE_64_BIT_INT:
  *	This symbol, if defined, indicates that 64-bit integers should
@@ -4577,7 +4549,7 @@
 #define	USE_64_BIT_INT		/**/
 #endif
 #ifndef USE_64_BIT_ALL
-/*#define	USE_64_BIT_ALL		/ **/
+#define	USE_64_BIT_ALL		/**/
 #endif
 
 /* USE_DTRACE:

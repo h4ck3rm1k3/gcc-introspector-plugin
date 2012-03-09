@@ -14,8 +14,8 @@
  * exactly on the third column */
 
 #define PERL_REVISION	5		/* age */
-#define PERL_VERSION	12		/* epoch */
-#define PERL_SUBVERSION	4		/* generation */
+#define PERL_VERSION	10		/* epoch */
+#define PERL_SUBVERSION	1		/* generation */
 
 /* The following numbers describe the earliest compatible version of
    Perl ("compatibility" here being defined as sufficient binary/API
@@ -31,7 +31,7 @@
    to include in @INC.  See INSTALL for how this works.
 */
 #define PERL_API_REVISION	5	/* Adjust manually as needed.  */
-#define PERL_API_VERSION	12	/* Adjust manually as needed.  */
+#define PERL_API_VERSION	10	/* Adjust manually as needed.  */
 #define PERL_API_SUBVERSION	0	/* Adjust manually as needed.  */
 /*
    XXX Note:  The selection of non-default Configure options, such
@@ -118,22 +118,59 @@ hunk.
 #if !defined(PERL_PATCHLEVEL_H_IMPLICIT) && !defined(LOCAL_PATCH_COUNT)
 #  if defined(PERL_IS_MINIPERL)
 #    define PERL_PATCHNUM "UNKNOWN-miniperl"
+#    define PERL_GIT_UNCOMMITTED_CHANGES ,"UNKNOWN"
 #    define PERL_GIT_UNPUSHED_COMMITS /*leave-this-comment*/
 #  elif defined(PERL_MICRO)
 #    define PERL_PATCHNUM "UNKNOWN-microperl"
+#    define PERL_GIT_UNCOMMITTED_CHANGES ,"UNKNOWN"
 #    define PERL_GIT_UNPUSHED_COMMITS /*leave-this-comment*/
 #  else
 #include "git_version.h"
 #  endif
 static const char * const local_patches[] = {
 	NULL
-#ifdef PERL_GIT_UNCOMMITTED_CHANGES
-	,"uncommitted-changes"
-#endif
 	PERL_GIT_UNPUSHED_COMMITS    	/* do not remove this line */
-#ifdef DEBIAN
-#include "patchlevel-debian.h"
-#endif
+        PERL_GIT_UNCOMMITTED_CHANGES	/* do not remove this line */
+	,"DEBPKG:debian/arm_thread_stress_timeout - http://bugs.debian.org/501970 Raise the timeout of ext/threads/shared/t/stress.t to accommodate slower build hosts"
+	,"DEBPKG:debian/cpan_config_path - Set location of CPAN::Config to /etc/perl as /usr may not be writable."
+	,"DEBPKG:debian/cpan_definstalldirs - Provide a sensible INSTALLDIRS default for modules installed from CPAN."
+	,"DEBPKG:debian/db_file_ver - http://bugs.debian.org/340047 Remove overly restrictive DB_File version check."
+	,"DEBPKG:debian/doc_info - Replace generic man(1) instructions with Debian-specific information."
+	,"DEBPKG:debian/enc2xs_inc - http://bugs.debian.org/290336 Tweak enc2xs to follow symlinks and ignore missing @INC directories."
+	,"DEBPKG:debian/errno_ver - http://bugs.debian.org/343351 Remove Errno version check due to upgrade problems with long-running processes."
+	,"DEBPKG:debian/extutils_hacks - Various debian-specific ExtUtils changes"
+	,"DEBPKG:debian/fakeroot - Postpone LD_LIBRARY_PATH evaluation to the binary targets."
+	,"DEBPKG:debian/instmodsh_doc - Debian policy doesn't install .packlist files for core or vendor."
+	,"DEBPKG:debian/ld_run_path - Remove standard libs from LD_RUN_PATH as per Debian policy."
+	,"DEBPKG:debian/libnet_config_path - Set location of libnet.cfg to /etc/perl/Net as /usr may not be writable."
+	,"DEBPKG:debian/m68k_thread_stress - http://bugs.debian.org/495826 Disable some threads tests on m68k for now due to missing TLS."
+	,"DEBPKG:debian/mod_paths - Tweak @INC ordering for Debian"
+	,"DEBPKG:debian/module_build_man_extensions - http://bugs.debian.org/479460 Adjust Module::Build manual page extensions for the Debian Perl policy"
+	,"DEBPKG:debian/perl_synopsis - http://bugs.debian.org/278323 Rearrange perl.pod"
+	,"DEBPKG:debian/prune_libs - http://bugs.debian.org/128355 Prune the list of libraries wanted to what we actually need."
+	,"DEBPKG:debian/use_gdbm - Explicitly link against -lgdbm_compat in ODBM_File/NDBM_File. "
+	,"DEBPKG:fixes/assorted_docs - http://bugs.debian.org/443733 [384f06a] Math::BigInt::CalcEmu documentation grammar fix"
+	,"DEBPKG:fixes/net_smtp_docs - http://bugs.debian.org/100195 [rt.cpan.org #36038] Document the Net::SMTP 'Port' option"
+	,"DEBPKG:fixes/processPL - http://bugs.debian.org/357264 [rt.cpan.org #17224] Always use PERLRUNINST when building perl modules."
+	,"DEBPKG:debian/perlivp - http://bugs.debian.org/510895 Make perlivp skip include directories in /usr/local"
+	,"DEBPKG:fixes/pod2man-index-backslash - http://bugs.debian.org/521256 Escape backslashes in .IX entries"
+	,"DEBPKG:debian/disable-zlib-bundling - Disable zlib bundling in Compress::Raw::Zlib"
+	,"DEBPKG:fixes/kfreebsd_cppsymbols - http://bugs.debian.org/533098 [3b910a0] Add gcc predefined macros to $Config{cppsymbols} on GNU/kFreeBSD."
+	,"DEBPKG:debian/cpanplus_definstalldirs - http://bugs.debian.org/533707 Configure CPANPLUS to use the site directories by default."
+	,"DEBPKG:debian/cpanplus_config_path - Save local versions of CPANPLUS::Config::System into /etc/perl."
+	,"DEBPKG:fixes/kfreebsd-filecopy-pipes - http://bugs.debian.org/537555 [16f708c] Fix File::Copy::copy with pipes on GNU/kFreeBSD"
+	,"DEBPKG:fixes/anon-tmpfile-dir - http://bugs.debian.org/528544 [perl #66452] Honor TMPDIR when open()ing an anonymous temporary file"
+	,"DEBPKG:fixes/abstract-sockets - http://bugs.debian.org/329291 [89904c0] Add support for Abstract namespace sockets."
+	,"DEBPKG:fixes/hurd_cppsymbols - http://bugs.debian.org/544307 [eeb92b7] Add gcc predefined macros to $Config{cppsymbols} on GNU/Hurd."
+	,"DEBPKG:fixes/autodie-flock - http://bugs.debian.org/543731 Allow for flock returning EAGAIN instead of EWOULDBLOCK on linux/parisc"
+	,"DEBPKG:fixes/archive-tar-instance-error - http://bugs.debian.org/539355 [rt.cpan.org #48879] Separate Archive::Tar instance error strings from each other"
+	,"DEBPKG:fixes/positive-gpos - http://bugs.debian.org/545234 [perl #69056] [c584a96] Fix \\G crash on first match"
+	,"DEBPKG:debian/devel-ppport-ia64-optim - http://bugs.debian.org/548943 Work around an ICE on ia64"
+	,"DEBPKG:fixes/trie-logic-match - http://bugs.debian.org/552291 [perl #69973] [0abd0d7] Fix a DoS in Unicode processing [CVE-2009-3626]"
+	,"DEBPKG:fixes/hppa-thread-eagain - http://bugs.debian.org/554218 make the threads-shared test suite more robust, fixing failures on hppa"
+	,"DEBPKG:fixes/crash-on-undefined-destroy - http://bugs.debian.org/564074 [perl #71952] [1f15e67] Fix a NULL pointer dereference when looking for a DESTROY method"
+	,"DEBPKG:fixes/tainted-errno - http://bugs.debian.org/574129 [perl #61976] [be1cf43] fix an errno stringification bug in taint mode"
+	,"DEBPKG:patchlevel - http://bugs.debian.org/567489 List packaged patches for 5.10.1-12 in patchlevel.h"
 	,NULL
 };
 

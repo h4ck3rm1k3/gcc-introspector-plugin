@@ -29,6 +29,14 @@ sub add_node
     warn $type;
 }
 
+sub print_tree
+{
+    my $t=shift;
+    warn "hello $t\n";
+    print_tree2($t);
+}
+
+#add_node(123,"blag");
 ##greet('Mike');
 
 __END__
@@ -38,6 +46,6 @@ void greet(char* name) {
     printf("Hello %s!\n", name);
 }
 
-void print_tree(tree t) {
+void print_tree2(tree t) {
     printf("%p %ld code %d!\n", t, t,  t->base.code);
 }

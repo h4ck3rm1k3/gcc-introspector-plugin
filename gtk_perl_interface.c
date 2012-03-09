@@ -1,9 +1,10 @@
 // from :http://search.cpan.org/~flora/perl-5.14.2/pod/perlembed.pod#Adding_a_Perl_interpreter_to_your_C_program
 
+
 #include <EXTERN.h>               /* from the Perl distribution     */
 #include <perl.h>                 /* from the Perl distribution     */
 
-static PerlInterpreter *my_perl;  /***    The Perl interpreter    ***/
+static PerlInterpreter *my_perl=0;  /***    The Perl interpreter    ***/
 
 static void xs_init (pTHX);
 
@@ -57,7 +58,9 @@ int gtk_perl_add_node(void* node_ptr,const char * node_type) // add a node to pe
 {
   //char *args[] = { node_ptr, node_type };
   //  call_argv("add_node", G_DISCARD , args);
-   dSP;
+  //  return ;
+  assert(my_perl);
+  dSP;
    ENTER;
    SAVETMPS;
    PUSHMARK(SP);

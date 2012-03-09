@@ -226,9 +226,9 @@ struct IPerlStdIOInfo
 #define PerlSIO_get_ptr(f)						\
 	(*PL_StdIO->pGetPtr)(PL_StdIO, (f))
 #define PerlSIO_fputc(f,c)						\
-	(*PL_StdIO->pPutc)(PL_StdIO, (c),(f))
+	(*PL_StdIO->pPutc)(PL_StdIO, (f),(c))
 #define PerlSIO_fputs(f,s)						\
-	(*PL_StdIO->pPuts)(PL_StdIO, (s),(f))
+	(*PL_StdIO->pPuts)(PL_StdIO, (f),(s))
 #define PerlSIO_fflush(f)						\
 	(*PL_StdIO->pFlush)(PL_StdIO, (f))
 #define PerlSIO_fgets(s, n, fp)						\
@@ -476,12 +476,9 @@ typedef char*		(*LPENVGetenv_len)(struct IPerlEnv*,
 #endif
 #ifdef WIN32
 typedef unsigned long	(*LPEnvOsID)(struct IPerlEnv*);
-typedef char*		(*LPEnvLibPath)(struct IPerlEnv*, const char*,
-					STRLEN *const len);
-typedef char*		(*LPEnvSiteLibPath)(struct IPerlEnv*, const char*,
-					    STRLEN *const len);
-typedef char*		(*LPEnvVendorLibPath)(struct IPerlEnv*, const char*,
-					      STRLEN *const len);
+typedef char*		(*LPEnvLibPath)(struct IPerlEnv*, const char*);
+typedef char*		(*LPEnvSiteLibPath)(struct IPerlEnv*, const char*);
+typedef char*		(*LPEnvVendorLibPath)(struct IPerlEnv*, const char*);
 typedef void		(*LPEnvGetChildIO)(struct IPerlEnv*, child_IO_table*);
 #endif
 
@@ -547,12 +544,12 @@ struct IPerlEnvInfo
 #ifdef WIN32
 #define PerlEnv_os_id()						\
 	(*PL_Env->pEnvOsID)(PL_Env)
-#define PerlEnv_lib_path(str, lenp)				\
-	(*PL_Env->pLibPath)(PL_Env,(str),(lenp))
-#define PerlEnv_sitelib_path(str, lenp)				\
-	(*PL_Env->pSiteLibPath)(PL_Env,(str),(lenp))
-#define PerlEnv_vendorlib_path(str, lenp)			\
-	(*PL_Env->pVendorLibPath)(PL_Env,(str),(lenp))
+#define PerlEnv_lib_path(str)					\
+	(*PL_Env->pLibPath)(PL_Env,(str))
+#define PerlEnv_sitelib_path(str)				\
+	(*PL_Env->pSiteLibPath)(PL_Env,(str))
+#define PerlEnv_vendorlib_path(str)				\
+	(*PL_Env->pVendorLibPath)(PL_Env,(str))
 #define PerlEnv_get_child_IO(ptr)				\
 	(*PL_Env->pGetChildIO)(PL_Env, ptr)
 #endif
@@ -573,9 +570,9 @@ struct IPerlEnvInfo
 
 #ifdef WIN32
 #define PerlEnv_os_id()			win32_os_id()
-#define PerlEnv_lib_path(str, lenp)	win32_get_privlib(str, lenp)
-#define PerlEnv_sitelib_path(str, lenp)	win32_get_sitelib(str, lenp)
-#define PerlEnv_vendorlib_path(str, lenp)	win32_get_vendorlib(str, lenp)
+#define PerlEnv_lib_path(str)		win32_get_privlib(str)
+#define PerlEnv_sitelib_path(str)	win32_get_sitelib(str)
+#define PerlEnv_vendorlib_path(str)	win32_get_vendorlib(str)
 #define PerlEnv_get_child_IO(ptr)	win32_get_child_IO(ptr)
 #define PerlEnv_clearenv()		win32_clearenv()
 #define PerlEnv_get_childenv()		win32_get_childenv()
@@ -877,28 +874,28 @@ struct IPerlMemInfo
 #else	/* PERL_IMPLICIT_SYS */
 
 /* Interpreter specific memory macros */
-#define PerlMem_malloc(size)		perl_malloc((size))
-#define PerlMem_realloc(buf, size)	perl_realloc((buf), (size))
+#define PerlMem_malloc(size)		malloc((size))
+#define PerlMem_realloc(buf, size)	realloc((buf), (size))
 #define PerlMem_free(buf)		free((buf))
-#define PerlMem_calloc(num, size)	perl_calloc((num), (size))
+#define PerlMem_calloc(num, size)	calloc((num), (size))
 #define PerlMem_get_lock()		
 #define PerlMem_free_lock()
 #define PerlMem_is_locked()		0
 
 /* Shared memory macros */
-#define PerlMemShared_malloc(size)		perl_malloc((size))
-#define PerlMemShared_realloc(buf, size)	perl_realloc((buf), (size))
+#define PerlMemShared_malloc(size)		malloc((size))
+#define PerlMemShared_realloc(buf, size)	realloc((buf), (size))
 #define PerlMemShared_free(buf)			free((buf))
-#define PerlMemShared_calloc(num, size)		perl_calloc((num), (size))
+#define PerlMemShared_calloc(num, size)		calloc((num), (size))
 #define PerlMemShared_get_lock()		
 #define PerlMemShared_free_lock()
 #define PerlMemShared_is_locked()		0
 
 /* Parse tree memory macros */
-#define PerlMemParse_malloc(size)	perl_malloc((size))
-#define PerlMemParse_realloc(buf, size)	perl_realloc((buf), (size))
+#define PerlMemParse_malloc(size)	malloc((size))
+#define PerlMemParse_realloc(buf, size)	realloc((buf), (size))
 #define PerlMemParse_free(buf)		free((buf))
-#define PerlMemParse_calloc(num, size)	perl_calloc((num), (size))
+#define PerlMemParse_calloc(num, size)	calloc((num), (size))
 #define PerlMemParse_get_lock()		
 #define PerlMemParse_free_lock()
 #define PerlMemParse_is_locked()	0
