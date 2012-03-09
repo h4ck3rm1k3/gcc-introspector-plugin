@@ -1,0 +1,1834 @@
+
+_muldi3.o:
+00000000 T __muldi3
+
+_negdi2.o:
+00000000 T __negdi2
+
+_lshrdi3.o:
+00000000 T __lshrdi3
+
+_ashldi3.o:
+00000000 T __ashldi3
+
+_ashrdi3.o:
+00000000 T __ashrdi3
+
+_cmpdi2.o:
+00000000 T __cmpdi2
+
+_ucmpdi2.o:
+00000000 T __ucmpdi2
+
+_clear_cache.o:
+00000000 T __clear_cache
+
+_enable_execute_stack.o:
+00000000 T __enable_execute_stack
+
+_trampoline.o:
+
+__main.o:
+
+_absvsi2.o:
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __absvsi2
+00000000 T __i686.get_pc_thunk.bx
+         U abort
+
+_absvdi2.o:
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __absvdi2
+00000000 T __i686.get_pc_thunk.bx
+         U abort
+
+_addvsi3.o:
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __addvsi3
+00000000 T __i686.get_pc_thunk.bx
+         U abort
+
+_addvdi3.o:
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __addvdi3
+00000000 T __i686.get_pc_thunk.bx
+         U abort
+
+_subvsi3.o:
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __i686.get_pc_thunk.bx
+00000000 T __subvsi3
+         U abort
+
+_subvdi3.o:
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __i686.get_pc_thunk.bx
+00000000 T __subvdi3
+         U abort
+
+_mulvsi3.o:
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __i686.get_pc_thunk.bx
+00000000 T __mulvsi3
+         U abort
+
+_mulvdi3.o:
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __i686.get_pc_thunk.bx
+00000000 T __mulvdi3
+         U abort
+
+_negvsi2.o:
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __i686.get_pc_thunk.bx
+00000000 T __negvsi2
+         U abort
+
+_negvdi2.o:
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __i686.get_pc_thunk.bx
+00000000 T __negvdi2
+         U abort
+
+_ctors.o:
+
+_ffssi2.o:
+00000000 T __ffssi2
+
+_ffsdi2.o:
+00000000 T __ffsdi2
+
+_clz.o:
+00000000 R __clz_tab
+
+_clzsi2.o:
+00000000 T __clzsi2
+
+_clzdi2.o:
+00000000 T __clzdi2
+
+_ctzsi2.o:
+00000000 T __ctzsi2
+
+_ctzdi2.o:
+00000000 T __ctzdi2
+
+_popcount_tab.o:
+00000000 R __popcount_tab
+
+_popcountsi2.o:
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __i686.get_pc_thunk.bx
+         U __popcount_tab
+00000000 T __popcountsi2
+
+_popcountdi2.o:
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __i686.get_pc_thunk.bx
+         U __popcount_tab
+00000000 T __popcountdi2
+
+_paritysi2.o:
+00000000 T __paritysi2
+
+_paritydi2.o:
+00000000 T __paritydi2
+
+_powisf2.o:
+00000000 r .LC0
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __i686.get_pc_thunk.bx
+00000000 T __powisf2
+
+_powidf2.o:
+00000000 r .LC0
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __i686.get_pc_thunk.bx
+00000000 T __powidf2
+
+_powixf2.o:
+00000000 r .LC0
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __i686.get_pc_thunk.bx
+00000000 T __powixf2
+
+_powitf2.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __divtf3
+00000000 T __i686.get_pc_thunk.bx
+         U __multf3
+00000000 T __powitf2
+
+_mulsc3.o:
+00000000 r .LC4
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __i686.get_pc_thunk.cx
+00000000 T __mulsc3
+
+_muldc3.o:
+00000000 r .LC4
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __i686.get_pc_thunk.cx
+00000000 T __muldc3
+
+_mulxc3.o:
+00000000 r .LC4
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __i686.get_pc_thunk.cx
+00000000 T __mulxc3
+
+_multc3.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __addtf3
+         U __copysigntf3
+00000000 T __i686.get_pc_thunk.bx
+00000000 T __multc3
+         U __multf3
+         U __netf2
+         U __subtf3
+
+_divsc3.o:
+00000000 r .LC2
+00000004 r .LC3
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __divsc3
+00000000 T __i686.get_pc_thunk.cx
+
+_divdc3.o:
+00000000 r .LC2
+00000004 r .LC3
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __divdc3
+00000000 T __i686.get_pc_thunk.bx
+
+_divxc3.o:
+00000000 r .LC2
+00000004 r .LC3
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __divxc3
+00000000 T __i686.get_pc_thunk.bx
+
+_divtc3.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __addtf3
+         U __copysigntf3
+00000000 T __divtc3
+         U __divtf3
+         U __eqtf2
+         U __fabstf2
+00000000 T __i686.get_pc_thunk.bx
+         U __lttf2
+         U __multf3
+         U __netf2
+         U __subtf3
+
+_bswapsi2.o:
+00000000 T __bswapsi2
+
+_bswapdi2.o:
+00000000 T __bswapdi2
+
+_fixunssfsi.o:
+00000000 r .LC0
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __fixunssfsi
+00000000 T __i686.get_pc_thunk.cx
+
+_fixunsdfsi.o:
+00000000 r .LC0
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __fixunsdfsi
+00000000 T __i686.get_pc_thunk.cx
+
+_fixunsxfsi.o:
+00000000 r .LC0
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __fixunsxfsi
+00000000 T __i686.get_pc_thunk.cx
+
+_fixsfdi.o:
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __fixsfdi
+         U __fixunssfdi
+00000000 T __i686.get_pc_thunk.bx
+
+_fixdfdi.o:
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __fixdfdi
+         U __fixunsdfdi
+00000000 T __i686.get_pc_thunk.bx
+
+_fixxfdi.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __fixunsxfdi
+00000000 T __fixxfdi
+00000000 T __i686.get_pc_thunk.bx
+
+_fixunssfdi.o:
+00000000 r .LC0
+00000004 r .LC1
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __fixunssfdi
+00000000 T __i686.get_pc_thunk.bx
+
+_fixunsdfdi.o:
+00000000 r .LC0
+00000004 r .LC1
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __fixunsdfdi
+00000000 T __i686.get_pc_thunk.bx
+
+_fixunsxfdi.o:
+00000000 r .LC1
+00000004 r .LC2
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __fixunsxfdi
+00000000 T __i686.get_pc_thunk.cx
+
+_floatdisf.o:
+00000000 r .LC0
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __floatdisf
+00000000 T __i686.get_pc_thunk.bx
+
+_floatdidf.o:
+00000000 r .LC0
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __floatdidf
+00000000 T __i686.get_pc_thunk.cx
+
+_floatdixf.o:
+00000000 r .LC0
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __floatdixf
+00000000 T __i686.get_pc_thunk.cx
+
+_floatundisf.o:
+00000000 r .LC0
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __floatundisf
+00000000 T __i686.get_pc_thunk.cx
+
+_floatundidf.o:
+00000000 r .LC0
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __floatundidf
+00000000 T __i686.get_pc_thunk.cx
+
+_floatundixf.o:
+00000000 r .LC0
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __floatundixf
+00000000 T __i686.get_pc_thunk.cx
+
+_eprintf.o:
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __eprintf
+         U __fprintf_chk
+00000000 T __i686.get_pc_thunk.bx
+         U abort
+         U fflush
+         U stderr
+
+__gcc_bcmp.o:
+00000000 T __gcc_bcmp
+
+_divdi3.o:
+00000000 T __divdi3
+
+_moddi3.o:
+00000000 T __moddi3
+
+_udivdi3.o:
+00000000 T __udivdi3
+
+_umoddi3.o:
+00000000 T __umoddi3
+
+_udiv_w_sdiv.o:
+00000000 T __udiv_w_sdiv
+
+_udivmoddi4.o:
+00000000 T __udivmoddi4
+
+bid_decimal_globals.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U ___tls_get_addr
+00000000 B __bid_IDEC_glbflags
+00000004 B __bid_IDEC_glbround
+00000040 T __dfp_clear_except
+00000020 T __dfp_get_round
+000000c0 T __dfp_raise_except
+00000000 T __dfp_set_round
+00000060 T __dfp_test_except
+00000000 T __i686.get_pc_thunk.bx
+
+bid_decimal_data.o:
+00000ae0 D __bid_estimate_bin_expon
+00000dc0 D __bid_estimate_decimal_digits
+000008e0 D __bid_power10_index_binexp
+00000000 D __bid_power10_index_binexp_128
+00000b40 D __bid_power10_table_128
+00000fe0 D __bid_recip_scale
+00001080 D __bid_reciprocals10_128
+000007e0 D __bid_reciprocals10_64
+00001e00 D __bid_round_const_table
+000012c0 D __bid_round_const_table_128
+00000880 D __bid_short_recip_scale
+
+bid_binarydecimal.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U ___tls_get_addr
+0000b670 T __bid128_to_binary128
+00001a50 T __bid128_to_binary32
+000047f0 T __bid128_to_binary64
+00007e30 T __bid128_to_binary80
+000099c0 T __bid32_to_binary128
+00000000 T __bid32_to_binary32
+000031e0 T __bid32_to_binary64
+00006070 T __bid32_to_binary80
+0000a4b0 T __bid64_to_binary128
+000009c0 T __bid64_to_binary32
+00003bb0 T __bid64_to_binary64
+00006c10 T __bid64_to_binary80
+         U __bid_IDEC_glbflags
+         U __bid_IDEC_glbround
+0001d800 T __binary128_to_bid128
+0000fec0 T __binary128_to_bid32
+00014060 T __binary128_to_bid64
+00015a10 T __binary32_to_bid128
+0000d030 T __binary32_to_bid32
+00011660 T __binary32_to_bid64
+000180c0 T __binary64_to_bid128
+0000da60 T __binary64_to_bid32
+00012010 T __binary64_to_bid64
+0001ac40 T __binary80_to_bid128
+0000ec60 T __binary80_to_bid32
+00012cc0 T __binary80_to_bid64
+00000000 T __i686.get_pc_thunk.bx
+001a7c80 r breakpoints_bid32
+001b58e0 r breakpoints_bid64
+000dbaa0 r breakpoints_binary128
+00000000 r breakpoints_binary32
+000028a0 r breakpoints_binary64
+000103e0 r breakpoints_binary80
+001eafc0 r coefflimits_bid128
+001a7640 r coefflimits_bid32
+001b55c0 r coefflimits_bid64
+001aa5e0 r exponents_bid32
+001bfbc0 r exponents_bid64
+00102780 r exponents_binary128
+00000780 r exponents_binary32
+00005260 r exponents_binary64
+00036fe0 r exponents_binary80
+001ec2e0 r innertable_exp
+001eb2e0 r innertable_sig
+001ab040 r multipliers1_bid32
+001c2480 r multipliers1_bid64
+0010c2c0 r multipliers1_binary128
+00000960 r multipliers1_binary32
+00005ce0 r multipliers1_binary64
+00040ae0 r multipliers1_binary80
+001b0300 r multipliers2_bid32
+001d6a20 r multipliers2_bid64
+00159c80 r multipliers2_binary128
+00001860 r multipliers2_binary32
+0000b060 r multipliers2_binary64
+0008e2c0 r multipliers2_binary80
+001ecee0 r outertable_exp
+001ec4e0 r outertable_sig
+001a7960 r power_five
+00002760 r roundbound_128
+
+bid_convert_data.o:
+00000d00 R __bid_convert_table
+00000000 R __bid_factors
+00000800 R __bid_packed_10000_zeros
+
+_isinfd32.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid32_to_bid64
+         U __bid64_isInf
+00000000 T __i686.get_pc_thunk.bx
+00000000 T isinfd32
+
+_isinfd64.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid64_isInf
+00000000 T __i686.get_pc_thunk.bx
+00000000 T isinfd64
+
+_isinfd128.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid128_isInf
+00000000 T __i686.get_pc_thunk.bx
+00000000 T isinfd128
+
+bid64_noncomp.o:
+         U _GLOBAL_OFFSET_TABLE_
+00000500 T __bid64_abs
+00000530 T __bid64_class
+000004e0 T __bid64_copy
+00000510 T __bid64_copySign
+00000410 T __bid64_isCanonical
+00000330 T __bid64_isFinite
+000003c0 T __bid64_isInf
+000004c0 T __bid64_isNaN
+00000010 T __bid64_isNormal
+000003f0 T __bid64_isSignaling
+00000000 T __bid64_isSigned
+000001a0 T __bid64_isSubnormal
+00000350 T __bid64_isZero
+000004f0 T __bid64_negate
+00001450 T __bid64_radix
+00000700 T __bid64_sameQuantum
+000007e0 T __bid64_totalOrder
+00000ef0 T __bid64_totalOrderMag
+00000000 T __i686.get_pc_thunk.bx
+00000000 r mult_factor
+
+bid128_noncomp.o:
+00000000 r .LC0
+         U _GLOBAL_OFFSET_TABLE_
+000007b0 T __bid128_abs
+00000820 T __bid128_class
+00000750 T __bid128_copy
+000007e0 T __bid128_copySign
+000005d0 T __bid128_isCanonical
+00000490 T __bid128_isFinite
+00000570 T __bid128_isInf
+00000730 T __bid128_isNaN
+00000010 T __bid128_isNormal
+000005b0 T __bid128_isSignaling
+00000000 T __bid128_isSigned
+00000250 T __bid128_isSubnormal
+000004b0 T __bid128_isZero
+00000780 T __bid128_negate
+00003820 T __bid128_radix
+00000f80 T __bid128_sameQuantum
+000010b0 T __bid128_totalOrder
+00002620 T __bid128_totalOrderMag
+         U __bid_nr_digits
+         U __bid_ten2k128
+         U __bid_ten2k64
+00000000 T __i686.get_pc_thunk.bx
+
+bid128_fma.o:
+00000000 r .LC0
+         U _GLOBAL_OFFSET_TABLE_
+         U ___tls_get_addr
+00011290 T __bid128_fma
+         U __bid128_to_bid64
+000113e0 T __bid128ddd_fma
+00011570 T __bid128ddq_fma
+000116f0 T __bid128dqd_fma
+00011870 T __bid128dqq_fma
+000119f0 T __bid128qdd_fma
+00011b70 T __bid128qdq_fma
+00011cf0 T __bid128qqd_fma
+         U __bid64_to_bid128
+000132f0 T __bid64ddq_fma
+00013200 T __bid64dqd_fma
+00013110 T __bid64dqq_fma
+00013020 T __bid64qdd_fma
+00012f30 T __bid64qdq_fma
+00012e40 T __bid64qqd_fma
+00011e70 T __bid64qqq_fma
+         U __bid_IDEC_glbflags
+         U __bid_IDEC_glbround
+         U __bid_midpoint128
+         U __bid_midpoint192
+         U __bid_midpoint256
+         U __bid_midpoint64
+         U __bid_nr_digits
+         U __bid_round128_19_38
+         U __bid_round192_39_57
+         U __bid_round256_58_76
+         U __bid_round64_2_18
+         U __bid_ten2k128
+         U __bid_ten2k256
+         U __bid_ten2k64
+00000000 T __i686.get_pc_thunk.bx
+00000000 t add256
+00000b70 t add_and_round.constprop.0
+00003430 t bid128_ext_fma
+000004d0 t nr_digits256
+000007c0 t rounding_correction.constprop.1
+00000240 t sub256
+
+bid_round.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid_Ex128m128
+         U __bid_Ex192m192
+         U __bid_Ex256m256
+         U __bid_Ex64m64
+         U __bid_Kx128
+         U __bid_Kx192
+         U __bid_Kx256
+         U __bid_Kx64
+         U __bid_half128
+         U __bid_half192
+         U __bid_half256
+         U __bid_half64
+         U __bid_mask128
+         U __bid_mask192
+         U __bid_mask256
+         U __bid_mask64
+         U __bid_midpoint128
+         U __bid_midpoint192
+         U __bid_midpoint256
+         U __bid_midpoint64
+00000290 T __bid_round128_19_38
+00000cd0 T __bid_round192_39_57
+00005200 T __bid_round256_58_76
+00000000 T __bid_round64_2_18
+         U __bid_ten2k128
+         U __bid_ten2k256
+         U __bid_ten2k64
+         U __bid_ten2mxtrunc128
+         U __bid_ten2mxtrunc192
+         U __bid_ten2mxtrunc256
+         U __bid_ten2mxtrunc64
+00000000 T __i686.get_pc_thunk.bx
+
+bid_from_int.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U ___tls_get_addr
+000007c0 T __bid128_from_int32
+00000840 T __bid128_from_int64
+00000810 T __bid128_from_uint32
+00000890 T __bid128_from_uint64
+00000000 T __bid64_from_int32
+00000060 T __bid64_from_int64
+00000050 T __bid64_from_uint32
+000003c0 T __bid64_from_uint64
+         U __bid_IDEC_glbflags
+         U __bid_IDEC_glbround
+         U __bid_round128_19_38
+         U __bid_round64_2_18
+00000000 T __i686.get_pc_thunk.bx
+
+bid64_add.o:
+00000000 r .LC0
+         U _GLOBAL_OFFSET_TABLE_
+         U ___tls_get_addr
+00000000 T __bid64_add
+000018c0 T __bid64_sub
+         U __bid_IDEC_glbflags
+         U __bid_IDEC_glbround
+         U __bid_estimate_bin_expon
+         U __bid_estimate_decimal_digits
+         U __bid_power10_table_128
+         U __bid_reciprocals10_64
+         U __bid_round_const_table
+         U __bid_short_recip_scale
+00000000 T __i686.get_pc_thunk.bx
+
+bid128_add.o:
+00000000 r .LC0
+         U _GLOBAL_OFFSET_TABLE_
+         U ___tls_get_addr
+000004d0 T __bid128_add
+00008290 T __bid128_sub
+00008190 T __bid128dd_add
+00008500 T __bid128dd_sub
+000080c0 T __bid128dq_add
+00008430 T __bid128dq_sub
+00007ff0 T __bid128qd_add
+00008360 T __bid128qd_sub
+         U __bid64_to_bid128
+000001b0 T __bid64dq_add
+00000420 T __bid64dq_sub
+00000100 T __bid64qd_add
+00000370 T __bid64qd_sub
+00000000 T __bid64qq_add
+00000260 T __bid64qq_sub
+         U __bid64qqq_fma
+         U __bid_IDEC_glbflags
+         U __bid_IDEC_glbround
+         U __bid_maskhigh128
+         U __bid_midpoint128
+         U __bid_midpoint64
+         U __bid_nr_digits
+         U __bid_onehalf128
+         U __bid_shiftright128
+         U __bid_ten2k128
+         U __bid_ten2k64
+         U __bid_ten2mk128
+         U __bid_ten2mk128trunc
+00000000 T __i686.get_pc_thunk.bx
+
+bid64_div.o:
+00000000 r .LC0
+00000004 r .LC1
+00000008 r .LC2
+00000000 r .LC3
+00000008 r .LC4
+0000000c r .LC5
+00000010 r .LC6
+         U _GLOBAL_OFFSET_TABLE_
+         U ___tls_get_addr
+00000000 T __bid64_div
+00002240 T __bid64dq_div
+000063b0 T __bid64qd_div
+0000b050 T __bid64qq_div
+         U __bid_IDEC_glbflags
+         U __bid_IDEC_glbround
+         U __bid_convert_table
+         U __bid_estimate_decimal_digits
+         U __bid_factors
+         U __bid_packed_10000_zeros
+         U __bid_power10_index_binexp
+         U __bid_power10_index_binexp_128
+         U __bid_power10_table_128
+         U __bid_recip_scale
+         U __bid_reciprocals10_128
+         U __bid_reciprocals10_64
+         U __bid_round_const_table
+         U __bid_short_recip_scale
+00000000 T __i686.get_pc_thunk.bx
+         U __udivdi3
+
+bid128_div.o:
+00000000 r .LC0
+00000004 r .LC1
+00000008 r .LC2
+0000000c r .LC3
+00000000 r .LC4
+00000008 r .LC5
+00000010 r .LC6
+         U _GLOBAL_OFFSET_TABLE_
+         U ___tls_get_addr
+00000ec0 T __bid128_div
+00006680 T __bid128dd_div
+0000b470 T __bid128dq_div
+00010800 T __bid128qd_div
+         U __bid_IDEC_glbflags
+         U __bid_IDEC_glbround
+         U __bid_convert_table
+         U __bid_estimate_decimal_digits
+         U __bid_factors
+         U __bid_packed_10000_zeros
+         U __bid_power10_index_binexp_128
+         U __bid_power10_table_128
+         U __bid_recip_scale
+         U __bid_reciprocals10_128
+         U __bid_reciprocals10_64
+         U __bid_round_const_table_128
+         U __bid_short_recip_scale
+00000000 T __i686.get_pc_thunk.bx
+         U __udivdi3
+00000000 t get_BID128.constprop.5
+
+bid64_mul.o:
+00000000 r .LC0
+         U _GLOBAL_OFFSET_TABLE_
+         U ___tls_get_addr
+00000000 T __bid64_mul
+         U __bid_IDEC_glbflags
+         U __bid_IDEC_glbround
+         U __bid_estimate_decimal_digits
+         U __bid_power10_table_128
+         U __bid_recip_scale
+         U __bid_reciprocals10_128
+         U __bid_round_const_table
+00000000 T __i686.get_pc_thunk.bx
+
+bid128_mul.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid128_fma
+00000550 T __bid128_mul
+00000b20 T __bid128dd_mul
+00000a50 T __bid128dq_mul
+00000980 T __bid128qd_mul
+         U __bid64_to_bid128
+000004a0 T __bid64dq_mul
+000003f0 T __bid64qd_mul
+00000000 T __bid64qq_mul
+         U __bid64qqq_fma
+00000000 T __i686.get_pc_thunk.bx
+
+bid64_compare.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U ___tls_get_addr
+00000000 T __bid64_quiet_equal
+00000350 T __bid64_quiet_greater
+00000810 T __bid64_quiet_greater_equal
+00000cf0 T __bid64_quiet_greater_unordered
+00001190 T __bid64_quiet_less
+00001660 T __bid64_quiet_less_equal
+00001b40 T __bid64_quiet_less_unordered
+00002010 T __bid64_quiet_not_equal
+00002390 T __bid64_quiet_not_greater
+00002870 T __bid64_quiet_not_less
+00002d50 T __bid64_quiet_ordered
+00002de0 T __bid64_quiet_unordered
+00002e70 T __bid64_signaling_greater
+000032f0 T __bid64_signaling_greater_equal
+00003780 T __bid64_signaling_greater_unordered
+00003c00 T __bid64_signaling_less
+00004090 T __bid64_signaling_less_equal
+00004520 T __bid64_signaling_less_unordered
+000049b0 T __bid64_signaling_not_greater
+00004e40 T __bid64_signaling_not_less
+         U __bid_IDEC_glbflags
+00000000 T __i686.get_pc_thunk.bx
+00000000 r mult_factor
+
+bid128_compare.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U ___tls_get_addr
+00000000 T __bid128_quiet_equal
+00000930 T __bid128_quiet_greater
+00001a50 T __bid128_quiet_greater_equal
+00002bc0 T __bid128_quiet_greater_unordered
+00003d10 T __bid128_quiet_less
+00004e10 T __bid128_quiet_less_equal
+00005f20 T __bid128_quiet_less_unordered
+00007020 T __bid128_quiet_not_equal
+00007950 T __bid128_quiet_not_greater
+00008a60 T __bid128_quiet_not_less
+00009bd0 T __bid128_quiet_ordered
+00009c90 T __bid128_quiet_unordered
+00009d50 T __bid128_signaling_greater
+0000adf0 T __bid128_signaling_greater_equal
+0000bf40 T __bid128_signaling_greater_unordered
+0000d070 T __bid128_signaling_less
+0000e0f0 T __bid128_signaling_less_equal
+0000f190 T __bid128_signaling_less_unordered
+00010210 T __bid128_signaling_not_greater
+000112b0 T __bid128_signaling_not_less
+         U __bid_IDEC_glbflags
+         U __bid_ten2k128
+         U __bid_ten2k64
+00000000 T __i686.get_pc_thunk.bx
+
+bid128.o:
+00002c80 D __bid_Ex128m128
+00002180 D __bid_Ex192m192
+00000e20 D __bid_Ex256m256
+00003160 D __bid_Ex64m64
+00002d20 D __bid_Kx128
+00002260 D __bid_Kx192
+00000f60 D __bid_Kx256
+000031c0 D __bid_Kx64
+00003f80 D __bid_char_table2
+000033c0 D __bid_char_table3
+00002b40 D __bid_half128
+00001fc0 D __bid_half192
+00000bc0 D __bid_half256
+000030c0 D __bid_half64
+00002a00 D __bid_mask128
+00001e00 D __bid_mask192
+00000960 D __bid_mask256
+00003020 D __bid_mask64
+00004e00 D __bid_maskhigh128
+00004980 D __bid_maskhigh128M
+000044a0 D __bid_maskhigh192M
+000040a0 D __bid_maskhigh256M
+00005ce0 D __bid_midpoint128
+00005b00 D __bid_midpoint192
+000058a0 D __bid_midpoint256
+00005e20 D __bid_midpoint64
+00005ec0 D __bid_nr_digits
+00004ce0 D __bid_onehalf128
+00004960 D __bid_onehalf128M
+00004400 D __bid_onehalf192M
+00004040 D __bid_onehalf256M
+00003260 D __bid_shift_ten2m3k128
+00003350 D __bid_shift_ten2m3k64
+00004f20 D __bid_shiftright128
+000049a0 D __bid_shiftright128M
+00004540 D __bid_shiftright192M
+00004100 D __bid_shiftright256M
+000056c0 D __bid_ten2k128
+000051e0 D __bid_ten2k256
+00005800 D __bid_ten2k64
+000032a0 D __bid_ten2m3k128
+00003380 D __bid_ten2m3k64
+00004fc0 D __bid_ten2mk128
+00004a00 D __bid_ten2mk128M
+00004a40 D __bid_ten2mk128trunc
+000049c0 D __bid_ten2mk128truncM
+00004780 D __bid_ten2mk192M
+000045a0 D __bid_ten2mk192truncM
+000042a0 D __bid_ten2mk256M
+00004140 D __bid_ten2mk256truncM
+00004c60 D __bid_ten2mk64
+000027a0 D __bid_ten2mxtrunc128
+000018c0 D __bid_ten2mxtrunc192
+00000000 D __bid_ten2mxtrunc256
+00002f80 D __bid_ten2mxtrunc64
+
+bid32_to_bid64.o:
+00000000 r .LC0
+         U _GLOBAL_OFFSET_TABLE_
+         U ___tls_get_addr
+00000000 T __bid32_to_bid64
+00000160 T __bid64_to_bid32
+         U __bid_IDEC_glbflags
+         U __bid_IDEC_glbround
+         U __bid_estimate_decimal_digits
+         U __bid_power10_index_binexp
+         U __bid_power10_table_128
+         U __bid_reciprocals10_64
+         U __bid_round_const_table
+         U __bid_short_recip_scale
+00000000 T __i686.get_pc_thunk.bx
+
+bid32_to_bid128.o:
+00000000 r .LC0
+         U _GLOBAL_OFFSET_TABLE_
+         U ___tls_get_addr
+00000210 T __bid128_to_bid32
+00000000 T __bid32_to_bid128
+         U __bid_IDEC_glbflags
+         U __bid_IDEC_glbround
+         U __bid_estimate_decimal_digits
+         U __bid_power10_index_binexp_128
+         U __bid_power10_table_128
+         U __bid_recip_scale
+         U __bid_reciprocals10_128
+         U __bid_reciprocals10_64
+         U __bid_round_const_table
+         U __bid_round_const_table_128
+         U __bid_short_recip_scale
+00000000 T __i686.get_pc_thunk.bx
+
+bid64_to_bid128.o:
+00000000 r .LC0
+         U _GLOBAL_OFFSET_TABLE_
+         U ___tls_get_addr
+00000280 T __bid128_to_bid64
+00000000 T __bid64_to_bid128
+         U __bid_IDEC_glbflags
+         U __bid_IDEC_glbround
+         U __bid_estimate_decimal_digits
+         U __bid_power10_index_binexp_128
+         U __bid_power10_table_128
+         U __bid_recip_scale
+         U __bid_reciprocals10_128
+         U __bid_round_const_table
+         U __bid_round_const_table_128
+00000000 T __i686.get_pc_thunk.bx
+
+bid64_to_int32.o:
+00000000 r .LC0
+         U _GLOBAL_OFFSET_TABLE_
+         U ___tls_get_addr
+00001490 T __bid64_to_int32_ceil
+00000a90 T __bid64_to_int32_floor
+00001ed0 T __bid64_to_int32_int
+00000000 T __bid64_to_int32_rnint
+00002780 T __bid64_to_int32_rninta
+000019a0 T __bid64_to_int32_xceil
+00000fa0 T __bid64_to_int32_xfloor
+000022b0 T __bid64_to_int32_xint
+000004c0 T __bid64_to_int32_xrnint
+00002bb0 T __bid64_to_int32_xrninta
+         U __bid_IDEC_glbflags
+         U __bid_maskhigh128
+         U __bid_midpoint64
+         U __bid_nr_digits
+         U __bid_onehalf128
+         U __bid_shiftright128
+         U __bid_ten2k64
+         U __bid_ten2mk128trunc
+         U __bid_ten2mk64
+00000000 T __i686.get_pc_thunk.bx
+
+bid64_to_int64.o:
+00000000 r .LC0
+         U _GLOBAL_OFFSET_TABLE_
+         U ___tls_get_addr
+000019d0 T __bid64_to_int64_ceil
+00000d70 T __bid64_to_int64_floor
+000026b0 T __bid64_to_int64_int
+00000000 T __bid64_to_int64_rnint
+000031e0 T __bid64_to_int64_rninta
+00002040 T __bid64_to_int64_xceil
+000013a0 T __bid64_to_int64_xfloor
+00002be0 T __bid64_to_int64_xint
+00000600 T __bid64_to_int64_xrnint
+00003780 T __bid64_to_int64_xrninta
+         U __bid_IDEC_glbflags
+         U __bid_maskhigh128
+         U __bid_midpoint64
+         U __bid_nr_digits
+         U __bid_onehalf128
+         U __bid_shiftright128
+         U __bid_ten2k64
+         U __bid_ten2mk128trunc
+         U __bid_ten2mk64
+00000000 T __i686.get_pc_thunk.bx
+
+bid64_to_uint32.o:
+00000000 r .LC0
+         U _GLOBAL_OFFSET_TABLE_
+         U ___tls_get_addr
+00000f30 T __bid64_to_uint32_ceil
+00000890 T __bid64_to_uint32_floor
+000016f0 T __bid64_to_uint32_int
+00000000 T __bid64_to_uint32_rnint
+00001d70 T __bid64_to_uint32_rninta
+00001320 T __bid64_to_uint32_xceil
+00000b90 T __bid64_to_uint32_xfloor
+000019d0 T __bid64_to_uint32_xint
+000003b0 T __bid64_to_uint32_xrnint
+000020c0 T __bid64_to_uint32_xrninta
+         U __bid_IDEC_glbflags
+         U __bid_maskhigh128
+         U __bid_midpoint64
+         U __bid_nr_digits
+         U __bid_onehalf128
+         U __bid_shiftright128
+         U __bid_ten2k64
+         U __bid_ten2mk128trunc
+         U __bid_ten2mk64
+00000000 T __i686.get_pc_thunk.bx
+
+bid64_to_uint64.o:
+00000000 r .LC0
+         U _GLOBAL_OFFSET_TABLE_
+         U ___tls_get_addr
+00001660 T __bid64_to_uint64_ceil
+00000c90 T __bid64_to_uint64_floor
+00002090 T __bid64_to_uint64_int
+00000000 T __bid64_to_uint64_rnint
+00002a30 T __bid64_to_uint64_rninta
+00001b90 T __bid64_to_uint64_xceil
+00001140 T __bid64_to_uint64_xfloor
+00002530 T __bid64_to_uint64_xint
+000005c0 T __bid64_to_uint64_xrnint
+00002f40 T __bid64_to_uint64_xrninta
+         U __bid_IDEC_glbflags
+         U __bid_maskhigh128
+         U __bid_midpoint64
+         U __bid_nr_digits
+         U __bid_onehalf128
+         U __bid_shiftright128
+         U __bid_ten2k128
+         U __bid_ten2k64
+         U __bid_ten2mk128trunc
+         U __bid_ten2mk64
+00000000 T __i686.get_pc_thunk.bx
+
+bid128_to_int32.o:
+00000000 r .LC0
+         U _GLOBAL_OFFSET_TABLE_
+         U ___tls_get_addr
+00003fa0 T __bid128_to_int32_ceil
+000020e0 T __bid128_to_int32_floor
+00006280 T __bid128_to_int32_int
+00000000 T __bid128_to_int32_rnint
+00007fd0 T __bid128_to_int32_rninta
+00005110 T __bid128_to_int32_xceil
+00003040 T __bid128_to_int32_xfloor
+00007020 T __bid128_to_int32_xint
+00000ee0 T __bid128_to_int32_xrnint
+00008d70 T __bid128_to_int32_xrninta
+         U __bid_IDEC_glbflags
+         U __bid_maskhigh128
+         U __bid_midpoint128
+         U __bid_midpoint64
+         U __bid_nr_digits
+         U __bid_onehalf128
+         U __bid_shiftright128
+         U __bid_ten2k128
+         U __bid_ten2k64
+         U __bid_ten2mk128
+         U __bid_ten2mk128trunc
+00000000 T __i686.get_pc_thunk.bx
+
+bid128_to_int64.o:
+00000000 r .LC0
+         U _GLOBAL_OFFSET_TABLE_
+         U ___tls_get_addr
+00003b20 T __bid128_to_int64_ceil
+00002210 T __bid128_to_int64_floor
+00005780 T __bid128_to_int64_int
+00000000 T __bid128_to_int64_rnint
+00006f30 T __bid128_to_int64_rninta
+00004910 T __bid128_to_int64_xceil
+00002ed0 T __bid128_to_int64_xfloor
+00006280 T __bid128_to_int64_xint
+00000fb0 T __bid128_to_int64_xrnint
+00007d70 T __bid128_to_int64_xrninta
+         U __bid_IDEC_glbflags
+         U __bid_maskhigh128
+         U __bid_midpoint128
+         U __bid_midpoint64
+         U __bid_nr_digits
+         U __bid_onehalf128
+         U __bid_shiftright128
+         U __bid_ten2k64
+         U __bid_ten2mk128
+         U __bid_ten2mk128trunc
+00000000 T __i686.get_pc_thunk.bx
+
+bid128_to_uint32.o:
+00000000 r .LC0
+         U _GLOBAL_OFFSET_TABLE_
+         U ___tls_get_addr
+00003480 T __bid128_to_uint32_ceil
+00001c60 T __bid128_to_uint32_floor
+00005330 T __bid128_to_uint32_int
+00000000 T __bid128_to_uint32_rnint
+00006d30 T __bid128_to_uint32_rninta
+000043c0 T __bid128_to_uint32_xceil
+00002760 T __bid128_to_uint32_xfloor
+00005f30 T __bid128_to_uint32_xint
+00000cb0 T __bid128_to_uint32_xrnint
+000078d0 T __bid128_to_uint32_xrninta
+         U __bid_IDEC_glbflags
+         U __bid_maskhigh128
+         U __bid_midpoint128
+         U __bid_midpoint64
+         U __bid_nr_digits
+         U __bid_onehalf128
+         U __bid_shiftright128
+         U __bid_ten2k128
+         U __bid_ten2k64
+         U __bid_ten2mk128
+         U __bid_ten2mk128trunc
+00000000 T __i686.get_pc_thunk.bx
+
+bid128_to_uint64.o:
+00000000 r .LC0
+         U _GLOBAL_OFFSET_TABLE_
+         U ___tls_get_addr
+00003370 T __bid128_to_uint64_ceil
+00001f10 T __bid128_to_uint64_floor
+00004e70 T __bid128_to_uint64_int
+00000000 T __bid128_to_uint64_rnint
+00006350 T __bid128_to_uint64_rninta
+000040e0 T __bid128_to_uint64_xceil
+00002830 T __bid128_to_uint64_xfloor
+000057b0 T __bid128_to_uint64_xint
+00000de0 T __bid128_to_uint64_xrnint
+00006f70 T __bid128_to_uint64_xrninta
+         U __bid_IDEC_glbflags
+         U __bid_maskhigh128
+         U __bid_midpoint128
+         U __bid_midpoint64
+         U __bid_nr_digits
+         U __bid_onehalf128
+         U __bid_shiftright128
+         U __bid_ten2k128
+         U __bid_ten2k64
+         U __bid_ten2mk128
+         U __bid_ten2mk128trunc
+00000000 T __i686.get_pc_thunk.bx
+
+_addsub_sd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid32_to_bid64
+         U __bid64_add
+         U __bid64_sub
+         U __bid64_to_bid32
+00000000 T __bid_addsd3
+00000070 T __bid_subsd3
+00000000 T __i686.get_pc_thunk.bx
+
+_div_sd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid32_to_bid64
+         U __bid64_div
+         U __bid64_to_bid32
+00000000 T __bid_divsd3
+00000000 T __i686.get_pc_thunk.bx
+
+_mul_sd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid32_to_bid64
+         U __bid64_mul
+         U __bid64_to_bid32
+00000000 T __bid_mulsd3
+00000000 T __i686.get_pc_thunk.bx
+
+_eq_sd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid32_to_bid64
+         U __bid64_quiet_equal
+00000000 T __bid_eqsd2
+00000000 T __i686.get_pc_thunk.bx
+
+_ne_sd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid32_to_bid64
+         U __bid64_quiet_not_equal
+00000000 T __bid_nesd2
+00000000 T __i686.get_pc_thunk.bx
+
+_lt_sd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid32_to_bid64
+         U __bid64_quiet_less
+00000000 T __bid_ltsd2
+00000000 T __i686.get_pc_thunk.bx
+
+_gt_sd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid32_to_bid64
+         U __bid64_quiet_greater
+00000000 T __bid_gtsd2
+00000000 T __i686.get_pc_thunk.bx
+
+_le_sd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid32_to_bid64
+         U __bid64_quiet_less_equal
+00000000 T __bid_lesd2
+00000000 T __i686.get_pc_thunk.bx
+
+_ge_sd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid32_to_bid64
+         U __bid64_quiet_greater_equal
+00000000 T __bid_gesd2
+00000000 T __i686.get_pc_thunk.bx
+
+_sd_to_si.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid32_to_bid64
+         U __bid64_to_int32_xint
+00000000 T __bid_fixsdsi
+00000000 T __i686.get_pc_thunk.bx
+
+_sd_to_di.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid32_to_bid64
+         U __bid64_to_int64_xint
+00000000 T __bid_fixsddi
+00000000 T __i686.get_pc_thunk.bx
+
+_sd_to_usi.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid32_to_bid64
+         U __bid64_to_uint32_xint
+00000000 T __bid_fixunssdsi
+00000000 T __i686.get_pc_thunk.bx
+
+_sd_to_udi.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid32_to_bid64
+         U __bid64_to_uint64_xint
+00000000 T __bid_fixunssddi
+00000000 T __i686.get_pc_thunk.bx
+
+_si_to_sd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid64_from_int32
+         U __bid64_to_bid32
+00000000 T __bid_floatsisd
+00000000 T __i686.get_pc_thunk.bx
+
+_di_to_sd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid64_from_int64
+         U __bid64_to_bid32
+00000000 T __bid_floatdisd
+00000000 T __i686.get_pc_thunk.bx
+
+_usi_to_sd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid64_from_uint32
+         U __bid64_to_bid32
+00000000 T __bid_floatunssisd
+00000000 T __i686.get_pc_thunk.bx
+
+_udi_to_sd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid64_from_uint64
+         U __bid64_to_bid32
+00000000 T __bid_floatunsdisd
+00000000 T __i686.get_pc_thunk.bx
+
+_sd_to_sf.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid32_to_binary32
+00000000 T __bid_truncsdsf
+00000000 T __i686.get_pc_thunk.bx
+
+_sd_to_df.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid32_to_binary64
+00000000 T __bid_extendsddf
+00000000 T __i686.get_pc_thunk.bx
+
+_sd_to_xf.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid32_to_binary80
+00000000 T __bid_extendsdxf
+00000000 T __i686.get_pc_thunk.bx
+
+_sd_to_tf.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid32_to_binary128
+00000000 T __bid_extendsdtf
+00000000 T __i686.get_pc_thunk.bx
+
+_sf_to_sd.o:
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __bid_extendsfsd
+         U __binary32_to_bid32
+00000000 T __i686.get_pc_thunk.bx
+
+_df_to_sd.o:
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __bid_truncdfsd
+         U __binary64_to_bid32
+00000000 T __i686.get_pc_thunk.bx
+
+_xf_to_sd.o:
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __bid_truncxfsd
+         U __binary80_to_bid32
+00000000 T __i686.get_pc_thunk.bx
+
+_tf_to_sd.o:
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __bid_trunctfsd
+         U __binary128_to_bid32
+00000000 T __i686.get_pc_thunk.bx
+
+_sd_to_dd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid32_to_bid64
+00000000 T __bid_extendsddd2
+00000000 T __i686.get_pc_thunk.bx
+
+_sd_to_td.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid32_to_bid128
+00000000 T __bid_extendsdtd2
+00000000 T __i686.get_pc_thunk.bx
+
+_unord_sd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid32_to_bid64
+         U __bid64_quiet_unordered
+00000000 T __bid_unordsd2
+00000000 T __i686.get_pc_thunk.bx
+
+_addsub_dd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid64_add
+         U __bid64_sub
+00000000 T __bid_adddd3
+00000050 T __bid_subdd3
+00000000 T __i686.get_pc_thunk.bx
+
+_div_dd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid64_div
+00000000 T __bid_divdd3
+00000000 T __i686.get_pc_thunk.bx
+
+_mul_dd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid64_mul
+00000000 T __bid_muldd3
+00000000 T __i686.get_pc_thunk.bx
+
+_eq_dd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid64_quiet_equal
+00000000 T __bid_eqdd2
+00000000 T __i686.get_pc_thunk.bx
+
+_ne_dd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid64_quiet_not_equal
+00000000 T __bid_nedd2
+00000000 T __i686.get_pc_thunk.bx
+
+_lt_dd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid64_quiet_less
+00000000 T __bid_ltdd2
+00000000 T __i686.get_pc_thunk.bx
+
+_gt_dd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid64_quiet_greater
+00000000 T __bid_gtdd2
+00000000 T __i686.get_pc_thunk.bx
+
+_le_dd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid64_quiet_less_equal
+00000000 T __bid_ledd2
+00000000 T __i686.get_pc_thunk.bx
+
+_ge_dd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid64_quiet_greater_equal
+00000000 T __bid_gedd2
+00000000 T __i686.get_pc_thunk.bx
+
+_dd_to_si.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid64_to_int32_xint
+00000000 T __bid_fixddsi
+00000000 T __i686.get_pc_thunk.bx
+
+_dd_to_di.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid64_to_int64_xint
+00000000 T __bid_fixdddi
+00000000 T __i686.get_pc_thunk.bx
+
+_dd_to_usi.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid64_to_uint32_xint
+00000000 T __bid_fixunsddsi
+00000000 T __i686.get_pc_thunk.bx
+
+_dd_to_udi.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid64_to_uint64_xint
+00000000 T __bid_fixunsdddi
+00000000 T __i686.get_pc_thunk.bx
+
+_si_to_dd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid64_from_int32
+00000000 T __bid_floatsidd
+00000000 T __i686.get_pc_thunk.bx
+
+_di_to_dd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid64_from_int64
+00000000 T __bid_floatdidd
+00000000 T __i686.get_pc_thunk.bx
+
+_usi_to_dd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid64_from_uint32
+00000000 T __bid_floatunssidd
+00000000 T __i686.get_pc_thunk.bx
+
+_udi_to_dd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid64_from_uint64
+00000000 T __bid_floatunsdidd
+00000000 T __i686.get_pc_thunk.bx
+
+_dd_to_sf.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid64_to_binary32
+00000000 T __bid_truncddsf
+00000000 T __i686.get_pc_thunk.bx
+
+_dd_to_df.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid64_to_binary64
+00000000 T __bid_truncdddf
+00000000 T __i686.get_pc_thunk.bx
+
+_dd_to_xf.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid64_to_binary80
+00000000 T __bid_extendddxf
+00000000 T __i686.get_pc_thunk.bx
+
+_dd_to_tf.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid64_to_binary128
+00000000 T __bid_extendddtf
+00000000 T __i686.get_pc_thunk.bx
+
+_sf_to_dd.o:
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __bid_extendsfdd
+         U __binary32_to_bid64
+00000000 T __i686.get_pc_thunk.bx
+
+_df_to_dd.o:
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __bid_extenddfdd
+         U __binary64_to_bid64
+00000000 T __i686.get_pc_thunk.bx
+
+_xf_to_dd.o:
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __bid_truncxfdd
+         U __binary80_to_bid64
+00000000 T __i686.get_pc_thunk.bx
+
+_tf_to_dd.o:
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __bid_trunctfdd
+         U __binary128_to_bid64
+00000000 T __i686.get_pc_thunk.bx
+
+_dd_to_sd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid64_to_bid32
+00000000 T __bid_truncddsd2
+00000000 T __i686.get_pc_thunk.bx
+
+_dd_to_td.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid64_to_bid128
+00000000 T __bid_extendddtd2
+00000000 T __i686.get_pc_thunk.bx
+
+_unord_dd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid64_quiet_unordered
+00000000 T __bid_unorddd2
+00000000 T __i686.get_pc_thunk.bx
+
+_addsub_td.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid128_add
+         U __bid128_sub
+00000000 T __bid_addtd3
+00000100 T __bid_subtd3
+00000000 T __i686.get_pc_thunk.bx
+
+_div_td.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid128_div
+00000000 T __bid_divtd3
+00000000 T __i686.get_pc_thunk.bx
+
+_mul_td.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid128_mul
+00000000 T __bid_multd3
+00000000 T __i686.get_pc_thunk.bx
+
+_eq_td.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid128_quiet_equal
+00000000 T __bid_eqtd2
+00000000 T __i686.get_pc_thunk.bx
+
+_ne_td.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid128_quiet_not_equal
+00000000 T __bid_netd2
+00000000 T __i686.get_pc_thunk.bx
+
+_lt_td.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid128_quiet_less
+00000000 T __bid_lttd2
+00000000 T __i686.get_pc_thunk.bx
+
+_gt_td.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid128_quiet_greater
+00000000 T __bid_gttd2
+00000000 T __i686.get_pc_thunk.bx
+
+_le_td.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid128_quiet_less_equal
+00000000 T __bid_letd2
+00000000 T __i686.get_pc_thunk.bx
+
+_ge_td.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid128_quiet_greater_equal
+00000000 T __bid_getd2
+00000000 T __i686.get_pc_thunk.bx
+
+_td_to_si.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid128_to_int32_xint
+00000000 T __bid_fixtdsi
+00000000 T __i686.get_pc_thunk.bx
+
+_td_to_di.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid128_to_int64_xint
+00000000 T __bid_fixtddi
+00000000 T __i686.get_pc_thunk.bx
+
+_td_to_usi.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid128_to_uint32_xint
+00000000 T __bid_fixunstdsi
+00000000 T __i686.get_pc_thunk.bx
+
+_td_to_udi.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid128_to_uint64_xint
+00000000 T __bid_fixunstddi
+00000000 T __i686.get_pc_thunk.bx
+
+_si_to_td.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid128_from_int32
+00000000 T __bid_floatsitd
+00000000 T __i686.get_pc_thunk.bx
+
+_di_to_td.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid128_from_int64
+00000000 T __bid_floatditd
+00000000 T __i686.get_pc_thunk.bx
+
+_usi_to_td.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid128_from_uint32
+00000000 T __bid_floatunssitd
+00000000 T __i686.get_pc_thunk.bx
+
+_udi_to_td.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid128_from_uint64
+00000000 T __bid_floatunsditd
+00000000 T __i686.get_pc_thunk.bx
+
+_td_to_sf.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid128_to_binary32
+00000000 T __bid_trunctdsf
+00000000 T __i686.get_pc_thunk.bx
+
+_td_to_df.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid128_to_binary64
+00000000 T __bid_trunctddf
+00000000 T __i686.get_pc_thunk.bx
+
+_td_to_xf.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid128_to_binary80
+00000000 T __bid_trunctdxf
+00000000 T __i686.get_pc_thunk.bx
+
+_td_to_tf.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid128_to_binary128
+00000000 T __bid_trunctdtf
+00000000 T __i686.get_pc_thunk.bx
+
+_sf_to_td.o:
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __bid_extendsftd
+         U __binary32_to_bid128
+00000000 T __i686.get_pc_thunk.bx
+
+_df_to_td.o:
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __bid_extenddftd
+         U __binary64_to_bid128
+00000000 T __i686.get_pc_thunk.bx
+
+_xf_to_td.o:
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __bid_extendxftd
+         U __binary80_to_bid128
+00000000 T __i686.get_pc_thunk.bx
+
+_tf_to_td.o:
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __bid_extendtftd
+         U __binary128_to_bid128
+00000000 T __i686.get_pc_thunk.bx
+
+_td_to_sd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid128_to_bid32
+00000000 T __bid_trunctdsd2
+00000000 T __i686.get_pc_thunk.bx
+
+_td_to_dd.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid128_to_bid64
+00000000 T __bid_trunctddd2
+00000000 T __i686.get_pc_thunk.bx
+
+_unord_td.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U __bid128_quiet_unordered
+00000000 T __bid_unordtd2
+00000000 T __i686.get_pc_thunk.bx
+
+addtf3.o:
+00000000 T __addtf3
+
+divtf3.o:
+000007b8 t .L36
+00000528 t .L37
+00000770 t .L39
+00000b30 t .L40
+00000630 t .L42
+00000ae8 t .L43
+00000618 t .L74
+0000052d t .L75
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __divtf3
+00000000 T __i686.get_pc_thunk.bx
+
+eqtf2.o:
+00000000 T __eqtf2
+00000000 T __netf2
+
+getf2.o:
+00000000 T __getf2
+00000000 T __gttf2
+
+letf2.o:
+00000000 T __letf2
+00000000 T __lttf2
+
+multf3.o:
+00000578 t .L120
+00000440 t .L121
+00000790 t .L36
+0000057f t .L38
+000006a8 t .L40
+00000448 t .L41
+00000a80 t .L42
+         U _GLOBAL_OFFSET_TABLE_
+00000000 T __i686.get_pc_thunk.bx
+00000000 T __multf3
+
+negtf2.o:
+00000000 T __negtf2
+
+subtf3.o:
+00000000 T __subtf3
+
+unordtf2.o:
+00000000 T __unordtf2
+
+fixtfsi.o:
+00000000 T __fixtfsi
+
+fixunstfsi.o:
+00000000 T __fixunstfsi
+
+floatsitf.o:
+00000000 T __floatsitf
+
+floatunsitf.o:
+00000000 T __floatunsitf
+
+fixtfdi.o:
+00000000 T __fixtfdi
+
+fixunstfdi.o:
+00000000 T __fixunstfdi
+
+floatditf.o:
+00000000 T __floatditf
+
+floatunditf.o:
+00000000 T __floatunditf
+
+extendsftf2.o:
+00000000 T __extendsftf2
+
+extenddftf2.o:
+00000000 T __extenddftf2
+
+extendxftf2.o:
+00000000 T __extendxftf2
+
+trunctfsf2.o:
+00000000 T __trunctfsf2
+
+trunctfdf2.o:
+00000000 T __trunctfdf2
+
+trunctfxf2.o:
+00000000 T __trunctfxf2
+
+tf-signs.o:
+00000000 T __copysigntf3
+00000050 T __fabstf2
+
+generic-morestack.o:
+00000000 r .LC0
+00000000 r .LC1
+00000012 r .LC2
+         U _GLOBAL_OFFSET_TABLE_
+00000045 r __PRETTY_FUNCTION__.6399
+         U ___tls_get_addr
+         U __assert_fail
+         U __errno_location
+00000970 T __generic_findstack
+000002c0 T __generic_morestack
+00000240 T __generic_morestack_set_initial_sp
+00000760 T __generic_releasestack
+00000000 T __i686.get_pc_thunk.bx
+000008a0 T __morestack_allocate_stack_space
+000007f0 T __morestack_block_signals
+0000009c B __morestack_current_segment
+00000050 T __morestack_fail
+00000000 b __morestack_fullmask
+00000000 B __morestack_initial_sp
+00000a00 T __morestack_load_mmap
+00000130 T __morestack_release_segments
+000000a0 B __morestack_segments
+00000850 T __morestack_unblock_signals
+00000a90 T __splitstack_find
+         U abort
+         U free
+00000000 t free_dynamic_blocks
+         U getenv
+         U getpagesize
+         U malloc
+         U mmap
+         U mprotect
+00000060 r msg.6400
+00000020 r msg.6425
+         U munmap
+00000000 r nl.6382
+         w pthread_sigmask
+         U sigdelset
+         U sigemptyset
+         U sigfillset
+         U sigprocmask
+00000080 b static_pagesize.6391
+00000084 b use_guard_page.6392
+         U writev
+
+generic-morestack-thread.o:
+         U _GLOBAL_OFFSET_TABLE_
+         U ___tls_get_addr
+00000000 T __i686.get_pc_thunk.bx
+         U __morestack_fail
+         U __morestack_release_segments
+         U __morestack_segments
+         w __real_pthread_create
+         U __stack_split_initialize
+00000100 T __wrap_pthread_create
+00000090 t create_key
+00000000 b create_key_once
+         U free
+000000e0 t free_segments
+         U malloc
+00000060 r msg.6201
+00000020 r msg.6216
+00000000 r msg.6238
+         w pthread_key_create
+         w pthread_once
+         w pthread_setspecific
+00000004 b segment_list_key
+00000000 t stack_split_initialize_thread
+
+morestack.o:
+00000000 V DW.ref.__gcc_personality_v0
+         U _GLOBAL_OFFSET_TABLE_
+         U _Unwind_Resume
+         U __gcc_personality_v0
+         U __generic_findstack
+         U __generic_morestack
+         U __generic_morestack_set_initial_sp
+         U __generic_releasestack
+         U __i686.get_pc_thunk.bx
+00000008 T __morestack
+         U __morestack_block_signals
+         U __morestack_load_mmap
+00000000 T __morestack_non_split
+         U __morestack_unblock_signals
+000000cc T __stack_split_initialize

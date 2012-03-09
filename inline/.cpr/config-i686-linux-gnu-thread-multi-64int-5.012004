@@ -1,0 +1,18 @@
+version : 0.49
+languages : %
+    C : C
+    CPR : CPR
+    Foo : Foo
+    foo : Foo
+types : %
+    C : compiled
+    CPR : compiled
+    Foo : interpreted
+modules : %
+    C : Inline::C
+    CPR : Inline::CPR
+    Foo : Inline::Foo
+suffixes : %
+    C : so
+    CPR : so
+    Foo : foo

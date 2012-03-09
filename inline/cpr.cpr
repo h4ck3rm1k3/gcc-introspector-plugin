@@ -1,0 +1,10 @@
+// #!perl /usr/local/bin/cpr.pl
+
+ int main(void) {
+         
+        printf("Hello World, I'm running under Perl version %s\n",
+               CPR_eval("use Config; $Config{version}")
+              );
+
+        return 0;
+    }
