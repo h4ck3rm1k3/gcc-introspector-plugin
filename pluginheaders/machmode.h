@@ -1,6 +1,6 @@
 /* Machine mode definitions for GCC; included by rtl.h and tree.h.
    Copyright (C) 1991, 1993, 1994, 1996, 1998, 1999, 2000, 2001, 2003,
-   2007, 2008, 2009, 2010 Free Software Foundation, Inc.
+   2007, 2008, 2009 Free Software Foundation, Inc.
 
 This file is part of GCC.
 
@@ -195,7 +195,7 @@ extern CONST_MODE_FBIT unsigned char mode_fbit[NUM_MACHINE_MODES];
 /* Get a bitmask containing 1 for all bits in a word
    that fit within mode MODE.  */
 
-extern /*const*/ unsigned HOST_WIDE_INT mode_mask_array[NUM_MACHINE_MODES];
+extern const unsigned HOST_WIDE_INT mode_mask_array[NUM_MACHINE_MODES];
 
 #define GET_MODE_MASK(MODE) mode_mask_array[MODE]
 
@@ -240,11 +240,6 @@ extern enum machine_mode smallest_mode_for_size (unsigned int,
    or BLKmode on failure.  */
 
 extern enum machine_mode int_mode_for_mode (enum machine_mode);
-
-/* Return a mode that is suitable for representing a vector,
-   or BLKmode on failure.  */
-
-extern enum machine_mode mode_for_vector (enum machine_mode, unsigned);
 
 /* Find the best mode to use to access a bit field.  */
 

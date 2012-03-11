@@ -26,7 +26,6 @@ extern int fp_register_operand (rtx, enum machine_mode);
 extern int register_and_not_any_fp_reg_operand (rtx, enum machine_mode);
 extern int register_and_not_fp_reg_operand (rtx, enum machine_mode);
 extern int mmx_reg_operand (rtx, enum machine_mode);
-extern int sse_reg_operand (rtx, enum machine_mode);
 extern int q_regs_operand (rtx, enum machine_mode);
 extern int ext_register_operand (rtx, enum machine_mode);
 extern int ax_reg_operand (rtx, enum machine_mode);
@@ -44,14 +43,15 @@ extern int x86_64_szext_nonmemory_operand (rtx, enum machine_mode);
 extern int pic_32bit_operand (rtx, enum machine_mode);
 extern int x86_64_movabs_operand (rtx, enum machine_mode);
 extern int symbolic_operand (rtx, enum machine_mode);
+extern int pic_symbolic_operand (rtx, enum machine_mode);
 extern int local_symbolic_operand (rtx, enum machine_mode);
 extern int gotoff_operand (rtx, enum machine_mode);
 extern int tls_symbolic_operand (rtx, enum machine_mode);
 extern int tls_modbase_operand (rtx, enum machine_mode);
 extern int tp_or_register_operand (rtx, enum machine_mode);
 extern int constant_call_address_operand (rtx, enum machine_mode);
-extern int call_register_no_elim_operand (rtx, enum machine_mode);
 extern int register_no_elim_operand (rtx, enum machine_mode);
+extern int call_register_no_elim_operand (rtx, enum machine_mode);
 extern int index_register_operand (rtx, enum machine_mode);
 extern int general_no_elim_operand (rtx, enum machine_mode);
 extern int nonmemory_no_elim_operand (rtx, enum machine_mode);
@@ -121,6 +121,7 @@ extern int absneg_operator (rtx, enum machine_mode);
 extern int misaligned_operand (rtx, enum machine_mode);
 extern int emms_operation (rtx, enum machine_mode);
 extern int vzeroall_operation (rtx, enum machine_mode);
+extern int vzeroupper_operation (rtx, enum machine_mode);
 extern int avx_vpermilp_v8sf_operand (rtx, enum machine_mode);
 extern int avx_vpermilp_v4df_operand (rtx, enum machine_mode);
 extern int avx_vpermilp_v4sf_operand (rtx, enum machine_mode);
@@ -156,7 +157,6 @@ enum constraint_num
   CONSTRAINT_Y2,
   CONSTRAINT_Yi,
   CONSTRAINT_Ym,
-  CONSTRAINT_z,
   CONSTRAINT_I,
   CONSTRAINT_J,
   CONSTRAINT_K,

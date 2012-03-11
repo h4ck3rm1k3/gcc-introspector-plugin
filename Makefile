@@ -1,8 +1,11 @@
-GCC=gcc
+GCC=gcc-4.5
 PLUGIN_SOURCE_FILES= plugin.c
 PLUGIN_OBJECT_FILES= $(patsubst %.c,%.o,$(PLUGIN_SOURCE_FILES))
-#GCCPLUGINS_DIR:= $(shell $(GCC) -print-file-name=plugin)
+
 TOP := $(dir $(lastword $(MAKEFILE_LIST)))
+
+#GCCPLUGINS_DIR:= $(shell $(GCC) -print-file-name=plugin)
+#GCCPLUGINS_DIR:=/usr/lib/gcc/x86_64-linux-gnu/4.5/plugin/include/
 GCCPLUGINS_DIR:= $(TOP)/pluginheaders/
 PERLCORE_DIR:= $(TOP)/perlcore
 #PERLCORE_DIR=/usr/lib/perl/5.10.1/CORE/

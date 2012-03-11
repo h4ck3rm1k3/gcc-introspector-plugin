@@ -6,9 +6,9 @@
 
 enum machine_mode
 {
-  VOIDmode,                /* machmode.def:173 */
-  BLKmode,                 /* machmode.def:177 */
-  CCmode,                  /* machmode.def:205 */
+  VOIDmode,                /* machmode.def:169 */
+  BLKmode,                 /* machmode.def:173 */
+  CCmode,                  /* machmode.def:201 */
   CCGCmode,                /* config/i386/i386-modes.def:61 */
   CCGOCmode,               /* config/i386/i386-modes.def:62 */
   CCNOmode,                /* config/i386/i386-modes.def:63 */
@@ -19,48 +19,48 @@ enum machine_mode
   CCZmode,                 /* config/i386/i386-modes.def:68 */
   CCFPmode,                /* config/i386/i386-modes.def:69 */
   CCFPUmode,               /* config/i386/i386-modes.def:70 */
-  BImode,                  /* machmode.def:180 */
-  QImode,                  /* machmode.def:185 */
-  HImode,                  /* machmode.def:186 */
-  SImode,                  /* machmode.def:187 */
-  DImode,                  /* machmode.def:188 */
-  TImode,                  /* machmode.def:189 */
+  BImode,                  /* machmode.def:176 */
+  QImode,                  /* machmode.def:181 */
+  HImode,                  /* machmode.def:182 */
+  SImode,                  /* machmode.def:183 */
+  DImode,                  /* machmode.def:184 */
+  TImode,                  /* machmode.def:185 */
   OImode,                  /* config/i386/i386-modes.def:88 */
-  QQmode,                  /* machmode.def:208 */
-  HQmode,                  /* machmode.def:209 */
-  SQmode,                  /* machmode.def:210 */
-  DQmode,                  /* machmode.def:211 */
-  TQmode,                  /* machmode.def:212 */
-  UQQmode,                 /* machmode.def:214 */
-  UHQmode,                 /* machmode.def:215 */
-  USQmode,                 /* machmode.def:216 */
-  UDQmode,                 /* machmode.def:217 */
-  UTQmode,                 /* machmode.def:218 */
-  HAmode,                  /* machmode.def:220 */
-  SAmode,                  /* machmode.def:221 */
-  DAmode,                  /* machmode.def:222 */
-  TAmode,                  /* machmode.def:223 */
-  UHAmode,                 /* machmode.def:225 */
-  USAmode,                 /* machmode.def:226 */
-  UDAmode,                 /* machmode.def:227 */
-  UTAmode,                 /* machmode.def:228 */
-  SFmode,                  /* machmode.def:200 */
-  DFmode,                  /* machmode.def:201 */
+  QQmode,                  /* machmode.def:204 */
+  HQmode,                  /* machmode.def:205 */
+  SQmode,                  /* machmode.def:206 */
+  DQmode,                  /* machmode.def:207 */
+  TQmode,                  /* machmode.def:208 */
+  UQQmode,                 /* machmode.def:210 */
+  UHQmode,                 /* machmode.def:211 */
+  USQmode,                 /* machmode.def:212 */
+  UDQmode,                 /* machmode.def:213 */
+  UTQmode,                 /* machmode.def:214 */
+  HAmode,                  /* machmode.def:216 */
+  SAmode,                  /* machmode.def:217 */
+  DAmode,                  /* machmode.def:218 */
+  TAmode,                  /* machmode.def:219 */
+  UHAmode,                 /* machmode.def:221 */
+  USAmode,                 /* machmode.def:222 */
+  UDAmode,                 /* machmode.def:223 */
+  UTAmode,                 /* machmode.def:224 */
+  SFmode,                  /* machmode.def:196 */
+  DFmode,                  /* machmode.def:197 */
   XFmode,                  /* config/i386/i386-modes.def:24 */
   TFmode,                  /* config/i386/i386-modes.def:25 */
-  SDmode,                  /* machmode.def:240 */
-  DDmode,                  /* machmode.def:241 */
-  TDmode,                  /* machmode.def:242 */
-  CQImode,                 /* machmode.def:236 */
-  CHImode,                 /* machmode.def:236 */
-  CSImode,                 /* machmode.def:236 */
-  CDImode,                 /* machmode.def:236 */
-  CTImode,                 /* machmode.def:236 */
-  COImode,                 /* machmode.def:236 */
-  SCmode,                  /* machmode.def:237 */
-  DCmode,                  /* machmode.def:237 */
-  XCmode,                  /* machmode.def:237 */
-  TCmode,                  /* machmode.def:237 */
+  SDmode,                  /* machmode.def:236 */
+  DDmode,                  /* machmode.def:237 */
+  TDmode,                  /* machmode.def:238 */
+  CQImode,                 /* machmode.def:232 */
+  CHImode,                 /* machmode.def:232 */
+  CSImode,                 /* machmode.def:232 */
+  CDImode,                 /* machmode.def:232 */
+  CTImode,                 /* machmode.def:232 */
+  COImode,                 /* machmode.def:232 */
+  SCmode,                  /* machmode.def:233 */
+  DCmode,                  /* machmode.def:233 */
+  XCmode,                  /* machmode.def:233 */
+  TCmode,                  /* machmode.def:233 */
   V2QImode,                /* config/i386/i386-modes.def:86 */
   V4QImode,                /* config/i386/i386-modes.def:74 */
   V2HImode,                /* config/i386/i386-modes.def:74 */

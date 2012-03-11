@@ -3,9 +3,10 @@
 #include "gcc-plugin.h"
 #include "tree.h"
 #include "plugin-version.h"
+#include "tm.h"
 #include "cp/cp-tree.h"
 #include "ggc.h"
-
+#define USE_GTK
 #define DEFTREECODE(SYM, NAME, TYPE, LENGTH) TYPE,
 #define END_OF_BASE_TREE_CODES
 
@@ -24,7 +25,8 @@ static void generic_callback(void *gcc_data, void *user_data);
 #include "gtkinterface.h"
 void process (tree t); // forward
 void process_type(tree t);
-//#include "gtype-desc.h"
+
+
 
 // based on this doc http://gcc.gnu.org/onlinedocs/gccint/Plugins.html
 
@@ -46,6 +48,25 @@ void crashhandler()
 
 #endif
 
+void id_field (tree d)
+  {
+    const char *name = IDENTIFIER_POINTER(d);
+    int namel = IDENTIFIER_LENGTH(d);
+    if (namel)
+      {
+	fprintf(stderr, "has name1 %d :%s\n",namel,name);
+#ifdef USE_GTK
+	gtk_add_node(d,name);
+#endif
+	//	      TODO:gtk_add_node_field(d,tree_code_name[TREE_CODE(d)],name);
+	//	      fprintf(stderr, "%s: member1 %s\n", name, );
+      }
+    else
+      {
+	fprintf(stderr, "has no name1 length %d\n",namel);
+      }
+  }
+
 void id (tree d)
 {
   const char *name = IDENTIFIER_POINTER(d);
@@ -61,82 +82,68 @@ void id (tree d)
     }
 }
 
+
+void name(tree t)
+{
+  printf("get name\n");
+  tree d =DECL_NAME(t);
+  if (d)
+    {
+      printf("has decl\n");
+      id(d);
+    }
+  else
+    {
+      printf("has no decl\n");
+      id(t);
+    }
+}
+
+void fields (tree t)
+{
+  tree field;
+  for (field = TYPE_FIELDS (t) ; field ; field = TREE_CHAIN (field)) {
+    fprintf(stderr, "%s: member %s\n", "test1", tree_code_name[TREE_CODE(field)]);
+    name(field);
+  }
+}// fields
+
+void record(tree t)	
+{
+  printf ( "check:%d and record %d\n", TREE_CODE(t),RECORD_TYPE);
+
+  switch (TREE_CODE(t)) {
+  case RECORD_TYPE:
+  case UNION_TYPE:
+    name(t);
+    fields (t);
+    break;
+    
+  default: 
+  printf ( "unknown tcname:%s\n", tree_code_name[TREE_CODE(t)]);
+    break;      
+  }
+}//
+
+
 static void generic_callbackPLUGIN_FINISH_TYPE (tree t, void *_)
 {
   printf ( "tcname:%s\n", tree_code_name[TREE_CODE(t)]);
   //  printf("check1 pointer %p\n",t);
   //  printf("check2 as long %ul\n",t);
+#ifdef USE_GTK
   gtk_add_node(t,tree_code_name[TREE_CODE(t)]);
+#endif
   //  printf ( "after tcname:%s\n", tree_code_name[TREE_CODE(t)]);
-  //  generic_callback(t, "user_data");
-
-  void name(tree t)
-  {
-    tree d =DECL_NAME(t);
-    if (d)
-      {
-	fprintf(stderr, "has decl\n");
-	// gtk_add_node(d,tree_code_name[TREE_CODE(d)]);
-
-	void id (tree d)
-	{
-	  const char *name = IDENTIFIER_POINTER(d);
-	  int namel = IDENTIFIER_LENGTH(d);
-	  if (namel)
-	    {
-	      fprintf(stderr, "has name1 %d :%s\n",namel,name);
-	      gtk_add_node(d,name);
-	      //	      gtk_add_node_field(d,tree_code_name[TREE_CODE(d)],name);
-	      //	      fprintf(stderr, "%s: member1 %s\n", name, );
-	    }
-	  else
-	    {
-	      fprintf(stderr, "has no name1 length %d\n",namel);
-	    }
-	}
-	
-	id(d);
-      }
-    else
-      {
-	id(t);
-      }
-  }
-  
-  void fields (tree t)
-  {
-    tree field;
-    for (field = TYPE_FIELDS (t) ; field ; field = TREE_CHAIN (field)) {
-      //if (DECL_ARTIFICIAL(field) && !DECL_IMPLICIT_TYPEDEF_P(field)) continue;
-      fprintf(stderr, "%s: member %s\n", "test1", tree_code_name[TREE_CODE(field)]);
-      //gtk_add_node(field,tree_code_name[TREE_CODE(field)]);
-      name(field);
-    }
-  }// fields
-  
-  void record(tree t)	
-  {
-    switch (TREE_CODE(t)) {
-    case RECORD_TYPE:
-    case UNION_TYPE:
-      name(t);
-      fields (t);
-      break;
-      
-    default: 
-      break;      
-    }
-  }//
-  
-  void check_record (tree t) { 
-    record(t);
-  }
-    
+  //  generic_callback(t, "user_data");   
   if (t)
     {
-      check_record(t);
+      record(t);      
     }
-
+  else
+    {
+      printf ( "no record\n");
+    }
   //gcc_report_tree_visit(t);
 }
 
@@ -165,59 +172,49 @@ static void generic_callback(void *gcc_data, void *user_data)
   //  printf ("%H", (char * )user_data[1]);
 }
 
+
+void record2(tree t)
+{
+  printf ("starting\n");
+  name (t);
+  generic_callback(t, "user_data");
+  //tree type_decl = TYPE_NAME (t);
+  
+  tree field;
+  for (field = TYPE_FIELDS (t) ; field ; field = TREE_CHAIN (field)) {
+    //if (DECL_ARTIFICIAL(field) && !DECL_IMPLICIT_TYPEDEF_P(field)) continue;
+    name (field);
+    fprintf(stderr, "%s: member %s\n", "test2", tree_code_name[TREE_CODE(field)]);
+    
+  }
+};
+
 void gcc_report_tree_visit(tree t) // in the gcc model
 {
   return;
-  void name(tree t)
-  {
-    tree d =DECL_NAME(t);
-    if (d)
-      {
-	fprintf(stderr, "has decl\n");
-	id (d);
-      }
-    else
-      {
-	fprintf(stderr, "has no decl\n");
-	id (t);
-      }
-  };
-
-  void record(tree t)
-  {
-    printf ("starting\n");
-    name (t);
-    generic_callback(t, "user_data");
-    //tree type_decl = TYPE_NAME (t);
-    
-    tree field;
-    for (field = TYPE_FIELDS (t) ; field ; field = TREE_CHAIN (field)) {
-      //if (DECL_ARTIFICIAL(field) && !DECL_IMPLICIT_TYPEDEF_P(field)) continue;
-      name (field);
-      fprintf(stderr, "%s: member %s\n", "test2", tree_code_name[TREE_CODE(field)]);
-      
-    }
-  };
   if (t)
     {
-      record(t);
+      record2(t);
     }
   
 }
 
 static void generic_callbackPLUGIN_FINISH (tree t, void *_)
 {
+#ifdef USE_GTK
   gtk_shutdown();
+#endif
 }
 
 static void generic_callbackPLUGIN_GGC_START ()
 {
-  //  gtk_startup();
 }
 
 static void generic_callbackPLUGIN_ATTRIBUTES ()
 {
+#ifdef USE_GTK
   gtk_startup();
+#endif
 }
 
 static void generic_callbackPLUGIN_GGC_END ()

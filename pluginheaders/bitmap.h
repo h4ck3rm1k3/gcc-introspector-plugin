@@ -1,6 +1,6 @@
 /* Functions to support general ended bitmaps.
    Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005,
-   2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
+   2006, 2007, 2008, 2009 Free Software Foundation, Inc.
 
 This file is part of GCC.
 
@@ -77,7 +77,7 @@ typedef struct GTY(()) bitmap_head_def {
   bitmap_element *current;	/* Last element looked at.  */
   unsigned int indx;		/* Index of last element looked at.  */
   bitmap_obstack *obstack;	/* Obstack to allocate elements from.
-				   If NULL, then use GGC allocation.  */
+				   If NULL, then use ggc_alloc.  */
 #ifdef GATHER_STATISTICS
   struct bitmap_descriptor GTY((skip)) *desc;
 #endif
@@ -385,27 +385,6 @@ bmp_iter_next (bitmap_iterator *bi, unsigned *bit_no)
   *bit_no += 1;
 }
 
-/* Advance to first set bit in BI.  */
-
-static inline void
-bmp_iter_next_bit (bitmap_iterator * bi, unsigned *bit_no)
-{
-#if (GCC_VERSION >= 3004)
-  {
-    unsigned int n = __builtin_ctzl (bi->bits);
-    gcc_assert (sizeof (unsigned long) == sizeof (BITMAP_WORD));
-    bi->bits >>= n;
-    *bit_no += n;
-  }
-#else
-  while (!(bi->bits & 1))
-    {
-      bi->bits >>= 1;
-      *bit_no += 1;
-    }
-#endif
-}
-
 /* Advance to the next nonzero bit of a single bitmap, we will have
    already advanced past the just iterated bit.  Return true if there
    is a bit to iterate.  */
@@ -417,7 +396,11 @@ bmp_iter_set (bitmap_iterator *bi, unsigned *bit_no)
   if (bi->bits)
     {
     next_bit:
-      bmp_iter_next_bit (bi, bit_no);
+      while (!(bi->bits & 1))
+	{
+	  bi->bits >>= 1;
+	  *bit_no += 1;
+	}
       return true;
     }
 
@@ -460,7 +443,11 @@ bmp_iter_and (bitmap_iterator *bi, unsigned *bit_no)
   if (bi->bits)
     {
     next_bit:
-      bmp_iter_next_bit (bi, bit_no);
+      while (!(bi->bits & 1))
+	{
+	  bi->bits >>= 1;
+	  *bit_no += 1;
+	}
       return true;
     }
 
@@ -523,7 +510,11 @@ bmp_iter_and_compl (bitmap_iterator *bi, unsigned *bit_no)
   if (bi->bits)
     {
     next_bit:
-      bmp_iter_next_bit (bi, bit_no);
+      while (!(bi->bits & 1))
+	{
+	  bi->bits >>= 1;
+	  *bit_no += 1;
+	}
       return true;
     }
 

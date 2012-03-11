@@ -46,12 +46,6 @@
 #endif
 
 
-/* Define if building with C++. */
-#ifndef USED_FOR_TARGET
-/* #undef ENABLE_BUILD_WITH_CXX */
-#endif
-
-
 /* Define if you want more run-time sanity checks. This one gets a grab bag of
    miscellaneous but relatively cheap checks. */
 #ifndef USED_FOR_TARGET
@@ -120,12 +114,6 @@
 #endif
 
 
-/* Define to 1 to enable libquadmath support */
-#ifndef USED_FOR_TARGET
-#define ENABLE_LIBQUADMATH_SUPPORT 1
-#endif
-
-
 /* Define to enable LTO support. */
 #ifndef USED_FOR_TARGET
 #define ENABLE_LTO 1
@@ -142,6 +130,12 @@
 /* Define to enable plugin support. */
 #ifndef USED_FOR_TARGET
 #define ENABLE_PLUGIN 1
+#endif
+
+
+/* Define to warn for use of native system header directories */
+#ifndef USED_FOR_TARGET
+/* #undef ENABLE_POISON_SYSTEM_DIRECTORIES */
 #endif
 
 
@@ -192,6 +186,10 @@
 /* #undef ENABLE_WIN32_REGISTRY */
 #endif
 
+/* Define if you want to use multiarch. */
+#ifndef USED_FOR_TARGET
+#define ENABLE_MULTIARCH 1
+#endif
 
 /* Define to the name of a file containing a list of extra machine modes for
    this architecture. */
@@ -242,12 +240,6 @@
 #endif
 
 
-/* Define if your assembler supports DSPR1 mult. */
-#ifndef USED_FOR_TARGET
-/* #undef HAVE_AS_DSPR1_MULT */
-#endif
-
-
 /* Define if your assembler supports .dtprelword. */
 #ifndef USED_FOR_TARGET
 /* #undef HAVE_AS_DTPRELWORD */
@@ -287,7 +279,7 @@
 
 /* Define true if the assembler supports '.long foo@GOTOFF'. */
 #ifndef USED_FOR_TARGET
-#define HAVE_AS_GOTOFF_IN_DATA 1
+#define HAVE_AS_GOTOFF_IN_DATA 0
 #endif
 
 
@@ -334,7 +326,7 @@
 #endif
 
 
-/* Define if the assembler supports 'rep <insn>, lock <insn>'. */
+/* Define true if the assembler supports 'rep <insn>, lock <insn>'. */
 #ifndef USED_FOR_TARGET
 #define HAVE_AS_IX86_REP_LOCK_PREFIX 1
 #endif
@@ -468,7 +460,7 @@
 #endif
 
 
-/* Define if your assembler and linker support thread-local storage. */
+/* Define if your assembler supports thread-local storage. */
 #ifndef USED_FOR_TARGET
 #define HAVE_AS_TLS 1
 #endif
@@ -845,9 +837,21 @@
 #endif
 
 
-/* Define to 1 if you have the <ext/hash_map> header file. */
+/* Define to 1 if you have the `elf_getshdrstrndx' function. */
 #ifndef USED_FOR_TARGET
-/* #undef HAVE_EXT_HASH_MAP */
+#define HAVE_ELF_GETSHDRSTRNDX 1
+#endif
+
+
+/* Define to 1 if you have the `elf_getshstrndx' function. */
+#ifndef USED_FOR_TARGET
+/* #undef HAVE_ELF_GETSHSTRNDX */
+#endif
+
+
+/* Define if elf_getshstrndx has gABI conformant return values. */
+#ifndef USED_FOR_TARGET
+/* #undef HAVE_ELF_GETSHSTRNDX_GABI */
 #endif
 
 
@@ -943,13 +947,22 @@
 
 
 /* Define 0/1 if your assembler supports CFI directives. */
+#ifndef USED_FOR_TARGET
 #define HAVE_GAS_CFI_DIRECTIVE 1
+#endif
+
 
 /* Define 0/1 if your assembler supports .cfi_personality. */
+#ifndef USED_FOR_TARGET
 #define HAVE_GAS_CFI_PERSONALITY_DIRECTIVE 1
+#endif
+
 
 /* Define 0/1 if your assembler supports .cfi_sections. */
+#ifndef USED_FOR_TARGET
 #define HAVE_GAS_CFI_SECTIONS_DIRECTIVE 1
+#endif
+
 
 /* Define if your assembler supports the .loc discriminator sub-directive. */
 #ifndef USED_FOR_TARGET
@@ -1066,12 +1079,6 @@
 #endif
 
 
-/* Define if your system supports gnu indirect functions. */
-#ifndef USED_FOR_TARGET
-#define HAVE_GNU_INDIRECT_FUNCTION 1
-#endif
-
-
 /* Define if using GNU ld. */
 #ifndef USED_FOR_TARGET
 #define HAVE_GNU_LD 0
@@ -1162,26 +1169,13 @@
 #endif
 
 
-/* Define if your linker supports .eh_frame_hdr. */
+/* Define if your linker supports --eh-frame-hdr option. */
 #define HAVE_LD_EH_FRAME_HDR 1
 
 /* Define if your linker supports garbage collection of sections in presence
    of EH frames. */
 #ifndef USED_FOR_TARGET
 #define HAVE_LD_EH_GC_SECTIONS 1
-#endif
-
-
-/* Define if your linker has buggy garbage collection of sections support when
-   .text.startup.foo like sections are used. */
-#ifndef USED_FOR_TARGET
-/* #undef HAVE_LD_EH_GC_SECTIONS_BUG */
-#endif
-
-
-/* Define if your PowerPC64 linker supports a large TOC. */
-#ifndef USED_FOR_TARGET
-/* #undef HAVE_LD_LARGE_TOC */
 #endif
 
 
@@ -1217,7 +1211,7 @@
 #endif
 
 
-/* Define if your linker supports -Bstatic/-Bdynamic or equivalent options. */
+/* Define if your linker supports -Bstatic/-Bdynamic option. */
 #ifndef USED_FOR_TARGET
 #define HAVE_LD_STATIC_DYNAMIC 1
 #endif
@@ -1253,12 +1247,6 @@
 #endif
 
 
-/* Define if your linker supports plugin. */
-#ifndef USED_FOR_TARGET
-#define HAVE_LTO_PLUGIN 1
-#endif
-
-
 /* Define to 1 if you have the <malloc.h> header file. */
 #ifndef USED_FOR_TARGET
 #define HAVE_MALLOC_H 1
@@ -1280,6 +1268,12 @@
 /* Define to 1 if you have the <memory.h> header file. */
 #ifndef USED_FOR_TARGET
 #define HAVE_MEMORY_H 1
+#endif
+
+
+/* Define to 1 if you have the `mincore' function. */
+#ifndef USED_FOR_TARGET
+#define HAVE_MINCORE 1
 #endif
 
 
@@ -1451,12 +1445,6 @@
 #endif
 
 
-/* Define to 1 if you have the <tr1/unordered_map> header file. */
-#ifndef USED_FOR_TARGET
-#define HAVE_TR1_UNORDERED_MAP 1
-#endif
-
-
 /* Define to 1 if the system has the type `uintmax_t'. */
 #ifndef USED_FOR_TARGET
 #define HAVE_UINTMAX_T 1
@@ -1472,12 +1460,6 @@
 /* Define to 1 if you have the <unistd.h> header file. */
 #ifndef USED_FOR_TARGET
 #define HAVE_UNISTD_H 1
-#endif
-
-
-/* Define to 1 if you have the <unordered_map> header file. */
-#ifndef USED_FOR_TARGET
-/* #undef HAVE_UNORDERED_MAP */
 #endif
 
 
@@ -1548,40 +1530,15 @@
 #endif
 
 
+/* Define if libelf is in use. */
+#ifndef USED_FOR_TARGET
+#define HAVE_libelf 1
+#endif
+
+
 /* Define as const if the declaration of iconv() needs const. */
 #ifndef USED_FOR_TARGET
 #define ICONV_CONST 
-#endif
-
-
-/* Define to the linker option to enable use of shared objects. */
-#ifndef USED_FOR_TARGET
-#define LD_DYNAMIC_OPTION "-Bdynamic"
-#endif
-
-
-/* Define to the linker option to disable use of shared objects. */
-#ifndef USED_FOR_TARGET
-#define LD_STATIC_OPTION "-Bstatic"
-#endif
-
-
-/* Define to the linker flags to use for -pthread. */
-#ifndef USED_FOR_TARGET
-/* #undef LIB_THREAD_LDFLAGS_SPEC */
-#endif
-
-
-/* Define to the library containing __tls_get_addr/___tls_get_addr. */
-#ifndef USED_FOR_TARGET
-/* #undef LIB_TLS_SPEC */
-#endif
-
-
-/* Define to the name of the LTO plugin DSO that must be passed to the
-   linker's -plugin=LIB option. */
-#ifndef USED_FOR_TARGET
-#define LTOPLUGINSONAME "liblto_plugin.so"
 #endif
 
 
@@ -1648,7 +1605,7 @@
 
 /* Specify plugin linker */
 #ifndef USED_FOR_TARGET
-#define PLUGIN_LD "ld"
+#define PLUGIN_LD "ld.gold"
 #endif
 
 
@@ -1666,7 +1623,7 @@
 
 /* The size of `long', as computed by sizeof. */
 #ifndef USED_FOR_TARGET
-#define SIZEOF_LONG 4
+#define SIZEOF_LONG 8
 #endif
 
 
@@ -1684,7 +1641,7 @@
 
 /* The size of `void *', as computed by sizeof. */
 #ifndef USED_FOR_TARGET
-#define SIZEOF_VOID_P 4
+#define SIZEOF_VOID_P 8
 #endif
 
 
@@ -1711,9 +1668,6 @@
 /* #undef TARGET_DEFAULT_LONG_DOUBLE_128 */
 #endif
 
-
-/* Define if your target C library provides the `dl_iterate_phdr' function. */
-/* #undef TARGET_DL_ITERATE_PHDR */
 
 /* Define if your target C library provides stack protector support */
 #ifndef USED_FOR_TARGET
@@ -1802,18 +1756,6 @@
 /* #  undef WORDS_BIGENDIAN */
 # endif
 #endif
-
-/* Number of bits in a file offset, on hosts where this is settable. */
-#ifndef USED_FOR_TARGET
-#define _FILE_OFFSET_BITS 64
-#endif
-
-
-/* Define for large files, on AIX-style hosts. */
-#ifndef USED_FOR_TARGET
-/* #undef _LARGE_FILES */
-#endif
-
 
 /* Define to 1 if on MINIX. */
 #ifndef USED_FOR_TARGET

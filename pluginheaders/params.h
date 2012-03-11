@@ -1,5 +1,5 @@
 /* params.h - Run-time parameters.
-   Copyright (C) 2001, 2003, 2004, 2005, 2007, 2008, 2009, 2010, 2011
+   Copyright (C) 2001, 2003, 2004, 2005, 2007, 2008, 2009
    Free Software Foundation, Inc.
    Written by Mark Mitchell <mark@codesourcery.com>.
 
@@ -44,9 +44,11 @@ typedef struct param_info
   /* The name used with the `--param <name>=<value>' switch to set this
      value.  */
   const char *const option;
+  /* The associated value.  */
+  int value;
 
-  /* The default value.  */
-  int default_value;
+  /* True if the parameter was explicitly set.  */
+  bool set;
 
   /* Minimum acceptable value.  */
   int min_value;
@@ -70,12 +72,9 @@ extern size_t get_num_compiler_params (void);
 
 extern void add_params (const param_info params[], size_t n);
 
-/* Set the VALUE associated with the parameter given by NAME in the
-   table PARAMS using PARAMS_SET to indicate which have been
-   explicitly set.  */
+/* Set the VALUE associated with the parameter given by NAME.  */
 
-extern void set_param_value (const char *name, int value,
-			     int *params, int *params_set);
+extern void set_param_value (const char *name, int value);
 
 
 /* The parameters in use by language-independent code.  */
@@ -89,33 +88,13 @@ typedef enum compiler_param
   LAST_PARAM
 } compiler_param;
 
-/* The value of the parameter given by ENUM.  Not an lvalue.  */
+/* The value of the parameter given by ENUM.  */
 #define PARAM_VALUE(ENUM) \
-  ((int) global_options.x_param_values[(int) ENUM])
+  (compiler_params[(int) ENUM].value)
 
-/* Set the value of the parameter given by NUM to VALUE, implicitly,
-   if it has not been set explicitly by the user, in the table PARAMS
-   using PARAMS_SET to indicate which have been explicitly set.  */
-
-extern void maybe_set_param_value (compiler_param num, int value,
-				   int *params, int *params_set);
-
-/* Set the default value of a parameter given by NUM to VALUE, before
-   option processing.  */
-
-extern void set_default_param_value (compiler_param num, int value);
-
-/* Note that all parameters have been added and all default values
-   set.  */
-extern void finish_params (void);
-
-/* Return the default value of parameter NUM.  */
-
-extern int default_param_value (compiler_param num);
-
-/* Initialize an array PARAMS with default values of the
-   parameters.  */
-extern void init_param_values (int *params);
+/* True if the value of the parameter was explicitly changed.  */
+#define PARAM_SET_P(ENUM) \
+  (compiler_params[(int) ENUM].set)
 
 /* Macros for the various parameters.  */
 #define STRUCT_REORG_COLD_STRUCT_RATIO \
@@ -142,8 +121,6 @@ extern void init_param_values (int *params);
   PARAM_VALUE (PARAM_MAX_PENDING_LIST_LENGTH)
 #define MAX_GCSE_MEMORY \
   ((size_t) PARAM_VALUE (PARAM_MAX_GCSE_MEMORY))
-#define MAX_GCSE_INSERTION_RATIO \
-  ((size_t) PARAM_VALUE (PARAM_MAX_GCSE_INSERTION_RATIO))
 #define GCSE_AFTER_RELOAD_PARTIAL_FRACTION \
   PARAM_VALUE (PARAM_GCSE_AFTER_RELOAD_PARTIAL_FRACTION)
 #define GCSE_AFTER_RELOAD_CRITICAL_FRACTION \
@@ -206,6 +183,4 @@ extern void init_param_values (int *params);
   PARAM_VALUE (PARAM_PREFETCH_MIN_INSN_TO_MEM_RATIO)
 #define MIN_NONDEBUG_INSN_UID \
   PARAM_VALUE (PARAM_MIN_NONDEBUG_INSN_UID)
-#define MAX_STORES_TO_SINK \
-  PARAM_VALUE (PARAM_MAX_STORES_TO_SINK)
 #endif /* ! GCC_PARAMS_H */
