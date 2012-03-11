@@ -1,16 +1,7 @@
-#include <stdio.h>
-//#include "gcc-plugin.h"
-#include "gcc-plugin.h"
-#include "tree.h"
-#include "plugin-version.h"
-#include "tm.h"
-#include "cp/cp-tree.h"
-#include "ggc.h"
-//#define ENTER  fprintf( code_outputfile,"Enter at %s:%d\n", __FILE__, __LINE__);
+#include "gcc.h"
+
 #define ENTER
 #define PREFIX ""
-extern _IO_FILE * code_outputfile;
-//field_type_TYPE_SIZE_UNIT_value
 
 void field_type_TYPE_SIZE_UNIT_value(tree t)
 {
@@ -104,7 +95,7 @@ void field_type_TREE_HASH(tree t)
 {
   ENTER; if (TREE_HASH(t)) {
     fprintf( code_outputfile,PREFIX "TREE_HASH\n");
-    fprintf( code_outputfile,PREFIX "TREE_HASH %ld\n",TREE_HASH(t));
+    fprintf( code_outputfile,PREFIX "TREE_HASH %u\n",TREE_HASH(t));
   }
 }
 void field_type_COMPLETE_TYPE_P(tree t)
@@ -3035,7 +3026,7 @@ void field_type_MAIN_NAME_P(tree t)
 void field_type(tree t)
 {
   fprintf( code_outputfile, "declare_field_type(tree_code(%d,\"%s\"),\n", TREE_CODE(t),tree_code_name[TREE_CODE(t)]);
-  //  field_type_TREE_CODE(t);
+  field_type_TREE_CODE(t);
   //  field_type_TYPE_SIZE_UNIT(t);
   field_type_TYPE_SIZE_UNIT_value(t);
   field_type_TYPE_PRECISION(t);

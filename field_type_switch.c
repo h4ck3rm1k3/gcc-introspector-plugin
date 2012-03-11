@@ -14,6 +14,7 @@
 void field_type_ENUMERAL_TYPE2(tree t){
   // 
   //field_type_TREE_CODE_ENUMERAL_TYPE(t); 
+  process_enum ( t );
   process_enum_tree_code_generate_gcc (t );
 };
 
@@ -35,7 +36,7 @@ void field_type_GCC_BLOCK(tree t){emit_tree_code("GCC_BLOCK");
 void field_type_OFFSET_TYPE(tree t){emit_tree_code("OFFSET_TYPE");
 };
 void field_type_ENUMERAL_TYPE(tree t){emit_tree_code("ENUMERAL_TYPE");
-  //field_type_ENUMERAL_TYPE2(t);
+  field_type_ENUMERAL_TYPE2(t);
 };
 void field_type_BOOLEAN_TYPE(tree t){emit_tree_code("BOOLEAN_TYPE");
 };
@@ -589,113 +590,116 @@ void field_type_CLASS_REFERENCE_EXPR(tree t){emit_tree_code("CLASS_REFERENCE_EXP
 };
 void field_type_MAX_TREE_CODES(tree t){emit_tree_code("MAX_TREE_CODES");
 };
-process_enum_tree_code(tree t) { 	switch(TREE_CODE(t))
-{
-case ERROR_MARK:
-	field_type_ERROR_MARK(t);
-	break;
-case IDENTIFIER_NODE:
-	field_type_IDENTIFIER_NODE(t);
-	break;
-case TREE_LIST:
-	field_type_TREE_LIST(t);
-	break;
-case TREE_VEC:
-	field_type_TREE_VEC(t);
-	break;
-case GCC_BLOCK:
-	field_type_GCC_BLOCK(t);
-	break;
-case OFFSET_TYPE:
-	field_type_OFFSET_TYPE(t);
-	break;
-case ENUMERAL_TYPE:
-	field_type_ENUMERAL_TYPE(t);
-	break;
-case BOOLEAN_TYPE:
-	field_type_BOOLEAN_TYPE(t);
-	break;
-case INTEGER_TYPE:
-	field_type_INTEGER_TYPE(t);
-	break;
-case REAL_TYPE:
-	field_type_REAL_TYPE(t);
-	break;
-case POINTER_TYPE:
-	field_type_POINTER_TYPE(t);
-	break;
-case FIXED_POINT_TYPE:
-	field_type_FIXED_POINT_TYPE(t);
-	break;
-case REFERENCE_TYPE:
-	field_type_REFERENCE_TYPE(t);
-	break;
-case COMPLEX_TYPE:
-	field_type_COMPLEX_TYPE(t);
-	break;
-case VECTOR_TYPE:
-	field_type_VECTOR_TYPE(t);
-	break;
-case ARRAY_TYPE:
-	field_type_ARRAY_TYPE(t);
-	break;
-case RECORD_TYPE:
-	field_type_RECORD_TYPE(t);
-	break;
-case UNION_TYPE:
-	field_type_UNION_TYPE(t);
-	break;
-case QUAL_UNION_TYPE:
-	field_type_QUAL_UNION_TYPE(t);
-	break;
-case VOID_TYPE:
-	field_type_VOID_TYPE(t);
-	break;
-case FUNCTION_TYPE:
-	field_type_FUNCTION_TYPE(t);
-	break;
-case METHOD_TYPE:
-	field_type_METHOD_TYPE(t);
-	break;
-case LANG_TYPE:
-	field_type_LANG_TYPE(t);
-	break;
-case INTEGER_CST:
-	field_type_INTEGER_CST(t);
-	break;
-case REAL_CST:
-	field_type_REAL_CST(t);
-	break;
-case FIXED_CST:
-	field_type_FIXED_CST(t);
-	break;
-case COMPLEX_CST:
-	field_type_COMPLEX_CST(t);
-	break;
-case VECTOR_CST:
-	field_type_VECTOR_CST(t);
-	break;
-case STRING_CST:
-	field_type_STRING_CST(t);
-	break;
-case FUNCTION_DECL:
-	field_type_FUNCTION_DECL(t);
-	break;
-case LABEL_DECL:
-	field_type_LABEL_DECL(t);
-	break;
-case FIELD_DECL:
-	field_type_FIELD_DECL(t);
-	break;
-case VAR_DECL:
-	field_type_VAR_DECL(t);
-	break;
-case CONST_DECL:
-	field_type_CONST_DECL(t);
-	break;
-case PARM_DECL:
-	field_type_PARM_DECL(t);
-	break;
+
+
+void process_enum_tree_code(tree t) { 	
+  switch(TREE_CODE(t))
+    {
+    case ERROR_MARK:
+      field_type_ERROR_MARK(t);
+      break;
+    case IDENTIFIER_NODE:
+      field_type_IDENTIFIER_NODE(t);
+      break;
+    case TREE_LIST:
+      field_type_TREE_LIST(t);
+      break;
+    case TREE_VEC:
+      field_type_TREE_VEC(t);
+      break;
+    case GCC_BLOCK:
+      field_type_GCC_BLOCK(t);
+      break;
+    case OFFSET_TYPE:
+      field_type_OFFSET_TYPE(t);
+      break;
+    case ENUMERAL_TYPE:
+      field_type_ENUMERAL_TYPE(t);
+      break;
+    case BOOLEAN_TYPE:
+      field_type_BOOLEAN_TYPE(t);
+      break;
+    case INTEGER_TYPE:
+      field_type_INTEGER_TYPE(t);
+      break;
+    case REAL_TYPE:
+      field_type_REAL_TYPE(t);
+      break;
+    case POINTER_TYPE:
+      field_type_POINTER_TYPE(t);
+      break;
+    case FIXED_POINT_TYPE:
+      field_type_FIXED_POINT_TYPE(t);
+      break;
+    case REFERENCE_TYPE:
+      field_type_REFERENCE_TYPE(t);
+      break;
+    case COMPLEX_TYPE:
+      field_type_COMPLEX_TYPE(t);
+      break;
+    case VECTOR_TYPE:
+      field_type_VECTOR_TYPE(t);
+      break;
+    case ARRAY_TYPE:
+      field_type_ARRAY_TYPE(t);
+      break;
+    case RECORD_TYPE:
+      field_type_RECORD_TYPE(t);
+      break;
+    case UNION_TYPE:
+      field_type_UNION_TYPE(t);
+      break;
+    case QUAL_UNION_TYPE:
+      field_type_QUAL_UNION_TYPE(t);
+      break;
+    case VOID_TYPE:
+      field_type_VOID_TYPE(t);
+      break;
+    case FUNCTION_TYPE:
+      field_type_FUNCTION_TYPE(t);
+      break;
+    case METHOD_TYPE:
+      field_type_METHOD_TYPE(t);
+      break;
+    case LANG_TYPE:
+      field_type_LANG_TYPE(t);
+      break;
+    case INTEGER_CST:
+      field_type_INTEGER_CST(t);
+      break;
+    case REAL_CST:
+      field_type_REAL_CST(t);
+      break;
+    case FIXED_CST:
+      field_type_FIXED_CST(t);
+      break;
+    case COMPLEX_CST:
+      field_type_COMPLEX_CST(t);
+      break;
+    case VECTOR_CST:
+      field_type_VECTOR_CST(t);
+      break;
+    case STRING_CST:
+      field_type_STRING_CST(t);
+      break;
+    case FUNCTION_DECL:
+      field_type_FUNCTION_DECL(t);
+      break;
+    case LABEL_DECL:
+      field_type_LABEL_DECL(t);
+      break;
+    case FIELD_DECL:
+      field_type_FIELD_DECL(t);
+      break;
+    case VAR_DECL:
+      field_type_VAR_DECL(t);
+      break;
+    case CONST_DECL:
+      field_type_CONST_DECL(t);
+      break;
+    case PARM_DECL:
+      field_type_PARM_DECL(t);
+      break;
 case TYPE_DECL:
 	field_type_TYPE_DECL(t);
 	break;
@@ -1442,4 +1446,5 @@ case MAX_TREE_CODES:
 	break;
 	default : ;
 };
+
 };
