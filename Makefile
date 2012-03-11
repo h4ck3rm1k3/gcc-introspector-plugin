@@ -48,3 +48,7 @@ cpp : plugincpp.o dummy.o main2cpp.o
 	g++ -fpermissive -std=gnu++0x  -I $(GCCPLUGINS_DIR) plugincpp.o main2.o dummy.o
 cxxml : plugin.cpp
 	gccxml -fxml=plugin.xml -fpermissive   -I $(GCCPLUGINS_DIR) plugin.cpp
+
+
+reprocess : testoutput.c
+	gcc testoutput.c

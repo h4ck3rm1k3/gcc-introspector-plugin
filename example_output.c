@@ -1,0 +1,363 @@
+#include "gccinterface.h"
+void main() {
+start_plugin(
+finish_type("record_type",
+noname(),fields(
+	field(
+name("code"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(2),
+	TYPE_PRECISION(16),
+	TYPE_UNSIGNED(1),
+0),/*ft*/
+DECL_MODE(180),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+	field(
+name("side_effects_flag"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(1),
+	TYPE_PRECISION(1),
+	TYPE_UNSIGNED(1),
+0),/*ft*/
+DECL_MODE(180),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+	field(
+name("constant_flag"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(1),
+	TYPE_PRECISION(1),
+	TYPE_UNSIGNED(1),
+0),/*ft*/
+DECL_MODE(180),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+	field(
+name("addressable_flag"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(1),
+	TYPE_PRECISION(1),
+	TYPE_UNSIGNED(1),
+0),/*ft*/
+DECL_MODE(180),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+	field(
+name("volatile_flag"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(1),
+	TYPE_PRECISION(1),
+	TYPE_UNSIGNED(1),
+0),/*ft*/
+DECL_MODE(180),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+	field(
+name("readonly_flag"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(1),
+	TYPE_PRECISION(1),
+	TYPE_UNSIGNED(1),
+0),/*ft*/
+DECL_MODE(180),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+	field(
+name("unsigned_flag"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(1),
+	TYPE_PRECISION(1),
+	TYPE_UNSIGNED(1),
+0),/*ft*/
+DECL_MODE(180),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+	field(
+name("asm_written_flag"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(1),
+	TYPE_PRECISION(1),
+	TYPE_UNSIGNED(1),
+0),/*ft*/
+DECL_MODE(180),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+	field(
+name("nowarning_flag"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(1),
+	TYPE_PRECISION(1),
+	TYPE_UNSIGNED(1),
+0),/*ft*/
+DECL_MODE(180),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+	field(
+name("used_flag"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(1),
+	TYPE_PRECISION(1),
+	TYPE_UNSIGNED(1),
+0),/*ft*/
+DECL_MODE(180),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+	field(
+name("nothrow_flag"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(1),
+	TYPE_PRECISION(1),
+	TYPE_UNSIGNED(1),
+0),/*ft*/
+DECL_MODE(180),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+	field(
+name("static_flag"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(1),
+	TYPE_PRECISION(1),
+	TYPE_UNSIGNED(1),
+0),/*ft*/
+DECL_MODE(180),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+	field(
+name("public_flag"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(1),
+	TYPE_PRECISION(1),
+	TYPE_UNSIGNED(1),
+0),/*ft*/
+DECL_MODE(180),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+	field(
+name("private_flag"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(1),
+	TYPE_PRECISION(1),
+	TYPE_UNSIGNED(1),
+0),/*ft*/
+DECL_MODE(180),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+	field(
+name("protected_flag"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(1),
+	TYPE_PRECISION(1),
+	TYPE_UNSIGNED(1),
+0),/*ft*/
+DECL_MODE(180),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+	field(
+name("deprecated_flag"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(1),
+	TYPE_PRECISION(1),
+	TYPE_UNSIGNED(1),
+0),/*ft*/
+DECL_MODE(180),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+	field(
+name("saturating_flag"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(1),
+	TYPE_PRECISION(1),
+	TYPE_UNSIGNED(1),
+0),/*ft*/
+DECL_MODE(180),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+	field(
+name("default_def_flag"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(1),
+	TYPE_PRECISION(1),
+	TYPE_UNSIGNED(1),
+0),/*ft*/
+DECL_MODE(180),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+	field(
+name("lang_flag_0"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(1),
+	TYPE_PRECISION(1),
+	TYPE_UNSIGNED(1),
+0),/*ft*/
+DECL_MODE(180),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+	field(
+name("lang_flag_1"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(1),
+	TYPE_PRECISION(1),
+	TYPE_UNSIGNED(1),
+0),/*ft*/
+DECL_MODE(180),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+	field(
+name("lang_flag_2"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(1),
+	TYPE_PRECISION(1),
+	TYPE_UNSIGNED(1),
+0),/*ft*/
+DECL_MODE(180),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+	field(
+name("lang_flag_3"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(1),
+	TYPE_PRECISION(1),
+	TYPE_UNSIGNED(1),
+0),/*ft*/
+DECL_MODE(180),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+	field(
+name("lang_flag_4"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(1),
+	TYPE_PRECISION(1),
+	TYPE_UNSIGNED(1),
+0),/*ft*/
+DECL_MODE(180),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+	field(
+name("lang_flag_5"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(1),
+	TYPE_PRECISION(1),
+	TYPE_UNSIGNED(1),
+0),/*ft*/
+DECL_MODE(180),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+	field(
+name("lang_flag_6"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(1),
+	TYPE_PRECISION(1),
+	TYPE_UNSIGNED(1),
+0),/*ft*/
+DECL_MODE(180),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+	field(
+name("visited"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(1),
+	TYPE_PRECISION(1),
+	TYPE_UNSIGNED(1),
+0),/*ft*/
+DECL_MODE(180),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+	field(
+name("packed_flag"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(1),
+	TYPE_PRECISION(1),
+	TYPE_UNSIGNED(1),
+0),/*ft*/
+DECL_MODE(180),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+	field(
+name("user_align"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(1),
+	TYPE_PRECISION(1),
+	TYPE_UNSIGNED(1),
+0),/*ft*/
+DECL_MODE(180),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+	field(
+name("nameless_flag"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(1),
+	TYPE_PRECISION(1),
+	TYPE_UNSIGNED(1),
+0),/*ft*/
+DECL_MODE(180),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+	field(
+name("spare"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(2),
+	TYPE_PRECISION(12),
+	TYPE_UNSIGNED(1),
+0),/*ft*/
+DECL_MODE(180),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+	field(
+name("address_space"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(1),
+	TYPE_PRECISION(8),
+	TYPE_UNSIGNED(1),
+0),/*ft*/
+DECL_MODE(180),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+0),
+0),//finish_type
+finish_type("record_type",
+noname(),fields(
+	field(
+name("x"),
+declare_field_type(tree_code(8,"integer_type"),
+	TYPE_SIZE_UNIT_val(4),
+	TYPE_PRECISION(32),
+0),/*ft*/
+DECL_MODE(210),
+DECL_OFFSET_ALIGN(1),
+DECL_VIRTUAL_P(1),
+	0),/*field*/
+0),
+0),//finish_type
+0);}

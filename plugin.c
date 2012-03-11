@@ -6,6 +6,9 @@
 #include "tm.h"
 #include "cp/cp-tree.h"
 #include "ggc.h"
+#include <stdio.h>
+
+_IO_FILE * code_outputfile;
 //#define USE_GTK
 #define DEFTREECODE(SYM, NAME, TYPE, LENGTH) TYPE,
 #define END_OF_BASE_TREE_CODES
@@ -42,7 +45,7 @@ void crashhandler()
             ". \nIf the file compiles correctly without invoking "      \
             "introspector please file a bug, include a testcase or .ii file" \
             " produced with -save-temps\n",                             \
-            __FILE__, __LINE__);                                        \
+           __FILE__, __LINE__);                                        \
     crashhandler();                                                     \
   }
 
@@ -54,7 +57,7 @@ void id_field (tree d)
     int namel = IDENTIFIER_LENGTH(d);
     if (namel)
       {
-	fprintf(stderr, "field name :%s\n",name);
+	fprintf(code_outputfile, "fieldname(\"%s\"),\n",name);
 #ifdef USE_GTK
 	gtk_add_node(d,name);
 #endif
@@ -63,7 +66,7 @@ void id_field (tree d)
       }
     else
       {
-		fprintf(stderr, "has no name1 length %d\n",namel);
+	fprintf( code_outputfile, "noname(),\n",namel);
       }
   }
 
@@ -74,12 +77,12 @@ void id (tree d)
   if (namel)
     {
       //      fprintf(stderr, "has name1 %d :%s\n",namel,name);
-      fprintf(stderr, "has name :%s\n",name);
+      fprintf( code_outputfile, "name(\"%s\"),\n",name);
       //      fprintf(stderr, "%s: member1 %s\n", name, tree_code_name[TREE_CODE(d)]);
     }
   else
     {
-      fprintf(stderr, "has no name1 length %d\n",namel);
+      fprintf( code_outputfile, "noname(),");
     }
 }
 
@@ -109,7 +112,9 @@ void record(tree t)
   case RECORD_TYPE:
   case UNION_TYPE:
     name(t);
+    fprintf( code_outputfile,"fields(\n");
     fields (t);
+    fprintf( code_outputfile,"0),\n");
     break;
     
   default: 
@@ -121,7 +126,7 @@ void record(tree t)
 
 static void generic_callbackPLUGIN_FINISH_TYPE (tree t, void *_)
 {
-  printf ( "tcname:%s\n", tree_code_name[TREE_CODE(t)]);
+  fprintf(code_outputfile, "finish_type(\"%s\",\n", tree_code_name[TREE_CODE(t)]);
   //  printf("check1 pointer %p\n",t);
   //  printf("check2 as long %ul\n",t);
 #ifdef USE_GTK
@@ -137,6 +142,7 @@ static void generic_callbackPLUGIN_FINISH_TYPE (tree t, void *_)
     {
       printf ( "no record\n");
     }
+  fprintf(code_outputfile,"0),//finish_type\n");
   //gcc_report_tree_visit(t);
 }
 
@@ -215,6 +221,25 @@ static void generic_callbackPLUGIN_GGC_END ()
 
 }
 
+
+static void generic_callbackPLUGIN_START_UNIT()
+{
+  // open the output file
+  code_outputfile=fopen ("example_output.c","w+");
+  fprintf(code_outputfile, "#include \"gccinterface.h\"\n");
+  fprintf(code_outputfile, "void main() {\n");
+  fprintf(code_outputfile, "start_plugin(\n");
+  if (code_outputfile == NULL) perror ("Error opening file");
+}
+
+static void generic_callbackPLUGIN_ALL_IPA_PASSES_START()
+{
+  // close the output file
+  fprintf(code_outputfile, "0);");
+  fprintf(code_outputfile, "}");
+  fclose(code_outputfile);
+}
+
 /*
   register a simple handler for all plugins,
   the commented out ones just crash
@@ -235,6 +260,8 @@ void register_special_plugins  (struct plugin_name_args *plugin_info){
   DEFEVENTSPECIAL (PLUGIN_GGC_START);
   DEFEVENTSPECIAL (PLUGIN_GGC_END);
 
+  DEFEVENTSPECIAL (  PLUGIN_START_UNIT);
+  DEFEVENTSPECIAL ( PLUGIN_ALL_IPA_PASSES_START);
 }
 
 
