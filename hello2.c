@@ -1,4 +1,4 @@
-typedef enum tree_code {
+enum tree_code  {
 ERROR_MARK,
 IDENTIFIER_NODE,
 TREE_LIST,
@@ -282,10 +282,10 @@ CLASS_METHOD_DECL,
 MESSAGE_SEND_EXPR,
 CLASS_REFERENCE_EXPR,
 MAX_TREE_CODES
-} t_tree_code;
+} ;
 
 
 struct funky
 {
-  t_tree_code code;
+  enum tree_code code;
 };

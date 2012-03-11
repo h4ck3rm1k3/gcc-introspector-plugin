@@ -19,3 +19,7 @@ void fields(){}
 void noname(){}
 void finish_type(){}
 void start_plugin(){}
+void DECL_NAME(const char * pname){
+  printf("Typename %s\n", pname);
+}
+void TYPE_NAME(){}

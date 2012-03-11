@@ -9,6 +9,22 @@ void field_type_TYPE_SIZE_UNIT_value(tree t)
     fprintf( code_outputfile,PREFIX "\tTYPE_SIZE_UNIT_val(%ld),\n",tree_low_cst(TYPE_SIZE_UNIT(t),1));
   }
 }
+
+void field_type_TYPE_NAME(tree t)
+{
+  ENTER; if (TYPE_NAME(t)) {
+
+    if (TREE_CODE (TYPE_NAME (t)) == IDENTIFIER_NODE)
+      {
+	fprintf( code_outputfile,PREFIX "TYPE_NAME(\"%s\"),\n",IDENTIFIER_POINTER (TYPE_NAME(t)));
+      }
+    else if (TREE_CODE (TYPE_NAME (t)) == TYPE_DECL
+	     && DECL_NAME (TYPE_NAME (t)))
+      {
+	fprintf( code_outputfile,PREFIX "TYPE_NAME(DECL_NAME(\"%s\")),\n",IDENTIFIER_POINTER (DECL_NAME(TYPE_NAME(t))));
+      }    
+  }
+}
 void field_type_TYPE_UNSIGNED(tree t)
 {
   ENTER; if (TYPE_UNSIGNED(t)) {
@@ -27,6 +43,16 @@ void field_type_EXPR_P(tree t)
   ENTER; if (EXPR_P(t)) {
     //    fprintf( code_outputfile,PREFIX "EXPR_P\n");
     fprintf( code_outputfile,PREFIX "\tEXPR_P(%d),\n",EXPR_P(t));
+  }
+}
+void field_type_TYPE_MAIN_VARIANT(tree t)
+{
+  ENTER; if (TYPE_MAIN_VARIANT(t)) {
+    //   fprintf( code_outputfile,PREFIX "TYPE_MAIN_VARIANT\n");
+    fprintf( code_outputfile,PREFIX "TYPE_MAIN_VARIANT(\n");
+    //    field_type(TYPE_MAIN_VARIANT(t));
+    field_type_TYPE_NAME(TYPE_MAIN_VARIANT(t));
+    fprintf( code_outputfile,PREFIX "),\n");
   }
 }
 
@@ -1714,13 +1740,7 @@ void field_type_TYPE_SYMTAB_DIE(tree t)
     //struct die_struct *
   }
 }
-void field_type_TYPE_NAME(tree t)
-{
-  ENTER; if (TYPE_NAME(t)) {
-    fprintf( code_outputfile,PREFIX "TYPE_NAME\n");
-    fprintf( code_outputfile,PREFIX "TYPE_NAME %p\n",TYPE_NAME(t));
-  }
-}
+
 void field_type_TYPE_NEXT_VARIANT(tree t)
 {
   ENTER; if (TYPE_NEXT_VARIANT(t)) {
@@ -1728,13 +1748,7 @@ void field_type_TYPE_NEXT_VARIANT(tree t)
     fprintf( code_outputfile,PREFIX "TYPE_NEXT_VARIANT %p\n",TYPE_NEXT_VARIANT(t));
   }
 }
-void field_type_TYPE_MAIN_VARIANT(tree t)
-{
-  ENTER; if (TYPE_MAIN_VARIANT(t)) {
-    fprintf( code_outputfile,PREFIX "TYPE_MAIN_VARIANT\n");
-    fprintf( code_outputfile,PREFIX "TYPE_MAIN_VARIANT %p\n",TYPE_MAIN_VARIANT(t));
-  }
-}
+
 void field_type_TYPE_CONTEXT(tree t)
 {
   ENTER; if (TYPE_CONTEXT(t)) {
@@ -3030,12 +3044,16 @@ void field_type_MAIN_NAME_P(tree t)
 void field_type(tree t)
 {
   fprintf( code_outputfile, "declare_field_type(tree_code(%d,\"%s\"),\n", TREE_CODE(t),tree_code_name[TREE_CODE(t)]);
-  field_type_TREE_CODE(t);
+  field_type_TYPE_NAME(t);
+
+  //  field_type_TYPE_MAIN_VARIANT(t);
+  //  tree type = TYPE_MAIN_VARIANT(orig_type);
   //  field_type_TYPE_SIZE_UNIT(t);
   field_type_TYPE_SIZE_UNIT_value(t);
   field_type_TYPE_PRECISION(t);
   field_type_TYPE_UNSIGNED(t);
   field_type_TREE_CONSTANT(t);
+  field_type_TREE_CODE(t);
   fprintf( code_outputfile,"0),/*ft*/\n");// field_type
 
   return;
@@ -3419,7 +3437,7 @@ void field_type(tree t)
   field_type_TYPE_LANG_FLAG_6(t);
   field_type_TYPE_LANG_SLOT_1(t);
   field_type_TYPE_LANG_SPECIFIC(t);
-  field_type_TYPE_MAIN_VARIANT(t);
+
   field_type_TYPE_MAXVAL(t);
   field_type_TYPE_MAX_VALUE(t);
   field_type_TYPE_METHODS(t);

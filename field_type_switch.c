@@ -37,7 +37,8 @@ void field_type_GCC_BLOCK(tree t){emit_tree_code("GCC_BLOCK");
 };
 void field_type_OFFSET_TYPE(tree t){emit_tree_code("OFFSET_TYPE");
 };
-void field_type_ENUMERAL_TYPE(tree t){emit_tree_code("ENUMERAL_TYPE");
+void field_type_ENUMERAL_TYPE(tree t){
+  emit_tree_code("ENUMERAL_TYPE");
   field_type_ENUMERAL_TYPE2(t);
 };
 void field_type_BOOLEAN_TYPE(tree t){emit_tree_code("BOOLEAN_TYPE");

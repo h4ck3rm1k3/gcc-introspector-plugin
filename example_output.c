@@ -6,6 +6,10 @@ noname(),fields(
 	field(
 name("code"),
 declare_field_type(tree_code(6,"enumeral_type"),
+TYPE_NAME("tree_code"),
+	TYPE_SIZE_UNIT_val(4),
+	TYPE_PRECISION(32),
+	TYPE_UNSIGNED(1),
 TREE_CODE(6),
 ENUM(
 ENUMVALUE("ERROR_MARK",0),
@@ -292,9 +296,6 @@ ENUMVALUE("MESSAGE_SEND_EXPR",280),
 ENUMVALUE("CLASS_REFERENCE_EXPR",281),
 ENUMVALUE("MAX_TREE_CODES",282),
 0),/*enum*/
-	TYPE_SIZE_UNIT_val(4),
-	TYPE_PRECISION(32),
-	TYPE_UNSIGNED(1),
 0),/*ft*/
 CONSTRUCTOR_BITFIELD_P(),
 BIT_FIELD(),
