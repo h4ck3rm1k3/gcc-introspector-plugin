@@ -18,7 +18,8 @@ CFLAGS+= -g -O0 -save-temps -I$(GCCPLUGINS_DIR) -I/usr/lib/glib-2.0/include/ -I/
 #MYLIBS="-pthread -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lcairo -lpango-1.0 -lfreetype -lfontconfig -lgobject-2.0 -lgmodule-2.0 -lgthread-2.0 -lrt -lglib-2.0"
 #gcc -I ../perlcore/ miniperlmain.c  -lperl
 
-plugin.so: $(PLUGIN_OBJECT_FILES) gtkinterface.o gtk_perl_interface.o field_type.o
+plugin.so: $(PLUGIN_OBJECT_FILES) gtkinterface.o gtk_perl_interface.o field_type.o field_type_size.o field.o enum.o field_type_switch.o
+
 	$(GCC) -shared -pthread -lperl -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lcairo -lpango-1.0 -lfreetype -lfontconfig -lgobject-2.0 -lgmodule-2.0 -lgthread-2.0 -lrt -lglib-2.0 $^ -o $@
 
 test2: $(PLUGIN_OBJECT_FILES) main2.o gtkinterface.o gtk_perl_interface.o
@@ -26,6 +27,9 @@ test2: $(PLUGIN_OBJECT_FILES) main2.o gtkinterface.o gtk_perl_interface.o
 
 test : plugin.so
 	LD_PRELOAD=/usr/lib/libgtk-x11-2.0.so:/usr/lib/libperl.so gcc-4.5 -fplugin=$(TOP)/plugin.so -I$(GCCPLUGINS_DIR)/include  hello.c -c -o plugin-bootstrap.o
+
+test3 : plugin.so
+	LD_PRELOAD=/usr/lib/libgtk-x11-2.0.so:/usr/lib/libperl.so gcc-4.5 -fplugin=$(TOP)/plugin.so -I$(GCCPLUGINS_DIR)/include  hello2.c -c -o plugin-bootstrap.o
 
 clean :
 	rm plugin.so
