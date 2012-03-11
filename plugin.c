@@ -6,7 +6,7 @@
 #include "tm.h"
 #include "cp/cp-tree.h"
 #include "ggc.h"
-#define USE_GTK
+//#define USE_GTK
 #define DEFTREECODE(SYM, NAME, TYPE, LENGTH) TYPE,
 #define END_OF_BASE_TREE_CODES
 
