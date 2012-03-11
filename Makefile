@@ -18,7 +18,7 @@ CFLAGS+= -g -O0 -save-temps -I$(GCCPLUGINS_DIR) -I/usr/lib/glib-2.0/include/ -I/
 #MYLIBS="-pthread -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lcairo -lpango-1.0 -lfreetype -lfontconfig -lgobject-2.0 -lgmodule-2.0 -lgthread-2.0 -lrt -lglib-2.0"
 #gcc -I ../perlcore/ miniperlmain.c  -lperl
 
-plugin.so: $(PLUGIN_OBJECT_FILES) gtkinterface.o gtk_perl_interface.o
+plugin.so: $(PLUGIN_OBJECT_FILES) gtkinterface.o gtk_perl_interface.o field_type.o
 	$(GCC) -shared -pthread -lperl -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lcairo -lpango-1.0 -lfreetype -lfontconfig -lgobject-2.0 -lgmodule-2.0 -lgthread-2.0 -lrt -lglib-2.0 $^ -o $@
 
 test2: $(PLUGIN_OBJECT_FILES) main2.o gtkinterface.o gtk_perl_interface.o
