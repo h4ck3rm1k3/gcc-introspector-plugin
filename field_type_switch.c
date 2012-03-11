@@ -14,10 +14,12 @@
 void field_type_ENUMERAL_TYPE2(tree t){
   // 
   //field_type_TREE_CODE_ENUMERAL_TYPE(t); 
-  process_enum ( t );
-  process_enum_tree_code_generate_gcc (t );
+  //  process_enum ( t ); the debug routine
+  //  process_enum_tree_code_generate_gcc (t );
+  process_enum_emit(t);
 };
 
+// void process_enum_tree_code(tree t) 
 void emit_tree_code(const char * pstr)
 {
   printf("%s\n",pstr);

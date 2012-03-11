@@ -36,21 +36,25 @@ void field_type_TREE_CONSTANT(tree t)
     fprintf( code_outputfile,PREFIX "\tTREE_CONSTANT(%d),\n",TREE_CONSTANT(t));
   }
 }
+
 void field_type_TREE_CODE_ENUMERAL_TYPE(tree t)
 {
   // process the enum
-  process_enum (t);
+  //process_enum (t);
+  process_enum_emit(t);
 }
 
 void field_type_TREE_CODE(tree t)
 {
   ENTER; if (TREE_CODE(t)) {
-    fprintf( code_outputfile,PREFIX "TREE_CODE\n");
-    fprintf( code_outputfile,PREFIX "TREE_CODE %d\n",TREE_CODE(t));
+    //    fprintf( code_outputfile,PREFIX "TREE_CODE\n");
+    fprintf( code_outputfile,PREFIX "TREE_CODE(%d),\n",TREE_CODE(t));
   }
   process_enum_tree_code(t);
+  //process_enum_tree_code(t);
   //  process_field_type_enum_tree_code(t);
   //process_enum (t);
+
   //process_field_type_enum_tree_code(t);
   /* switch(TREE_CODE(t)) */
   /*   { */

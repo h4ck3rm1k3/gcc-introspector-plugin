@@ -6,13 +6,16 @@
 #include "tm.h"
 #include "cp/cp-tree.h"
 #include "ggc.h"
+
 extern _IO_FILE * code_outputfile;
+
 void     field_DECL_MODE(tree t)
 {
   if (DECL_MODE(t)) {
     fprintf( code_outputfile,"DECL_MODE(%d),\n",DECL_MODE(t));
   }
 }
+
 void    field_DECL_OFFSET_ALIGN(tree t)
 {
   if (DECL_OFFSET_ALIGN(t)) {
@@ -36,18 +39,17 @@ void  field_TREE_ADDRESSABLE(tree t)
   }
 }
 
-
 void field_CONSTRUCTOR_BITFIELD_P(tree t)
 {
   if (CONSTRUCTOR_BITFIELD_P(t)) {
-    fprintf( code_outputfile,"CONSTRUCTOR_BITFIELD_P\n");
+    fprintf( code_outputfile,"CONSTRUCTOR_BITFIELD_P(),\n");
   }
 }
 
 void    field_DECL_BIT_FIELD(tree t)
 {
   if (DECL_BIT_FIELD(t)) {
-    fprintf( code_outputfile,"BIT_FIELD\n");
+    fprintf( code_outputfile,"BIT_FIELD(),\n");
   }
 }
 
@@ -102,15 +104,12 @@ void    field_DECL_NONADDRESSABLE_P(tree t)
   }
 }
 
-
 void    field_DECL_PACKED(tree t)
 {
   if (DECL_PACKED(t)) {
     fprintf( code_outputfile,"DECL_PACKED %d\n",DECL_PACKED(t));
   }
 }
-
-
 
 void    field_DECL_UNSIGNED(tree t)
 {
@@ -119,15 +118,12 @@ void    field_DECL_UNSIGNED(tree t)
   }
 }
 
-
-
 void    field_TREE_READONLY(tree t)
 {
   if (TREE_READONLY(t)) {
     fprintf( code_outputfile,"TREE_READONLY %d\n",TREE_READONLY(t));
   }
 }
-
 
 void fields (tree t)
 {

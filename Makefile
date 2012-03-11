@@ -57,5 +57,5 @@ cxxml : plugin.cpp
 	gccxml -fxml=plugin.xml -fpermissive   -I $(GCCPLUGINS_DIR) plugin.cpp
 
 
-reprocess : testoutput.c
-	gcc testoutput.c
+reprocess : example_output.c gccinterface.c
+	gcc example_output.c gccinterface.c

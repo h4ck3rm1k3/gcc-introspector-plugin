@@ -16,22 +16,23 @@ void process_enum_name_value(const char * p, int val)
   fprintf( code_outputfile,"ENUM : %s %d",p,val);
 }
 
-void process_enum ( tree enumeral_type) {
-  fprintf( code_outputfile,"BEGIN ENUM\n");
+void process_enum_emit ( tree enumeral_type) {
+  fprintf( code_outputfile,"ENUM(\n");
   tree tv;
   /* Output the list of possible values for the enumeration type.  */
   for (tv = TYPE_VALUES (enumeral_type); tv ; tv = TREE_CHAIN (tv))
     {
-      fprintf( code_outputfile,"ENUM VALUE\n");
+
       tree v = TREE_VALUE (tv);
       // GCC 4.4 switched to consts for enum values
       if (TREE_CODE (v) == CONST_DECL)
         v = DECL_INITIAL (v);
       int value = TREE_INT_CST_LOW (v);
-      process_enum_name_value(IDENTIFIER_POINTER (TREE_PURPOSE (tv)),value);
+      fprintf( code_outputfile,"ENUMVALUE(\"%s\",%d),\n",IDENTIFIER_POINTER (TREE_PURPOSE (tv)),value);
+      //process_enum_name_value(IDENTIFIER_POINTER (TREE_PURPOSE (tv)),value);
 
     }
-  fprintf( code_outputfile,"END ENUM\n");
+  fprintf( code_outputfile,"0),/*enum*/\n");
   // if we want to generate code for the enum :
   //  process_enum_tree_code(enumeral_type);
 }
