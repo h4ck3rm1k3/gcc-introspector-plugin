@@ -1,0 +1,9 @@
+Mongoose was compiled like this :
+  hg clone https://code.google.com/p/mongoose/
+  cd mongoose/
+  make linux
+
+IN the directory $(HOME)/experiments/introspector/plugin/mongoose/ referenced by the makefile,
+sorry no autotools (yet)
+
+

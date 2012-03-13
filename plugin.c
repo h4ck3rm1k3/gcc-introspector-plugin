@@ -1,8 +1,11 @@
 //#include "gtkinterface.h"
 #include "gcc.h"
+#define USE_MONGOOSE 1
+#ifdef USE_MONGOOSE
+#include "mongoose_webserver.h"
+#endif
 void process (tree t); // forward
 void process_type(tree t);
-
 
 static void generic_callbackPLUGIN_ALL_IPA_PASSES_START()
 {
@@ -17,12 +20,17 @@ static void generic_callbackPLUGIN_FINISH_TYPE (tree t, void *i)
 static void generic_callbackPLUGIN_START_UNIT()
 {
   plugin_open_files();
+
 }
 
 static void generic_callbackPLUGIN_FINISH (tree t, void *_)
 {
 #ifdef USE_GTK
   gtk_shutdown();
+
+#endif
+#ifdef USE_MONGOOSE
+  mongoose_stop();
 #endif
 }
 
@@ -30,6 +38,9 @@ static void generic_callbackPLUGIN_ATTRIBUTES ()
 {
 #ifdef USE_GTK
   gtk_startup();
+#endif
+#ifdef USE_MONGOOSE
+  mongoose_start();
 #endif
 }
 

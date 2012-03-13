@@ -1,12 +1,4 @@
-#include <stdio.h>
-//#include "gcc-plugin.h"
-#include "gcc-plugin.h"
-#include "tree.h"
-#include "plugin-version.h"
-#include "tm.h"
-#include "cp/cp-tree.h"
-#include "ggc.h"
-//#define ENTER  printf ("Enter at %s:%d\n", __FILE__, __LINE__);
+#include "gcc.h"
 #define ENTER
 #define PREFIX "field type :"
 
@@ -22,7 +14,7 @@ void field_type_ENUMERAL_TYPE2(tree t){
 // void process_enum_tree_code(tree t) 
 void emit_tree_code(const char * pstr)
 {
-  printf("%s\n",pstr);
+  fprintf( code_outputfile,"TREECODE(\"%s\"),\n",pstr);
 }
 
 void field_type_ERROR_MARK(tree t){emit_tree_code("ERROR_MARK");

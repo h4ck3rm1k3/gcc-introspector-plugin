@@ -1,4 +1,4 @@
-typedef enum {
+enum gcc_tree_code {
   ERROR_MARK,
   IDENTIFIER_NODE,
   TREE_LIST,
@@ -290,5 +290,5 @@ typedef enum {
   CLASS_REFERENCE_EXPR,
   PROPERTY_REF,
   MAX_TREE_CODES
-} GccTreeCode;
+} Gcc:TreeCode;
 //tree_code
